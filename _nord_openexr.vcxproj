@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Half\eLut.h" />
+    <ClInclude Include="Half\half.h" />
+    <ClInclude Include="Half\halfFunction.h" />
+    <ClInclude Include="Half\halfLimits.h" />
+    <ClInclude Include="Half\toFloat.h" />
+    <ClInclude Include="IexMath\IexMathFloatExc.h" />
+    <ClInclude Include="IexMath\IexMathIeeeExc.h" />
+    <ClInclude Include="Iex\Iex.h" />
+    <ClInclude Include="Iex\IexBaseExc.h" />
+    <ClInclude Include="Iex\IexErrnoExc.h" />
+    <ClInclude Include="Iex\IexExport.h" />
+    <ClInclude Include="Iex\IexForward.h" />
+    <ClInclude Include="Iex\IexMacros.h" />
+    <ClInclude Include="Iex\IexMathExc.h" />
+    <ClInclude Include="Iex\IexNamespace.h" />
+    <ClInclude Include="Iex\IexThrowErrnoExc.h" />
+    <ClInclude Include="IlmBaseConfig.h" />
+    <ClInclude Include="IlmImf\b44ExpLogTable.h" />
+    <ClInclude Include="IlmImf\dwaLookups.h" />
+    <ClInclude Include="IlmImf\ImfAcesFile.h" />
+    <ClInclude Include="IlmImf\ImfArray.h" />
+    <ClInclude Include="IlmImf\ImfAttribute.h" />
+    <ClInclude Include="IlmImf\ImfAutoArray.h" />
+    <ClInclude Include="IlmImf\ImfB44Compressor.h" />
+    <ClInclude Include="IlmImf\ImfBoxAttribute.h" />
+    <ClInclude Include="IlmImf\ImfChannelList.h" />
+    <ClInclude Include="IlmImf\ImfChannelListAttribute.h" />
+    <ClInclude Include="IlmImf\ImfCheckedArithmetic.h" />
+    <ClInclude Include="IlmImf\ImfChromaticities.h" />
+    <ClInclude Include="IlmImf\ImfChromaticitiesAttribute.h" />
+    <ClInclude Include="IlmImf\ImfCompositeDeepScanLine.h" />
+    <ClInclude Include="IlmImf\ImfCompression.h" />
+    <ClInclude Include="IlmImf\ImfCompressionAttribute.h" />
+    <ClInclude Include="IlmImf\ImfCompressor.h" />
+    <ClInclude Include="IlmImf\ImfConvert.h" />
+    <ClInclude Include="IlmImf\ImfCRgbaFile.h" />
+    <ClInclude Include="IlmImf\ImfDeepCompositing.h" />
+    <ClInclude Include="IlmImf\ImfDeepFrameBuffer.h" />
+    <ClInclude Include="IlmImf\ImfDeepImageState.h" />
+    <ClInclude Include="IlmImf\ImfDeepImageStateAttribute.h" />
+    <ClInclude Include="IlmImf\ImfDeepScanLineInputFile.h" />
+    <ClInclude Include="IlmImf\ImfDeepScanLineInputPart.h" />
+    <ClInclude Include="IlmImf\ImfDeepScanLineOutputFile.h" />
+    <ClInclude Include="IlmImf\ImfDeepScanLineOutputPart.h" />
+    <ClInclude Include="IlmImf\ImfDeepTiledInputFile.h" />
+    <ClInclude Include="IlmImf\ImfDeepTiledInputPart.h" />
+    <ClInclude Include="IlmImf\ImfDeepTiledOutputFile.h" />
+    <ClInclude Include="IlmImf\ImfDeepTiledOutputPart.h" />
+    <ClInclude Include="IlmImf\ImfDoubleAttribute.h" />
+    <ClInclude Include="IlmImf\ImfDwaCompressor.h" />
+    <ClInclude Include="IlmImf\ImfDwaCompressorSimd.h" />
+    <ClInclude Include="IlmImf\ImfEnvmap.h" />
+    <ClInclude Include="IlmImf\ImfEnvmapAttribute.h" />
+    <ClInclude Include="IlmImf\ImfExport.h" />
+    <ClInclude Include="IlmImf\ImfFastHuf.h" />
+    <ClInclude Include="IlmImf\ImfFloatAttribute.h" />
+    <ClInclude Include="IlmImf\ImfFloatVectorAttribute.h" />
+    <ClInclude Include="IlmImf\ImfForward.h" />
+    <ClInclude Include="IlmImf\ImfFrameBuffer.h" />
+    <ClInclude Include="IlmImf\ImfFramesPerSecond.h" />
+    <ClInclude Include="IlmImf\ImfGenericInputFile.h" />
+    <ClInclude Include="IlmImf\ImfGenericOutputFile.h" />
+    <ClInclude Include="IlmImf\ImfHeader.h" />
+    <ClInclude Include="IlmImf\ImfHuf.h" />
+    <ClInclude Include="IlmImf\ImfInputFile.h" />
+    <ClInclude Include="IlmImf\ImfInputPart.h" />
+    <ClInclude Include="IlmImf\ImfInputPartData.h" />
+    <ClInclude Include="IlmImf\ImfInputStreamMutex.h" />
+    <ClInclude Include="IlmImf\ImfInt64.h" />
+    <ClInclude Include="IlmImf\ImfIntAttribute.h" />
+    <ClInclude Include="IlmImf\ImfIO.h" />
+    <ClInclude Include="IlmImf\ImfKeyCode.h" />
+    <ClInclude Include="IlmImf\ImfKeyCodeAttribute.h" />
+    <ClInclude Include="IlmImf\ImfLineOrder.h" />
+    <ClInclude Include="IlmImf\ImfLineOrderAttribute.h" />
+    <ClInclude Include="IlmImf\ImfLut.h" />
+    <ClInclude Include="IlmImf\ImfMatrixAttribute.h" />
+    <ClInclude Include="IlmImf\ImfMisc.h" />
+    <ClInclude Include="IlmImf\ImfMultiPartInputFile.h" />
+    <ClInclude Include="IlmImf\ImfMultiPartOutputFile.h" />
+    <ClInclude Include="IlmImf\ImfMultiView.h" />
+    <ClInclude Include="IlmImf\ImfName.h" />
+    <ClInclude Include="IlmImf\ImfNamespace.h" />
+    <ClInclude Include="IlmImf\ImfOpaqueAttribute.h" />
+    <ClInclude Include="IlmImf\ImfOptimizedPixelReading.h" />
+    <ClInclude Include="IlmImf\ImfOutputFile.h" />
+    <ClInclude Include="IlmImf\ImfOutputPart.h" />
+    <ClInclude Include="IlmImf\ImfOutputPartData.h" />
+    <ClInclude Include="IlmImf\ImfOutputStreamMutex.h" />
+    <ClInclude Include="IlmImf\ImfPartHelper.h" />
+    <ClInclude Include="IlmImf\ImfPartType.h" />
+    <ClInclude Include="IlmImf\ImfPixelType.h" />
+    <ClInclude Include="IlmImf\ImfPizCompressor.h" />
+    <ClInclude Include="IlmImf\ImfPreviewImage.h" />
+    <ClInclude Include="IlmImf\ImfPreviewImageAttribute.h" />
+    <ClInclude Include="IlmImf\ImfPxr24Compressor.h" />
+    <ClInclude Include="IlmImf\ImfRational.h" />
+    <ClInclude Include="IlmImf\ImfRationalAttribute.h" />
+    <ClInclude Include="IlmImf\ImfRgba.h" />
+    <ClInclude Include="IlmImf\ImfRgbaFile.h" />
+    <ClInclude Include="IlmImf\ImfRgbaYca.h" />
+    <ClInclude Include="IlmImf\ImfRle.h" />
+    <ClInclude Include="IlmImf\ImfRleCompressor.h" />
+    <ClInclude Include="IlmImf\ImfScanLineInputFile.h" />
+    <ClInclude Include="IlmImf\ImfSimd.h" />
+    <ClInclude Include="IlmImf\ImfStandardAttributes.h" />
+    <ClInclude Include="IlmImf\ImfStdIO.h" />
+    <ClInclude Include="IlmImf\ImfStringAttribute.h" />
+    <ClInclude Include="IlmImf\ImfStringVectorAttribute.h" />
+    <ClInclude Include="IlmImf\ImfSystemSpecific.h" />
+    <ClInclude Include="IlmImf\ImfTestFile.h" />
+    <ClInclude Include="IlmImf\ImfThreading.h" />
+    <ClInclude Include="IlmImf\ImfTileDescription.h" />
+    <ClInclude Include="IlmImf\ImfTileDescriptionAttribute.h" />
+    <ClInclude Include="IlmImf\ImfTiledInputFile.h" />
+    <ClInclude Include="IlmImf\ImfTiledInputPart.h" />
+    <ClInclude Include="IlmImf\ImfTiledMisc.h" />
+    <ClInclude Include="IlmImf\ImfTiledOutputFile.h" />
+    <ClInclude Include="IlmImf\ImfTiledOutputPart.h" />
+    <ClInclude Include="IlmImf\ImfTiledRgbaFile.h" />
+    <ClInclude Include="IlmImf\ImfTileOffsets.h" />
+    <ClInclude Include="IlmImf\ImfTimeCode.h" />
+    <ClInclude Include="IlmImf\ImfTimeCodeAttribute.h" />
+    <ClInclude Include="IlmImf\ImfVecAttribute.h" />
+    <ClInclude Include="IlmImf\ImfVersion.h" />
+    <ClInclude Include="IlmImf\ImfWav.h" />
+    <ClInclude Include="IlmImf\ImfXdr.h" />
+    <ClInclude Include="IlmImf\ImfZip.h" />
+    <ClInclude Include="IlmImf\ImfZipCompressor.h" />
+    <ClInclude Include="IlmThread\IlmThread.h" />
+    <ClInclude Include="IlmThread\IlmThreadExport.h" />
+    <ClInclude Include="IlmThread\IlmThreadForward.h" />
+    <ClInclude Include="IlmThread\IlmThreadMutex.h" />
+    <ClInclude Include="IlmThread\IlmThreadNamespace.h" />
+    <ClInclude Include="IlmThread\IlmThreadPool.h" />
+    <ClInclude Include="IlmThread\IlmThreadSemaphore.h" />
+    <ClInclude Include="Imath\ImathBox.h" />
+    <ClInclude Include="Imath\ImathBoxAlgo.h" />
+    <ClInclude Include="Imath\ImathColor.h" />
+    <ClInclude Include="Imath\ImathColorAlgo.h" />
+    <ClInclude Include="Imath\ImathEuler.h" />
+    <ClInclude Include="Imath\ImathExc.h" />
+    <ClInclude Include="Imath\ImathExport.h" />
+    <ClInclude Include="Imath\ImathForward.h" />
+    <ClInclude Include="Imath\ImathFrame.h" />
+    <ClInclude Include="Imath\ImathFrustum.h" />
+    <ClInclude Include="Imath\ImathFrustumTest.h" />
+    <ClInclude Include="Imath\ImathFun.h" />
+    <ClInclude Include="Imath\ImathGL.h" />
+    <ClInclude Include="Imath\ImathGLU.h" />
+    <ClInclude Include="Imath\ImathHalfLimits.h" />
+    <ClInclude Include="Imath\ImathInt64.h" />
+    <ClInclude Include="Imath\ImathInterval.h" />
+    <ClInclude Include="Imath\ImathLimits.h" />
+    <ClInclude Include="Imath\ImathLine.h" />
+    <ClInclude Include="Imath\ImathLineAlgo.h" />
+    <ClInclude Include="Imath\ImathMath.h" />
+    <ClInclude Include="Imath\ImathMatrix.h" />
+    <ClInclude Include="Imath\ImathMatrixAlgo.h" />
+    <ClInclude Include="Imath\ImathNamespace.h" />
+    <ClInclude Include="Imath\ImathPlane.h" />
+    <ClInclude Include="Imath\ImathPlatform.h" />
+    <ClInclude Include="Imath\ImathQuat.h" />
+    <ClInclude Include="Imath\ImathRandom.h" />
+    <ClInclude Include="Imath\ImathRoots.h" />
+    <ClInclude Include="Imath\ImathShear.h" />
+    <ClInclude Include="Imath\ImathSphere.h" />
+    <ClInclude Include="Imath\ImathVec.h" />
+    <ClInclude Include="Imath\ImathVecAlgo.h" />
+    <ClInclude Include="OpenEXRConfig.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="openexr.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Half\half.cpp" />
+    <ClCompile Include="IexMath\IexMathFloatExc.cpp" />
+    <ClCompile Include="IexMath\IexMathFpu.cpp" />
+    <ClCompile Include="Iex\IexBaseExc.cpp" />
+    <ClCompile Include="Iex\IexThrowErrnoExc.cpp" />
+    <ClCompile Include="IlmImf\b44ExpLogTable.cpp" />
+    <ClCompile Include="IlmImf\ImfAcesFile.cpp" />
+    <ClCompile Include="IlmImf\ImfAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfB44Compressor.cpp" />
+    <ClCompile Include="IlmImf\ImfBoxAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfChannelList.cpp" />
+    <ClCompile Include="IlmImf\ImfChannelListAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfChromaticities.cpp" />
+    <ClCompile Include="IlmImf\ImfChromaticitiesAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfCompositeDeepScanLine.cpp" />
+    <ClCompile Include="IlmImf\ImfCompressionAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfCompressor.cpp" />
+    <ClCompile Include="IlmImf\ImfConvert.cpp" />
+    <ClCompile Include="IlmImf\ImfCRgbaFile.cpp" />
+    <ClCompile Include="IlmImf\ImfDeepCompositing.cpp" />
+    <ClCompile Include="IlmImf\ImfDeepFrameBuffer.cpp" />
+    <ClCompile Include="IlmImf\ImfDeepImageStateAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfDeepScanLineInputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfDeepScanLineInputPart.cpp" />
+    <ClCompile Include="IlmImf\ImfDeepScanLineOutputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfDeepScanLineOutputPart.cpp" />
+    <ClCompile Include="IlmImf\ImfDeepTiledInputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfDeepTiledInputPart.cpp" />
+    <ClCompile Include="IlmImf\ImfDeepTiledOutputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfDeepTiledOutputPart.cpp" />
+    <ClCompile Include="IlmImf\ImfDoubleAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfDwaCompressor.cpp" />
+    <ClCompile Include="IlmImf\ImfEnvmap.cpp" />
+    <ClCompile Include="IlmImf\ImfEnvmapAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfFastHuf.cpp" />
+    <ClCompile Include="IlmImf\ImfFloatAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfFloatVectorAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfFrameBuffer.cpp" />
+    <ClCompile Include="IlmImf\ImfFramesPerSecond.cpp" />
+    <ClCompile Include="IlmImf\ImfGenericInputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfGenericOutputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfHeader.cpp" />
+    <ClCompile Include="IlmImf\ImfHuf.cpp" />
+    <ClCompile Include="IlmImf\ImfInputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfInputPart.cpp" />
+    <ClCompile Include="IlmImf\ImfInputPartData.cpp" />
+    <ClCompile Include="IlmImf\ImfIntAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfIO.cpp" />
+    <ClCompile Include="IlmImf\ImfKeyCode.cpp" />
+    <ClCompile Include="IlmImf\ImfKeyCodeAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfLineOrderAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfLut.cpp" />
+    <ClCompile Include="IlmImf\ImfMatrixAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfMisc.cpp" />
+    <ClCompile Include="IlmImf\ImfMultiPartInputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfMultiPartOutputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfMultiView.cpp" />
+    <ClCompile Include="IlmImf\ImfOpaqueAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfOutputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfOutputPart.cpp" />
+    <ClCompile Include="IlmImf\ImfOutputPartData.cpp" />
+    <ClCompile Include="IlmImf\ImfPartType.cpp" />
+    <ClCompile Include="IlmImf\ImfPizCompressor.cpp" />
+    <ClCompile Include="IlmImf\ImfPreviewImage.cpp" />
+    <ClCompile Include="IlmImf\ImfPreviewImageAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfPxr24Compressor.cpp" />
+    <ClCompile Include="IlmImf\ImfRational.cpp" />
+    <ClCompile Include="IlmImf\ImfRationalAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfRgbaFile.cpp" />
+    <ClCompile Include="IlmImf\ImfRgbaYca.cpp" />
+    <ClCompile Include="IlmImf\ImfRle.cpp" />
+    <ClCompile Include="IlmImf\ImfRleCompressor.cpp" />
+    <ClCompile Include="IlmImf\ImfScanLineInputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfStandardAttributes.cpp" />
+    <ClCompile Include="IlmImf\ImfStdIO.cpp" />
+    <ClCompile Include="IlmImf\ImfStringAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfStringVectorAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfSystemSpecific.cpp" />
+    <ClCompile Include="IlmImf\ImfTestFile.cpp" />
+    <ClCompile Include="IlmImf\ImfThreading.cpp" />
+    <ClCompile Include="IlmImf\ImfTileDescriptionAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfTiledInputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfTiledInputPart.cpp" />
+    <ClCompile Include="IlmImf\ImfTiledMisc.cpp" />
+    <ClCompile Include="IlmImf\ImfTiledOutputFile.cpp" />
+    <ClCompile Include="IlmImf\ImfTiledOutputPart.cpp" />
+    <ClCompile Include="IlmImf\ImfTiledRgbaFile.cpp" />
+    <ClCompile Include="IlmImf\ImfTileOffsets.cpp" />
+    <ClCompile Include="IlmImf\ImfTimeCode.cpp" />
+    <ClCompile Include="IlmImf\ImfTimeCodeAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfVecAttribute.cpp" />
+    <ClCompile Include="IlmImf\ImfVersion.cpp" />
+    <ClCompile Include="IlmImf\ImfWav.cpp" />
+    <ClCompile Include="IlmImf\ImfZip.cpp" />
+    <ClCompile Include="IlmImf\ImfZipCompressor.cpp" />
+    <ClCompile Include="IlmThread\IlmThread.cpp" />
+    <ClCompile Include="IlmThread\IlmThreadMutex.cpp" />
+    <ClCompile Include="IlmThread\IlmThreadPool.cpp" />
+    <ClCompile Include="IlmThread\IlmThreadSemaphore.cpp" />
+    <ClCompile Include="Imath\ImathBox.cpp" />
+    <ClCompile Include="Imath\ImathColorAlgo.cpp" />
+    <ClCompile Include="Imath\ImathFun.cpp" />
+    <ClCompile Include="Imath\ImathMatrixAlgo.cpp" />
+    <ClCompile Include="Imath\ImathRandom.cpp" />
+    <ClCompile Include="Imath\ImathShear.cpp" />
+    <ClCompile Include="Imath\ImathVec.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{048418E2-3848-4A81-B8D1-53B62CBBCE8F}</ProjectGuid>
+    <Keyword>Android</Keyword>
+    <ApplicationType>Android</ApplicationType>
+    <ApplicationTypeRevision>3.0</ApplicationTypeRevision>
+    <ProjectName>_openexr</ProjectName>
+    <RootNamespace>third</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <AndroidAPILevel>android-24</AndroidAPILevel>
+    <UseOfStl>c++_shared</UseOfStl>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseOfStl>c++_shared</UseOfStl>
+    <ThumbMode>Disabled</ThumbMode>
+    <AndroidAPILevel>android-27</AndroidAPILevel>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <AndroidAPILevel>android-27</AndroidAPILevel>
+    <UseOfStl>c++_shared</UseOfStl>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <UseOfStl>c++_shared</UseOfStl>
+    <ThumbMode>Disabled</ThumbMode>
+    <AndroidAPILevel>android-27</AndroidAPILevel>
+    <PlatformToolset>Clang_5_0</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <Import Project="..\..\..\operating-system\operating-system-android\Common.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Import Project="..\..\..\operating-system\operating-system-android\Common.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <Import Project="..\..\..\operating-system\operating-system-android\Common.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="..\..\..\operating-system\operating-system-android\Common.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <OutDir>$(SolutionDir)..\..\..\..\operating-system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(__operating_system)time-android\intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>lib$(ProjectName)</TargetName>
+    <TargetExt>.a</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <OutDir>$(SolutionDir)..\..\..\..\operating-system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(__operating_system)time-android\intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>lib$(ProjectName)</TargetName>
+    <TargetExt>.a</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <OutDir>$(SolutionDir)..\..\..\..\operating-system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(__operating_system)time-android\intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>lib$(ProjectName)</TargetName>
+    <TargetExt>.a</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <OutDir>$(SolutionDir)..\..\..\..\operating-system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(__operating_system)time-android\intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <UseMultiToolTask>true</UseMultiToolTask>
+    <TargetName>lib$(ProjectName)</TargetName>
+    <TargetExt>.a</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)/IlmImf;$(ProjectDir)/Imath;$(ProjectDir)/IexMath;$(ProjectDir)/Iex;$(ProjectDir)/Half;$(ProjectDir)/IlmThread;$(SolutionDir)../../operating-system-android;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/third/include;$(SolutionDir)../../../source/third_graphics/include;$(ProjectDir)..;$(ProjectDir)../..;$(ProjectDir)../../..;$(ProjectDir)../../include;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBRAW_BUILDLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CppLanguageStandard>c++1z</CppLanguageStandard>
+      <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
+      <ObjectFileName>$(IntDir)%(RelativeDir)%(filename).o</ObjectFileName>
+      <ExceptionHandling>Enabled</ExceptionHandling>
+      <CLanguageStandard>c11</CLanguageStandard>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>ace;$(StlLibraryName);log;android</LibraryDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);$(__operating_system)operating-system-android\thirdparty\library\$(Platform)\$(Configuration)\;$(SolutionDir)..\..\..\time\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories);$(ToolchainPrebuiltPath)\lib\gcc\i686-linux-android\$(ToolchainVersion);$(StlLibraryPath)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
+      <ObjectFileName>$(IntDir)%(RelativeDir)%(filename).o</ObjectFileName>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../../../;$(SolutionDir)/../../operating-system-android;$(SolutionDir)/../../app/_include;$(__operating_system)third-android\third\include;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__ANDROID_API__=19;LIBRAW_BUILDLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Enabled</ExceptionHandling>
+      <CLanguageStandard>c11</CLanguageStandard>
+      <CppLanguageStandard>c++1z</CppLanguageStandard>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link />
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(__operating_system)operating-system-android\thirdparty\library\$(Platform)\$(Configuration)\;$(SolutionDir)..\..\..\time\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories);$(ToolchainPrebuiltPath)\lib\gcc\i686-linux-android\$(ToolchainVersion);$(StlLibraryPath)</AdditionalLibraryDirectories>
+      <LibraryDependencies>ace;ace;$(StlLibraryName);log;android</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <ObjectFileName>$(IntDir)%(RelativeDir)%(filename).o</ObjectFileName>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../../../;$(SolutionDir)/../../operating-system-android;$(SolutionDir)/../../app/_include;$(__operating_system)third-android\third\include;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <CLanguageStandard>c11</CLanguageStandard>
+      <CppLanguageStandard>c++1z</CppLanguageStandard>
+      <ExceptionHandling>Enabled</ExceptionHandling>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PreprocessorDefinitions>__ANDROID_API__=19;LIBRAW_BUILDLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(__operating_system)operating-system-android\thirdparty\library\$(Platform)\$(Configuration)\;$(SolutionDir)..\..\..\time\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories);$(ToolchainPrebuiltPath)\lib\gcc\i686-linux-android\$(ToolchainVersion);$(StlLibraryPath)</AdditionalLibraryDirectories>
+      <LibraryDependencies>ace;ace;$(StlLibraryName);log;android</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <ClCompile>
+      <ObjectFileName>$(IntDir)%(RelativeDir)%(filename).o</ObjectFileName>
+      <ExceptionHandling>Enabled</ExceptionHandling>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CLanguageStandard>c11</CLanguageStandard>
+      <CppLanguageStandard>c++1z</CppLanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)/IlmImf;$(ProjectDir)/Imath;$(ProjectDir)/IexMath;$(ProjectDir)/Iex;$(ProjectDir)/Half;$(ProjectDir)/IlmThread;$(SolutionDir)../../operating-system-android;$(SolutionDir)../../../source/app/_include;$(SolutionDir)../../../source/third/include;$(SolutionDir)../../../source/third_graphics/include;$(ProjectDir)..;$(ProjectDir)../..;$(ProjectDir)../../..;$(ProjectDir)../../include;include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <PreprocessorDefinitions>__ANDROID_API__=19;LIBRAW_BUILDLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>-Wno-attributes -Wno-sign-compare -Wno-comment -Wno-strict-overflow -Wno-unused-local-typedefs -Wno-unknown-pragmas -Wno-unused-function -Wno-unused-variable -Wno-unused-value -Wno-unknown-pragmas -Wno-unused-function -Wno-implicit-int -Wno-unused-variable  -Wno-pointer-sign -Wdynamic-exception-spec -Wregister -Wenum-conversion</AdditionalOptions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);$(__operating_system)operating-system-android\thirdparty\library\$(Platform)\$(Configuration)\;$(SolutionDir)..\..\..\time\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories);$(ToolchainPrebuiltPath)\lib\gcc\i686-linux-android\$(ToolchainVersion);$(StlLibraryPath)</AdditionalLibraryDirectories>
+      <LibraryDependencies>ace;ace;$(StlLibraryName);log;android</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
