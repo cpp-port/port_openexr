@@ -171,32 +171,32 @@ DeepTiledOutputPart::dataWindowForLevel (int lx, int ly) const
 
 
 IMATH_NAMESPACE::Box2i
-DeepTiledOutputPart::dataWindowForTile (int dx, int dy,
+DeepTiledOutputPart::dataWindowForTile (int Δx, int Δy,
                                         int l) const
 {
-    return file->dataWindowForTile(dx, dy, l);
+    return file->dataWindowForTile(Δx, Δy, l);
 }
 
 
 IMATH_NAMESPACE::Box2i
-DeepTiledOutputPart::dataWindowForTile (int dx, int dy,
+DeepTiledOutputPart::dataWindowForTile (int Δx, int Δy,
                                         int lx, int ly) const
 {
-    return file->dataWindowForTile(dx, dy, lx, ly);
+    return file->dataWindowForTile(Δx, Δy, lx, ly);
 }
 
 
 void
-DeepTiledOutputPart::writeTile  (int dx, int dy, int l)
+DeepTiledOutputPart::writeTile  (int Δx, int Δy, int l)
 {
-    file->writeTile(dx, dy, l);
+    file->writeTile(Δx, Δy, l);
 }
 
 
 void
-DeepTiledOutputPart::writeTile  (int dx, int dy, int lx, int ly)
+DeepTiledOutputPart::writeTile  (int Δx, int Δy, int lx, int ly)
 {
-    file->writeTile(dx, dy, lx, ly);
+    file->writeTile(Δx, Δy, lx, ly);
 }
 
 
@@ -238,13 +238,13 @@ DeepTiledOutputPart::updatePreviewImage (const PreviewRgba newPixels[])
 
 
 void
-DeepTiledOutputPart::breakTile  (int dx, int dy,
+DeepTiledOutputPart::breakTile  (int Δx, int Δy,
                                  int lx, int ly,
                                  int offset,
                                  int length,
                                  char c)
 {
-    file->breakTile(dx, dy, lx, ly, offset, length, c);
+    file->breakTile(Δx, Δy, lx, ly, offset, length, c);
 }
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_EXIT

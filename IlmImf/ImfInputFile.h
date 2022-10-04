@@ -208,7 +208,7 @@ class IMF_EXPORT InputFile : public GenericInputFile
     // used to implement TiledOutputFile::copyPixels()).
     //--------------------------------------------------
 
-    void		rawTileData (int &dx, int &dy,
+    void		rawTileData (int &Δx, int &Δy,
 				     int &lx, int &ly,
 				     const char *&pixelData,
 				     int &pixelDataSize);

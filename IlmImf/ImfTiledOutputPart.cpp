@@ -151,27 +151,27 @@ TiledOutputPart::dataWindowForLevel (int lx, int ly) const
 }
 
 IMATH_NAMESPACE::Box2i
-TiledOutputPart::dataWindowForTile (int dx, int dy, int l) const
+TiledOutputPart::dataWindowForTile (int Δx, int Δy, int l) const
 {
-    return file->dataWindowForTile(dx, dy, l);
+    return file->dataWindowForTile(Δx, Δy, l);
 }
 
 IMATH_NAMESPACE::Box2i
-TiledOutputPart::dataWindowForTile (int dx, int dy, int lx, int ly) const
+TiledOutputPart::dataWindowForTile (int Δx, int Δy, int lx, int ly) const
 {
-    return file->dataWindowForTile(dx, dy, lx, ly);
+    return file->dataWindowForTile(Δx, Δy, lx, ly);
 }
 
 void
-TiledOutputPart::writeTile  (int dx, int dy, int l)
+TiledOutputPart::writeTile  (int Δx, int Δy, int l)
 {
-    file->writeTile(dx, dy, l);
+    file->writeTile(Δx, Δy, l);
 }
 
 void
-TiledOutputPart::writeTile  (int dx, int dy, int lx, int ly)
+TiledOutputPart::writeTile  (int Δx, int Δy, int lx, int ly)
 {
-    file->writeTile(dx, dy, lx, ly);
+    file->writeTile(Δx, Δy, lx, ly);
 }
 
 void
@@ -219,9 +219,9 @@ TiledOutputPart::updatePreviewImage (const PreviewRgba newPixels[])
 }
 
 void
-TiledOutputPart::breakTile  (int dx, int dy, int lx, int ly, int offset, int length, char c)
+TiledOutputPart::breakTile  (int Δx, int Δy, int lx, int ly, int offset, int length, char c)
 {
-    file->breakTile(dx, dy, lx, ly, offset, length, c);
+    file->breakTile(Δx, Δy, lx, ly, offset, length, c);
 }
 
 

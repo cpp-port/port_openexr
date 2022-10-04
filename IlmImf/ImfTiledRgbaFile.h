@@ -206,28 +206,28 @@ class IMF_EXPORT TiledRgbaOutputFile
     IMATH_NAMESPACE::Box2i	dataWindowForLevel (int l = 0) const;
     IMATH_NAMESPACE::Box2i	dataWindowForLevel (int lx, int ly) const;
 
-    IMATH_NAMESPACE::Box2i	dataWindowForTile (int dx, int dy,
+    IMATH_NAMESPACE::Box2i	dataWindowForTile (int Δx, int Δy,
 					   int l = 0) const;
 
-    IMATH_NAMESPACE::Box2i	dataWindowForTile (int dx, int dy,
+    IMATH_NAMESPACE::Box2i	dataWindowForTile (int Δx, int Δy,
 					   int lx, int ly) const;
 
     //------------------------------------------------------------------
     // Write pixel data:
     //
-    // writeTile(dx, dy, lx, ly) writes the tile with tile
-    // coordinates (dx, dy), and level number (lx, ly) to
+    // writeTile(Δx, Δy, lx, ly) writes the tile with tile
+    // coordinates (Δx, Δy), and level number (lx, ly) to
     // the file.
     //
-    //   dx must lie in the interval [0, numXTiles(lx)-1]
-    //   dy must lie in the interval [0, numYTiles(ly)-1]
+    //   Δx must lie in the interval [0, numXTiles(lx)-1]
+    //   Δy must lie in the interval [0, numYTiles(ly)-1]
     //
     //   lx must lie in the interval [0, numXLevels()-1]
     //   ly must lie in the inverval [0, numYLevels()-1]
     //
-    // writeTile(dx, dy, level) is a convenience function
+    // writeTile(Δx, Δy, level) is a convenience function
     // used for ONE_LEVEL and MIPMAP_LEVEL files.  It calls
-    // writeTile(dx, dy, level, level).
+    // writeTile(Δx, Δy, level, level).
     //
     // The two writeTiles(dx1, dx2, dy1, dy2, ...) functions allow
     // writing multiple tiles at once.  If multi-threading is used
@@ -240,8 +240,8 @@ class IMF_EXPORT TiledRgbaOutputFile
     //
     //------------------------------------------------------------------
 
-    void		writeTile (int dx, int dy, int l = 0);
-    void		writeTile (int dx, int dy, int lx, int ly);
+    void		writeTile (int Δx, int Δy, int l = 0);
+    void		writeTile (int Δx, int Δy, int lx, int ly);
 
     void		writeTiles (int dxMin, int dxMax, int dyMin, int dyMax,
                                     int lx, int ly);
@@ -268,7 +268,7 @@ class IMF_EXPORT TiledRgbaOutputFile
     //
     //------------------------------------------------
 
-    void		breakTile  (int dx, int dy,
+    void		breakTile  (int Δx, int Δy,
 				    int lx, int ly,
 				    int offset,
 				    int length,
@@ -411,29 +411,29 @@ class IMF_EXPORT TiledRgbaInputFile
     IMATH_NAMESPACE::Box2i	dataWindowForLevel (int l = 0) const;
     IMATH_NAMESPACE::Box2i	dataWindowForLevel (int lx, int ly) const;
 
-    IMATH_NAMESPACE::Box2i	dataWindowForTile (int dx, int dy,
+    IMATH_NAMESPACE::Box2i	dataWindowForTile (int Δx, int Δy,
 					   int l = 0) const;
 
-    IMATH_NAMESPACE::Box2i	dataWindowForTile (int dx, int dy,
+    IMATH_NAMESPACE::Box2i	dataWindowForTile (int Δx, int Δy,
 					   int lx, int ly) const;
 					   
 
     //----------------------------------------------------------------
     // Read pixel data:
     //
-    // readTile(dx, dy, lx, ly) reads the tile with tile
-    // coordinates (dx, dy), and level number (lx, ly),
+    // readTile(Δx, Δy, lx, ly) reads the tile with tile
+    // coordinates (Δx, Δy), and level number (lx, ly),
     // and stores it in the current frame buffer.
     //
-    //   dx must lie in the interval [0, numXTiles(lx)-1]
-    //   dy must lie in the interval [0, numYTiles(ly)-1]
+    //   Δx must lie in the interval [0, numXTiles(lx)-1]
+    //   Δy must lie in the interval [0, numYTiles(ly)-1]
     //
     //   lx must lie in the interval [0, numXLevels()-1]
     //   ly must lie in the inverval [0, numYLevels()-1]
     //
-    // readTile(dx, dy, level) is a convenience function used
+    // readTile(Δx, Δy, level) is a convenience function used
     // for ONE_LEVEL and MIPMAP_LEVELS files.  It calls
-    // readTile(dx, dy, level, level).
+    // readTile(Δx, Δy, level, level).
     //
     // The two readTiles(dx1, dx2, dy1, dy2, ...) functions allow
     // reading multiple tiles at once.  If multi-threading is used
@@ -447,8 +447,8 @@ class IMF_EXPORT TiledRgbaInputFile
     //
     //----------------------------------------------------------------
 
-    void           	readTile (int dx, int dy, int l = 0);
-    void           	readTile (int dx, int dy, int lx, int ly);
+    void           	readTile (int Δx, int Δy, int l = 0);
+    void           	readTile (int Δx, int Δy, int lx, int ly);
 
     void		readTiles (int dxMin, int dxMax,
                                    int dyMin, int dyMax, int lx, int ly);

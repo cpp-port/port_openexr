@@ -163,27 +163,27 @@ TiledInputPart::dataWindowForLevel (int lx, int ly) const
 }
 
 IMATH_NAMESPACE::Box2i
-TiledInputPart::dataWindowForTile (int dx, int dy, int l) const
+TiledInputPart::dataWindowForTile (int Δx, int Δy, int l) const
 {
-    return file->dataWindowForTile(dx, dy, l);
+    return file->dataWindowForTile(Δx, Δy, l);
 }
 
 IMATH_NAMESPACE::Box2i
-TiledInputPart::dataWindowForTile (int dx, int dy, int lx, int ly) const
+TiledInputPart::dataWindowForTile (int Δx, int Δy, int lx, int ly) const
 {
-    return file->dataWindowForTile(dx, dy, lx, ly);
+    return file->dataWindowForTile(Δx, Δy, lx, ly);
 }
 
 void
-TiledInputPart::readTile  (int dx, int dy, int l)
+TiledInputPart::readTile  (int Δx, int Δy, int l)
 {
-    file->readTile(dx, dy, l);
+    file->readTile(Δx, Δy, l);
 }
 
 void
-TiledInputPart::readTile  (int dx, int dy, int lx, int ly)
+TiledInputPart::readTile  (int Δx, int Δy, int lx, int ly)
 {
-    file->readTile(dx, dy, lx, ly);
+    file->readTile(Δx, Δy, lx, ly);
 }
 
 void
@@ -199,10 +199,10 @@ TiledInputPart::readTiles (int dx1, int dx2, int dy1, int dy2, int l)
 }
 
 void
-TiledInputPart::rawTileData (int &dx, int &dy, int &lx, int &ly,
+TiledInputPart::rawTileData (int &Δx, int &Δy, int &lx, int &ly,
              const char *&pixelData, int &pixelDataSize)
 {
-    file->rawTileData(dx, dy, lx, ly, pixelData, pixelDataSize);
+    file->rawTileData(Δx, Δy, lx, ly, pixelData, pixelDataSize);
 }
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_EXIT

@@ -73,12 +73,12 @@ class IMF_EXPORT TiledOutputPart
         int                 numYTiles (int ly = 0) const;
         IMATH_NAMESPACE::Box2i        dataWindowForLevel (int l = 0) const;
         IMATH_NAMESPACE::Box2i        dataWindowForLevel (int lx, int ly) const;
-        IMATH_NAMESPACE::Box2i        dataWindowForTile (int dx, int dy,
+        IMATH_NAMESPACE::Box2i        dataWindowForTile (int Δx, int Δy,
                                                int l = 0) const;
-        IMATH_NAMESPACE::Box2i        dataWindowForTile (int dx, int dy,
+        IMATH_NAMESPACE::Box2i        dataWindowForTile (int Δx, int Δy,
                                                int lx, int ly) const;
-        void                writeTile  (int dx, int dy, int l = 0);
-        void                writeTile  (int dx, int dy, int lx, int ly);
+        void                writeTile  (int Δx, int Δy, int l = 0);
+        void                writeTile  (int Δx, int Δy, int lx, int ly);
         void                writeTiles (int dx1, int dx2, int dy1, int dy2,
                                         int lx, int ly);
         void                writeTiles (int dx1, int dx2, int dy1, int dy2,
@@ -90,7 +90,7 @@ class IMF_EXPORT TiledOutputPart
         
         
         void                updatePreviewImage (const PreviewRgba newPixels[]);
-        void                breakTile  (int dx, int dy,
+        void                breakTile  (int Δx, int Δy,
                                         int lx, int ly,
                                         int offset,
                                         int length,

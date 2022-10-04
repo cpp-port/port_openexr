@@ -74,16 +74,16 @@ class IMF_EXPORT TiledInputPart
         int                 numYTiles (int ly = 0) const;
         IMATH_NAMESPACE::Box2i        dataWindowForLevel (int l = 0) const;
         IMATH_NAMESPACE::Box2i        dataWindowForLevel (int lx, int ly) const;
-        IMATH_NAMESPACE::Box2i        dataWindowForTile (int dx, int dy, int l = 0) const;
-        IMATH_NAMESPACE::Box2i        dataWindowForTile (int dx, int dy,
+        IMATH_NAMESPACE::Box2i        dataWindowForTile (int Δx, int Δy, int l = 0) const;
+        IMATH_NAMESPACE::Box2i        dataWindowForTile (int Δx, int Δy,
                                                int lx, int ly) const;
-        void                readTile  (int dx, int dy, int l = 0);
-        void                readTile  (int dx, int dy, int lx, int ly);
+        void                readTile  (int Δx, int Δy, int l = 0);
+        void                readTile  (int Δx, int Δy, int lx, int ly);
         void                readTiles (int dx1, int dx2, int dy1, int dy2,
                                        int lx, int ly);
         void                readTiles (int dx1, int dx2, int dy1, int dy2,
                                        int l = 0);
-        void                rawTileData (int &dx, int &dy,
+        void                rawTileData (int &Δx, int &Δy,
                                          int &lx, int &ly,
                                          const char *&pixelData,
                                          int &pixelDataSize);

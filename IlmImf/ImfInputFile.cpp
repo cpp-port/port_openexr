@@ -855,7 +855,7 @@ InputFile::rawPixelData (int firstScanLine,
 
 
 void
-InputFile::rawTileData (int &dx, int &dy,
+InputFile::rawTileData (int &Δx, int &Δy,
 			int &lx, int &ly,
 			const char *&pixelData,
 			int &pixelDataSize)
@@ -868,7 +868,7 @@ InputFile::rawTileData (int &dx, int &dy,
 			       "from a scanline-based image.");
 	}
         
-        _data->tFile->rawTileData (dx, dy, lx, ly, pixelData, pixelDataSize);
+        _data->tFile->rawTileData (Δx, Δy, lx, ly, pixelData, pixelDataSize);
     }
     catch (IEX_NAMESPACE::BaseExc &e)
     {

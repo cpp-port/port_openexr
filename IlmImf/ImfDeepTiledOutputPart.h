@@ -223,46 +223,46 @@ class IMF_EXPORT DeepTiledOutputPart
     //-------------------------------------------------------------------
     // Tile pixel ranges:
     //
-    // dataWindowForTile(dx, dy, lx, ly) returns a 2-dimensional
+    // dataWindowForTile(Δx, Δy, lx, ly) returns a 2-dimensional
     // region of valid pixel coordinates for a tile with tile coordinates
-    // (dx,dy) and level number (lx, ly).
+    // (Δx,Δy) and level number (lx, ly).
     //
     //  return value is a Box2i with min value:
-    //      (dataWindow.min.x + dx * tileXSize(),
-    //       dataWindow.min.y + dy * tileYSize())
+    //      (dataWindow.min.x + Δx * tileXSize(),
+    //       dataWindow.min.y + Δy * tileYSize())
     //
     //  and max value:
-    //      (dataWindow.min.x + (dx + 1) * tileXSize() - 1,
-    //       dataWindow.min.y + (dy + 1) * tileYSize() - 1)
+    //      (dataWindow.min.x + (Δx + 1) * tileXSize() - 1,
+    //       dataWindow.min.y + (Δy + 1) * tileYSize() - 1)
     //
-    // dataWindowForTile(dx, dy, level) is a convenience function
+    // dataWindowForTile(Δx, Δy, level) is a convenience function
     // used for ONE_LEVEL and MIPMAP_LEVELS files.  It returns
-    // dataWindowForTile(dx, dy, level, level).
+    // dataWindowForTile(Δx, Δy, level, level).
     //
     //-------------------------------------------------------------------
 
-    IMATH_NAMESPACE::Box2i        dataWindowForTile (int dx, int dy,
+    IMATH_NAMESPACE::Box2i        dataWindowForTile (int Δx, int Δy,
                                          int l = 0) const;
 
-    IMATH_NAMESPACE::Box2i        dataWindowForTile (int dx, int dy,
+    IMATH_NAMESPACE::Box2i        dataWindowForTile (int Δx, int Δy,
                                          int lx, int ly) const;
 
     //------------------------------------------------------------------
     // Write pixel data:
     //
-    // writeTile(dx, dy, lx, ly) writes the tile with tile
-    // coordinates (dx, dy), and level number (lx, ly) to
+    // writeTile(Δx, Δy, lx, ly) writes the tile with tile
+    // coordinates (Δx, Δy), and level number (lx, ly) to
     // the file.
     //
-    //   dx must lie in the interval [0, numXTiles(lx) - 1]
-    //   dy must lie in the interval [0, numYTiles(ly) - 1]
+    //   Δx must lie in the interval [0, numXTiles(lx) - 1]
+    //   Δy must lie in the interval [0, numYTiles(ly) - 1]
     //
     //   lx must lie in the interval [0, numXLevels() - 1]
     //   ly must lie in the inverval [0, numYLevels() - 1]
     //
-    // writeTile(dx, dy, level) is a convenience function
+    // writeTile(Δx, Δy, level) is a convenience function
     // used for ONE_LEVEL and MIPMAP_LEVEL files.  It calls
-    // writeTile(dx, dy, level, level).
+    // writeTile(Δx, Δy, level, level).
     //
     // The two writeTiles(dx1, dx2, dy1, dy2, ...) functions allow
     // writing multiple tiles at once.  If multi-threading is used
@@ -319,8 +319,8 @@ class IMF_EXPORT DeepTiledOutputPart
     //
     //------------------------------------------------------------------
 
-    void                writeTile  (int dx, int dy, int l = 0);
-    void                writeTile  (int dx, int dy, int lx, int ly);
+    void                writeTile  (int Δx, int Δy, int l = 0);
+    void                writeTile  (int Δx, int Δy, int lx, int ly);
 
     void                writeTiles (int dx1, int dx2, int dy1, int dy2,
                                   int lx, int ly);
@@ -367,10 +367,10 @@ class IMF_EXPORT DeepTiledOutputPart
     //-------------------------------------------------------------
     // Break a tile -- for testing and debugging only:
     //
-    // breakTile(dx,dy,lx,ly,p,n,c) introduces an error into the
+    // breakTile(Δx,Δy,lx,ly,p,n,c) introduces an error into the
     // output file by writing n copies of character c, starting
     // p bytes from the beginning of the tile with tile coordinates
-    // (dx, dy) and level number (lx, ly).
+    // (Δx, Δy) and level number (lx, ly).
     //
     // Warning: Calling this function usually results in a broken
     // image file.  The file or parts of it may not be readable,
@@ -378,7 +378,7 @@ class IMF_EXPORT DeepTiledOutputPart
     //
     //-------------------------------------------------------------
 
-    void                breakTile  (int dx, int dy,
+    void                breakTile  (int Δx, int Δy,
                                   int lx, int ly,
                                   int offset,
                                   int length,

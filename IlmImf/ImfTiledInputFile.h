@@ -283,45 +283,45 @@ class IMF_EXPORT TiledInputFile : public GenericInputFile
     //-------------------------------------------------------------------
     // Tile pixel ranges:
     //
-    // dataWindowForTile(dx, dy, lx, ly) returns a 2-dimensional
+    // dataWindowForTile(Δx, Δy, lx, ly) returns a 2-dimensional
     // region of valid pixel coordinates for a tile with tile coordinates
-    // (dx,dy) and level number (lx, ly).
+    // (Δx,Δy) and level number (lx, ly).
     //
     //	return value is a Box2i with min value:
-    //      (dataWindow.min.x + dx * tileXSize(),
-    //       dataWindow.min.y + dy * tileYSize())
+    //      (dataWindow.min.x + Δx * tileXSize(),
+    //       dataWindow.min.y + Δy * tileYSize())
     //
     //	and max value:
-    //      (dataWindow.min.x + (dx + 1) * tileXSize() - 1,
-    //       dataWindow.min.y + (dy + 1) * tileYSize() - 1)
+    //      (dataWindow.min.x + (Δx + 1) * tileXSize() - 1,
+    //       dataWindow.min.y + (Δy + 1) * tileYSize() - 1)
     //
-    // dataWindowForTile(dx, dy, level) is a convenience function
+    // dataWindowForTile(Δx, Δy, level) is a convenience function
     // used for ONE_LEVEL and MIPMAP_LEVELS files.  It returns
-    // dataWindowForTile(dx, dy, level, level).
+    // dataWindowForTile(Δx, Δy, level, level).
     //
     //-------------------------------------------------------------------
 
-    IMATH_NAMESPACE::Box2i	dataWindowForTile (int dx, int dy, int l = 0) const;
+    IMATH_NAMESPACE::Box2i	dataWindowForTile (int Δx, int Δy, int l = 0) const;
 
-    IMATH_NAMESPACE::Box2i	dataWindowForTile (int dx, int dy,
+    IMATH_NAMESPACE::Box2i	dataWindowForTile (int Δx, int Δy,
                                            int lx, int ly) const;
 
     //------------------------------------------------------------
     // Read pixel data:
     //
-    // readTile(dx, dy, lx, ly) reads the tile with tile
-    // coordinates (dx, dy), and level number (lx, ly),
+    // readTile(Δx, Δy, lx, ly) reads the tile with tile
+    // coordinates (Δx, Δy), and level number (lx, ly),
     // and stores it in the current frame buffer.
     //
-    //   dx must lie in the interval [0, numXTiles(lx)-1]
-    //   dy must lie in the interval [0, numYTiles(ly)-1]
+    //   Δx must lie in the interval [0, numXTiles(lx)-1]
+    //   Δy must lie in the interval [0, numYTiles(ly)-1]
     //
     //   lx must lie in the interval [0, numXLevels()-1]
     //   ly must lie in the inverval [0, numYLevels()-1]
     //
-    // readTile(dx, dy, level) is a convenience function used
+    // readTile(Δx, Δy, level) is a convenience function used
     // for ONE_LEVEL and MIPMAP_LEVELS files.  It calls
-    // readTile(dx, dy, level, level).
+    // readTile(Δx, Δy, level, level).
     //
     // The two readTiles(dx1, dx2, dy1, dy2, ...) functions allow
     // reading multiple tiles at once.  If multi-threading is used
@@ -335,8 +335,8 @@ class IMF_EXPORT TiledInputFile : public GenericInputFile
     //
     //------------------------------------------------------------
 
-    void		readTile  (int dx, int dy, int l = 0);
-    void		readTile  (int dx, int dy, int lx, int ly);
+    void		readTile  (int Δx, int Δy, int l = 0);
+    void		readTile  (int Δx, int Δy, int lx, int ly);
 
     void		readTiles (int dx1, int dx2, int dy1, int dy2,
                                    int lx, int ly);
@@ -351,11 +351,11 @@ class IMF_EXPORT TiledInputFile : public GenericInputFile
     // used to implement TiledOutputFile::copyPixels()).
     //
     // for single part files, reads the next tile in the file
-    // for multipart files, reads the tile specified by dx,dy,lx,ly
+    // for multipart files, reads the tile specified by Δx,Δy,lx,ly
     //
     //--------------------------------------------------
 
-    void		rawTileData (int &dx, int &dy,
+    void		rawTileData (int &Δx, int &Δy,
 				     int &lx, int &ly,
 				     const char *&pixelData,
 				     int &pixelDataSize);
@@ -379,13 +379,13 @@ class IMF_EXPORT TiledInputFile : public GenericInputFile
     void                multiPartInitialize(InputPartData* part);
     void                compatibilityInitialize(OPENEXR_IMF_INTERNAL_NAMESPACE::IStream& is);
 
-    bool		isValidTile (int dx, int dy,
+    bool		isValidTile (int Δx, int Δy,
 				     int lx, int ly) const;
 
-    size_t		bytesPerLineForTile (int dx, int dy,
+    size_t		bytesPerLineForTile (int Δx, int Δy,
 					     int lx, int ly) const;
 
-    void                tileOrder(int dx[],int dy[],int lx[],int ly[]) const;
+    void                tileOrder(int Δx[],int Δy[],int lx[],int ly[]) const;
     Data *		_data;
 
     friend void TiledOutputFile::copyPixels(TiledInputFile &);

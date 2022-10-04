@@ -139,8 +139,8 @@ struct TileBuffer
     int			dataSize;
     Compressor *	compressor;
     Compressor::Format	format;
-    int			dx;
-    int			dy;
+    int			Δx;
+    int			Δy;
     int			lx;
     int			ly;
     bool		hasException;
@@ -164,8 +164,8 @@ TileBuffer::TileBuffer (Compressor *comp):
     dataSize (0),
     compressor (comp),
     format (defaultFormat (compressor)),
-    dx (-1),
-    dy (-1),
+    Δx (-1),
+    Δy (-1),
     lx (-1),
     ly (-1),
     hasException (false),
@@ -293,7 +293,7 @@ namespace {
 void
 readTileData (InputStreamMutex *streamData,
               TiledInputFile::Data *ifd,
-	      int dx, int dy,
+	      int Δx, int Δy,
 	      int lx, int ly,
               char *&buffer,
               int &dataSize)
@@ -310,11 +310,11 @@ readTileData (InputStreamMutex *streamData,
     // seek to that position if necessary
     //
     
-    Int64 tileOffset = ifd->tileOffsets (dx, dy, lx, ly);
+    Int64 tileOffset = ifd->tileOffsets (Δx, Δy, lx, ly);
 
     if (tileOffset == 0)
     {
-        THROW (IEX_NAMESPACE::InputExc, "Tile (" << dx << ", " << dy << ", " <<
+        THROW (IEX_NAMESPACE::InputExc, "Tile (" << Δx << ", " << Δy << ", " <<
 			      lx << ", " << ly << ") is missing.");
     }
 
@@ -365,10 +365,10 @@ readTileData (InputStreamMutex *streamData,
     OPENEXR_IMF_INTERNAL_NAMESPACE::Xdr::read <OPENEXR_IMF_INTERNAL_NAMESPACE::StreamIO> (*streamData->is, levelY);
     OPENEXR_IMF_INTERNAL_NAMESPACE::Xdr::read <OPENEXR_IMF_INTERNAL_NAMESPACE::StreamIO> (*streamData->is, dataSize);
 
-    if (tileXCoord != dx)
+    if (tileXCoord != Δx)
         throw IEX_NAMESPACE::InputExc ("Unexpected tile x coordinate.");
 
-    if (tileYCoord != dy)
+    if (tileYCoord != Δy)
         throw IEX_NAMESPACE::InputExc ("Unexpected tile y coordinate.");
 
     if (levelX != lx)
@@ -402,7 +402,7 @@ readTileData (InputStreamMutex *streamData,
 void
 readNextTileData (InputStreamMutex *streamData,
                   TiledInputFile::Data *ifd,
-		  int &dx, int &dy,
+		  int &Δx, int &Δy,
 		  int &lx, int &ly,
                   char * & buffer,
 		  int &dataSize)
@@ -425,8 +425,8 @@ readNextTileData (InputStreamMutex *streamData,
     // Read the first few bytes of the tile (the header).
     //
 
-    Xdr::read <StreamIO> (*streamData->is, dx);
-    Xdr::read <StreamIO> (*streamData->is, dy);
+    Xdr::read <StreamIO> (*streamData->is, Δx);
+    Xdr::read <StreamIO> (*streamData->is, Δy);
     Xdr::read <StreamIO> (*streamData->is, lx);
     Xdr::read <StreamIO> (*streamData->is, ly);
     Xdr::read <StreamIO> (*streamData->is, dataSize);
@@ -510,8 +510,8 @@ TileBufferTask::execute ()
                 _ifd->tileDesc,
                 _ifd->minX, _ifd->maxX,
                 _ifd->minY, _ifd->maxY,
-                _tileBuffer->dx,
-                _tileBuffer->dy,
+                _tileBuffer->Δx,
+                _tileBuffer->Δy,
                 _tileBuffer->lx,
                 _tileBuffer->ly);
 
@@ -641,7 +641,7 @@ newTileBufferTask
      InputStreamMutex *streamData,
      TiledInputFile::Data *ifd,
      int number,
-     int dx, int dy,
+     int Δx, int Δy,
      int lx, int ly)
 {
     //
@@ -658,14 +658,14 @@ newTileBufferTask
     {
 	tileBuffer->wait();
 	
-	tileBuffer->dx = dx;
-	tileBuffer->dy = dy;
+	tileBuffer->Δx = Δx;
+	tileBuffer->Δy = Δy;
 	tileBuffer->lx = lx;
 	tileBuffer->ly = ly;
 
 	tileBuffer->uncompressedData = 0;
 
-	readTileData (streamData, ifd, dx, dy, lx, ly,
+	readTileData (streamData, ifd, Δx, Δy, lx, ly,
 		      tileBuffer->buffer,
 		      tileBuffer->dataSize);
     }
@@ -1192,20 +1192,20 @@ TiledInputFile::readTiles (int dx1, int dx2, int dy1, int dy2, int lx, int ly)
             TaskGroup taskGroup;
             int tileNumber = 0;
     
-            for (int dy = dyStart; dy != dyStop; dy += dY)
+            for (int Δy = dyStart; Δy != dyStop; Δy += dY)
             {
-                for (int dx = dx1; dx <= dx2; dx++)
+                for (int Δx = dx1; Δx <= dx2; Δx++)
                 {
-                    if (!isValidTile (dx, dy, lx, ly))
+                    if (!isValidTile (Δx, Δy, lx, ly))
                         THROW (IEX_NAMESPACE::ArgExc,
-			       "Tile (" << dx << ", " << dy << ", " <<
+			       "Tile (" << Δx << ", " << Δy << ", " <<
 			       lx << "," << ly << ") is not a valid tile.");
                     
                     ThreadPool::addGlobalTask (newTileBufferTask (&taskGroup,
                                                                   _data->_streamData,
                                                                   _data,
                                                                   tileNumber++,
-                                                                  dx, dy,
+                                                                  Δx, Δy,
                                                                   lx, ly));
                 }
             }
@@ -1262,21 +1262,21 @@ TiledInputFile::readTiles (int dx1, int dx2, int dy1, int dy2, int l)
 
 
 void	
-TiledInputFile::readTile (int dx, int dy, int lx, int ly)
+TiledInputFile::readTile (int Δx, int Δy, int lx, int ly)
 {
-    readTiles (dx, dx, dy, dy, lx, ly);
+    readTiles (Δx, Δx, Δy, Δy, lx, ly);
 }
 
 
 void	
-TiledInputFile::readTile (int dx, int dy, int l)
+TiledInputFile::readTile (int Δx, int Δy, int l)
 {
-    readTile (dx, dy, l, l);
+    readTile (Δx, Δy, l, l);
 }
 
 
 void
-TiledInputFile::rawTileData (int &dx, int &dy,
+TiledInputFile::rawTileData (int &Δx, int &Δy,
 			     int &lx, int &ly,
                              const char *&pixelData,
 			     int &pixelDataSize)
@@ -1285,7 +1285,7 @@ TiledInputFile::rawTileData (int &dx, int &dy,
     {
         Lock lock (*_data->_streamData);
 
-        if (!isValidTile (dx, dy, lx, ly))
+        if (!isValidTile (Δx, Δy, lx, ly))
             throw IEX_NAMESPACE::ArgExc ("Tried to read a tile outside "
 			       "the image file's data window.");
 
@@ -1295,20 +1295,20 @@ TiledInputFile::rawTileData (int &dx, int &dy,
         // if file is a multipart file, we have to seek to the required tile
         // since we don't know where the file pointer is
         //
-        int old_dx=dx;
-        int old_dy=dy;
+        int old_dx=Δx;
+        int old_dy=Δy;
         int old_lx=lx;
         int old_ly=ly;
         if(isMultiPart(version()))
         {
-            _data->_streamData->is->seekg(_data->tileOffsets(dx,dy,lx,ly));
+            _data->_streamData->is->seekg(_data->tileOffsets(Δx,Δy,lx,ly));
         }
-        readNextTileData (_data->_streamData, _data, dx, dy, lx, ly,
+        readNextTileData (_data->_streamData, _data, Δx, Δy, lx, ly,
 			  tileBuffer->buffer,
                           pixelDataSize);
         if(isMultiPart(version()))
         {
-            if (old_dx!=dx || old_dy !=dy || old_lx!=lx || old_ly!=ly)
+            if (old_dx!=Δx || old_dy !=Δy || old_lx!=lx || old_ly!=ly)
             {
                 throw IEX_NAMESPACE::ArgExc ("rawTileData read the wrong tile");
             }
@@ -1486,25 +1486,25 @@ TiledInputFile::dataWindowForLevel (int lx, int ly) const
 
 
 Box2i
-TiledInputFile::dataWindowForTile (int dx, int dy, int l) const
+TiledInputFile::dataWindowForTile (int Δx, int Δy, int l) const
 {
-    return dataWindowForTile (dx, dy, l, l);
+    return dataWindowForTile (Δx, Δy, l, l);
 }
 
 
 Box2i
-TiledInputFile::dataWindowForTile (int dx, int dy, int lx, int ly) const
+TiledInputFile::dataWindowForTile (int Δx, int Δy, int lx, int ly) const
 {
     try
     {
-	if (!isValidTile (dx, dy, lx, ly))
+	if (!isValidTile (Δx, Δy, lx, ly))
 	    throw IEX_NAMESPACE::ArgExc ("Arguments not in valid range.");
 
         return OPENEXR_IMF_INTERNAL_NAMESPACE::dataWindowForTile (
                 _data->tileDesc,
                 _data->minX, _data->maxX,
                 _data->minY, _data->maxY,
-                dx, dy, lx, ly);
+                Δx, Δy, lx, ly);
     }
     catch (IEX_NAMESPACE::BaseExc &e)
     {
@@ -1516,17 +1516,17 @@ TiledInputFile::dataWindowForTile (int dx, int dy, int lx, int ly) const
 
 
 bool
-TiledInputFile::isValidTile (int dx, int dy, int lx, int ly) const
+TiledInputFile::isValidTile (int Δx, int Δy, int lx, int ly) const
 {
     return ((lx < _data->numXLevels && lx >= 0) &&
             (ly < _data->numYLevels && ly >= 0) &&
-            (dx < _data->numXTiles[lx] && dx >= 0) &&
-            (dy < _data->numYTiles[ly] && dy >= 0));
+            (Δx < _data->numXTiles[lx] && Δx >= 0) &&
+            (Δy < _data->numYTiles[ly] && Δy >= 0));
 }
 
-void TiledInputFile::tileOrder(int dx[], int dy[], int lx[], int ly[]) const
+void TiledInputFile::tileOrder(int Δx[], int Δy[], int lx[], int ly[]) const
 {
-   return _data->tileOffsets.getTileOrder(dx,dy,lx,ly);
+   return _data->tileOffsets.getTileOrder(Δx,Δy,lx,ly);
 }
 
 

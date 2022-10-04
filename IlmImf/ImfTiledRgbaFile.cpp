@@ -163,7 +163,7 @@ class TiledRgbaOutputFile::ToYa: public Mutex
 				size_t xStride,
 				size_t yStride);
 
-     void	writeTile (int dx, int dy, int lx, int ly);
+     void	writeTile (int Δx, int Δy, int lx, int ly);
 
   private:
 
@@ -210,7 +210,7 @@ TiledRgbaOutputFile::ToYa::setFrameBuffer (const Rgba *base,
 
 
 void
-TiledRgbaOutputFile::ToYa::writeTile (int dx, int dy, int lx, int ly)
+TiledRgbaOutputFile::ToYa::writeTile (int Δx, int Δy, int lx, int ly)
 {
     if (_fbBase == 0)
     {
@@ -224,7 +224,7 @@ TiledRgbaOutputFile::ToYa::writeTile (int dx, int dy, int lx, int ly)
     // them to luminance/alpha format
     //
 
-    Box2i dw = _outputFile.dataWindowForTile (dx, dy, lx, ly);
+    Box2i dw = _outputFile.dataWindowForTile (Δx, Δy, lx, ly);
     int width = dw.max.x - dw.min.x + 1;
 
     for (int y = dw.min.y, y1 = 0; y <= dw.max.y; ++y, ++y1)
@@ -252,7 +252,7 @@ TiledRgbaOutputFile::ToYa::writeTile (int dx, int dy, int lx, int ly)
 			   sizeof (Rgba) * _tileXSize));	   // yStride
 
     _outputFile.setFrameBuffer (fb);
-    _outputFile.writeTile (dx, dy, lx, ly);
+    _outputFile.writeTile (Δx, Δy, lx, ly);
 }
 
 
@@ -579,45 +579,45 @@ TiledRgbaOutputFile::dataWindowForLevel (int lx, int ly) const
 
 
 IMATH_NAMESPACE::Box2i
-TiledRgbaOutputFile::dataWindowForTile (int dx, int dy, int l) const
+TiledRgbaOutputFile::dataWindowForTile (int Δx, int Δy, int l) const
 {
-     return _outputFile->dataWindowForTile (dx, dy, l);
+     return _outputFile->dataWindowForTile (Δx, Δy, l);
 }
 
 
 IMATH_NAMESPACE::Box2i
-TiledRgbaOutputFile::dataWindowForTile (int dx, int dy, int lx, int ly) const
+TiledRgbaOutputFile::dataWindowForTile (int Δx, int Δy, int lx, int ly) const
 {
-     return _outputFile->dataWindowForTile (dx, dy, lx, ly);
+     return _outputFile->dataWindowForTile (Δx, Δy, lx, ly);
 }
 
 
 void
-TiledRgbaOutputFile::writeTile (int dx, int dy, int l)
+TiledRgbaOutputFile::writeTile (int Δx, int Δy, int l)
 {
     if (_toYa)
     {
 	Lock lock (*_toYa);
-	_toYa->writeTile (dx, dy, l, l);
+	_toYa->writeTile (Δx, Δy, l, l);
     }
     else
     {
-	 _outputFile->writeTile (dx, dy, l);
+	 _outputFile->writeTile (Δx, Δy, l);
     }
 }
 
 
 void
-TiledRgbaOutputFile::writeTile (int dx, int dy, int lx, int ly)
+TiledRgbaOutputFile::writeTile (int Δx, int Δy, int lx, int ly)
 {
     if (_toYa)
     {
 	Lock lock (*_toYa);
-	_toYa->writeTile (dx, dy, lx, ly);
+	_toYa->writeTile (Δx, Δy, lx, ly);
     }
     else
     {
-	 _outputFile->writeTile (dx, dy, lx, ly);
+	 _outputFile->writeTile (Δx, Δy, lx, ly);
     }
 }
 
@@ -630,9 +630,9 @@ TiledRgbaOutputFile::writeTiles
     {
 	Lock lock (*_toYa);
 
-        for (int dy = dyMin; dy <= dyMax; dy++)
-            for (int dx = dxMin; dx <= dxMax; dx++)
-	        _toYa->writeTile (dx, dy, lx, ly);
+        for (int Δy = dyMin; Δy <= dyMax; Δy++)
+            for (int Δx = dxMin; Δx <= dxMax; Δx++)
+	        _toYa->writeTile (Δx, Δy, lx, ly);
     }
     else
     {
@@ -659,7 +659,7 @@ class TiledRgbaInputFile::FromYa: public Mutex
 				size_t yStride,
 				const string &channelNamePrefix);
 
-     void	readTile (int dx, int dy, int lx, int ly);
+     void	readTile (int Δx, int Δy, int lx, int ly);
 
   private:
 
@@ -728,7 +728,7 @@ TiledRgbaInputFile::FromYa::setFrameBuffer (Rgba *base,
 
 
 void
-TiledRgbaInputFile::FromYa::readTile (int dx, int dy, int lx, int ly)
+TiledRgbaInputFile::FromYa::readTile (int Δx, int Δy, int lx, int ly)
 {
     if (_fbBase == 0)
     {
@@ -741,14 +741,14 @@ TiledRgbaInputFile::FromYa::readTile (int dx, int dy, int lx, int ly)
     // Read the tile requested by the caller into _buf.
     //
     
-    _inputFile.readTile (dx, dy, lx, ly);
+    _inputFile.readTile (Δx, Δy, lx, ly);
 
     //
     // Convert the luminance/alpha pixels to RGBA
     // and copy them into the caller's frame buffer.
     //
 
-    Box2i dw = _inputFile.dataWindowForTile (dx, dy, lx, ly);
+    Box2i dw = _inputFile.dataWindowForTile (Δx, Δy, lx, ly);
     int width = dw.max.x - dw.min.x + 1;
 
     for (int y = dw.min.y, y1 = 0; y <= dw.max.y; ++y, ++y1)
@@ -1076,45 +1076,45 @@ TiledRgbaInputFile::dataWindowForLevel (int lx, int ly) const
 
 
 IMATH_NAMESPACE::Box2i
-TiledRgbaInputFile::dataWindowForTile (int dx, int dy, int l) const
+TiledRgbaInputFile::dataWindowForTile (int Δx, int Δy, int l) const
 {
-     return _inputFile->dataWindowForTile (dx, dy, l);
+     return _inputFile->dataWindowForTile (Δx, Δy, l);
 }
 
 
 IMATH_NAMESPACE::Box2i
-TiledRgbaInputFile::dataWindowForTile (int dx, int dy, int lx, int ly) const
+TiledRgbaInputFile::dataWindowForTile (int Δx, int Δy, int lx, int ly) const
 {
-     return _inputFile->dataWindowForTile (dx, dy, lx, ly);
+     return _inputFile->dataWindowForTile (Δx, Δy, lx, ly);
 }
 
 
 void
-TiledRgbaInputFile::readTile (int dx, int dy, int l)
+TiledRgbaInputFile::readTile (int Δx, int Δy, int l)
 {
     if (_fromYa)
     {
 	Lock lock (*_fromYa);
-	_fromYa->readTile (dx, dy, l, l);
+	_fromYa->readTile (Δx, Δy, l, l);
     }
     else
     {
-	 _inputFile->readTile (dx, dy, l);
+	 _inputFile->readTile (Δx, Δy, l);
     }
 }
 
 
 void
-TiledRgbaInputFile::readTile (int dx, int dy, int lx, int ly)
+TiledRgbaInputFile::readTile (int Δx, int Δy, int lx, int ly)
 {
     if (_fromYa)
     {
 	Lock lock (*_fromYa);
-	_fromYa->readTile (dx, dy, lx, ly);
+	_fromYa->readTile (Δx, Δy, lx, ly);
     }
     else
     {
-	 _inputFile->readTile (dx, dy, lx, ly);
+	 _inputFile->readTile (Δx, Δy, lx, ly);
     }
 }
 
@@ -1127,9 +1127,9 @@ TiledRgbaInputFile::readTiles (int dxMin, int dxMax, int dyMin, int dyMax,
     {
 	Lock lock (*_fromYa);
 
-        for (int dy = dyMin; dy <= dyMax; dy++)
-            for (int dx = dxMin; dx <= dxMax; dx++)
-	        _fromYa->readTile (dx, dy, lx, ly);
+        for (int Δy = dyMin; Δy <= dyMax; Δy++)
+            for (int Δx = dxMin; Δx <= dxMax; Δx++)
+	        _fromYa->readTile (Δx, Δy, lx, ly);
     }
     else
     {
@@ -1153,10 +1153,10 @@ TiledRgbaOutputFile::updatePreviewImage (const PreviewRgba newPixels[])
 
 
 void	
-TiledRgbaOutputFile::breakTile  (int dx, int dy, int lx, int ly,
+TiledRgbaOutputFile::breakTile  (int Δx, int Δy, int lx, int ly,
 				 int offset, int length, char c)
 {
-    _outputFile->breakTile (dx, dy, lx, ly, offset, length, c);
+    _outputFile->breakTile (Δx, Δy, lx, ly, offset, length, c);
 }
 
 

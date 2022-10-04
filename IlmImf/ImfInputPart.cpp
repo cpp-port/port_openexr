@@ -105,10 +105,10 @@ InputPart::rawPixelData (int firstScanLine, const char *&pixelData, int &pixelDa
 }
 
 void
-InputPart::rawTileData (int &dx, int &dy, int &lx, int &ly,
+InputPart::rawTileData (int &Δx, int &Δy, int &lx, int &ly,
              const char *&pixelData, int &pixelDataSize)
 {
-    file->rawTileData(dx, dy, lx, ly, pixelData, pixelDataSize);
+    file->rawTileData(Δx, Δy, lx, ly, pixelData, pixelDataSize);
 }
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_EXIT

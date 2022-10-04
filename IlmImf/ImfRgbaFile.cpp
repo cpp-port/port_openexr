@@ -1005,18 +1005,18 @@ RgbaInputFile::FromYca::readPixels (int scanLine)
     // in the missing data.
     //
 
-    int dy = scanLine - _currentScanLine;
+    int Δy = scanLine - _currentScanLine;
 
-    if (abs (dy) < N + 2)
-	rotateBuf1 (dy);
+    if (abs (Δy) < N + 2)
+	rotateBuf1 (Δy);
 
-    if (abs (dy) < 3)
-	rotateBuf2 (dy);
+    if (abs (Δy) < 3)
+	rotateBuf2 (Δy);
 
-    if (dy < 0)
+    if (Δy < 0)
     {
 	{
-	    int n = min (-dy, N + 2);
+	    int n = min (-Δy, N + 2);
 	    int yMin = scanLine - N2 - 1;
 
 	    for (int i = n - 1; i >= 0; --i)
@@ -1024,7 +1024,7 @@ RgbaInputFile::FromYca::readPixels (int scanLine)
 	}
 
 	{
-	    int n = min (-dy, 3);
+	    int n = min (-Δy, 3);
 
 	    for (int i = 0; i < n; ++i)
 	    {
@@ -1043,7 +1043,7 @@ RgbaInputFile::FromYca::readPixels (int scanLine)
     else
     {
 	{
-	    int n = min (dy, N + 2);
+	    int n = min (Δy, N + 2);
 	    int yMax = scanLine + N2 + 1;
 
 	    for (int i = n - 1; i >= 0; --i)
@@ -1051,7 +1051,7 @@ RgbaInputFile::FromYca::readPixels (int scanLine)
 	}
 
 	{
-	    int n = min (dy, 3);
+	    int n = min (Δy, 3);
 
 	    for (int i = 2; i > 2 - n; --i)
 	    {

@@ -185,31 +185,31 @@ DeepTiledInputPart::dataWindowForLevel (int lx, int ly) const
 
 
 IMATH_NAMESPACE::Box2i
-DeepTiledInputPart::dataWindowForTile (int dx, int dy, int l) const
+DeepTiledInputPart::dataWindowForTile (int Δx, int Δy, int l) const
 {
-    return file->dataWindowForTile(dx, dy, l);
+    return file->dataWindowForTile(Δx, Δy, l);
 }
 
 
 IMATH_NAMESPACE::Box2i
-DeepTiledInputPart::dataWindowForTile (int dx, int dy,
+DeepTiledInputPart::dataWindowForTile (int Δx, int Δy,
                                        int lx, int ly) const
 {
-    return file->dataWindowForTile(dx, dy, lx, ly);
+    return file->dataWindowForTile(Δx, Δy, lx, ly);
 }
 
 
 void
-DeepTiledInputPart::readTile  (int dx, int dy, int l)
+DeepTiledInputPart::readTile  (int Δx, int Δy, int l)
 {
-    file->readTile(dx, dy, l);
+    file->readTile(Δx, Δy, l);
 }
 
 
 void
-DeepTiledInputPart::readTile  (int dx, int dy, int lx, int ly)
+DeepTiledInputPart::readTile  (int Δx, int Δy, int lx, int ly)
 {
-    file->readTile(dx, dy, lx, ly);
+    file->readTile(Δx, Δy, lx, ly);
 }
 
 
@@ -230,26 +230,26 @@ DeepTiledInputPart::readTiles (int dx1, int dx2, int dy1, int dy2,
 
 
 void
-DeepTiledInputPart::rawTileData (int &dx, int &dy,
+DeepTiledInputPart::rawTileData (int &Δx, int &Δy,
                                  int &lx, int &ly,
                                  char * pixelData,
                                  Int64 & dataSize) const
 {
-    file->rawTileData(dx, dy, lx, ly, pixelData, dataSize );
+    file->rawTileData(Δx, Δy, lx, ly, pixelData, dataSize );
 }
 
 
 void
-DeepTiledInputPart::readPixelSampleCount  (int dx, int dy, int l)
+DeepTiledInputPart::readPixelSampleCount  (int Δx, int Δy, int l)
 {
-    file->readPixelSampleCount(dx, dy, l);
+    file->readPixelSampleCount(Δx, Δy, l);
 }
 
 
 void
-DeepTiledInputPart::readPixelSampleCount  (int dx, int dy, int lx, int ly)
+DeepTiledInputPart::readPixelSampleCount  (int Δx, int Δy, int lx, int ly)
 {
-    file->readPixelSampleCount(dx, dy, lx, ly);
+    file->readPixelSampleCount(Δx, Δy, lx, ly);
 }
 
 

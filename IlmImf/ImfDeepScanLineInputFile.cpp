@@ -647,22 +647,22 @@ LineBufferTask::execute ()
             }
         }
 
-        int yStart, yStop, dy;
+        int yStart, yStop, Δy;
 
         if (_ifd->lineOrder == INCREASING_Y)
         {
             yStart = _scanLineMin;
             yStop = _scanLineMax + 1;
-            dy = 1;
+            Δy = 1;
         }
         else
         {
             yStart = _scanLineMax;
             yStop = _scanLineMin - 1;
-            dy = -1;
+            Δy = -1;
         }
 
-        for (int y = yStart; y != yStop; y += dy)
+        for (int y = yStart; y != yStop; y += Δy)
         {
             //
             // Convert one scan line's worth of pixel data back
@@ -1528,19 +1528,19 @@ void DeepScanLineInputFile::readPixels (const char* rawPixelData,
     }
   
     
-    int yStart, yStop, dy;
+    int yStart, yStop, Δy;
     
     if (_data->lineOrder == INCREASING_Y)
     {
         yStart = scanLine1;
         yStop = scanLine2 + 1;
-        dy = 1;
+        Δy = 1;
     }
     else
     {
         yStart = scanLine2;
         yStop = scanLine1 - 1;
-        dy = -1;
+        Δy = -1;
     }
     
     
@@ -1582,7 +1582,7 @@ void DeepScanLineInputFile::readPixels (const char* rawPixelData,
     const ChannelList & channels=header().channels();    
     
     
-    for (int y = yStart; y != yStop; y += dy)
+    for (int y = yStart; y != yStop; y += Δy)
     {
         
         const char *readPtr =uncompressed_data +

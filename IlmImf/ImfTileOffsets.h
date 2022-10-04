@@ -91,11 +91,11 @@ class IMF_EXPORT TileOffsets
     // Access to the elements
     //-----------------------
 
-    Int64 &		operator () (int dx, int dy, int lx, int ly);
-    Int64 &		operator () (int dx, int dy, int l);
-    const Int64 &	operator () (int dx, int dy, int lx, int ly) const;
-    const Int64 &	operator () (int dx, int dy, int l) const;
-    bool        isValidTile (int dx, int dy, int lx, int ly) const;
+    Int64 &		operator () (int Δx, int Δy, int lx, int ly);
+    Int64 &		operator () (int Δx, int Δy, int l);
+    const Int64 &	operator () (int Δx, int Δy, int lx, int ly) const;
+    const Int64 &	operator () (int Δx, int Δy, int l) const;
+    bool        isValidTile (int Δx, int Δy, int lx, int ly) const;
     const std::vector<std::vector<std::vector <Int64> > >& getOffsets() const;
     
   private:

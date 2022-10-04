@@ -484,24 +484,24 @@ LineBufferTask::execute ()
 	// frame buffer into the line buffer
         //
         
-        int yStart, yStop, dy;
+        int yStart, yStop, Δy;
 
         if (_ofd->lineOrder == INCREASING_Y)
         {
             yStart = _lineBuffer->scanLineMin;
             yStop = _lineBuffer->scanLineMax + 1;
-            dy = 1;
+            Δy = 1;
         }
         else
         {
             yStart = _lineBuffer->scanLineMax;
             yStop = _lineBuffer->scanLineMin - 1;
-            dy = -1;
+            Δy = -1;
         }
     
 	int y;
 
-        for (y = yStart; y != yStop; y += dy)
+        for (y = yStart; y != yStop; y += Δy)
         {
             //
             // Gather one scan line's worth of pixel data and store

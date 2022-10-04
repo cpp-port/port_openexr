@@ -68,9 +68,9 @@ TileOffsets::TileOffsets (LevelMode mode,
         {
             _offsets[l].resize (numYTiles[l]);
 
-            for (unsigned int dy = 0; dy < _offsets[l].size(); ++dy)
+            for (unsigned int Δy = 0; Δy < _offsets[l].size(); ++Δy)
 	    {
-                _offsets[l][dy].resize (numXTiles[l]);
+                _offsets[l][Δy].resize (numXTiles[l]);
             }
         }
         break;
@@ -86,9 +86,9 @@ TileOffsets::TileOffsets (LevelMode mode,
                 int l = ly * _numXLevels + lx;
                 _offsets[l].resize (numYTiles[ly]);
 
-                for (size_t dy = 0; dy < _offsets[l].size(); ++dy)
+                for (size_t Δy = 0; Δy < _offsets[l].size(); ++Δy)
                 {
-                    _offsets[l][dy].resize (numXTiles[lx]);
+                    _offsets[l][Δy].resize (numXTiles[lx]);
                 }
             }
         }
@@ -104,9 +104,9 @@ bool
 TileOffsets::anyOffsetsAreInvalid () const
 {
     for (unsigned int l = 0; l < _offsets.size(); ++l)
-	for (unsigned int dy = 0; dy < _offsets[l].size(); ++dy)
-	    for (unsigned int dx = 0; dx < _offsets[l][dy].size(); ++dx)
-		if (_offsets[l][dy][dx] <= 0)
+	for (unsigned int Δy = 0; Δy < _offsets[l].size(); ++Δy)
+	    for (unsigned int Δx = 0; Δx < _offsets[l][Δy].size(); ++Δx)
+		if (_offsets[l][Δy][Δx] <= 0)
 		    return true;
     
     return false;
@@ -118,9 +118,9 @@ TileOffsets::findTiles (OPENEXR_IMF_INTERNAL_NAMESPACE::IStream &is, bool isMult
 {
     for (unsigned int l = 0; l < _offsets.size(); ++l)
     {
-	for (unsigned int dy = 0; dy < _offsets[l].size(); ++dy)
+	for (unsigned int Δy = 0; Δy < _offsets[l].size(); ++Δy)
 	{
-	    for (unsigned int dx = 0; dx < _offsets[l][dy].size(); ++dx)
+	    for (unsigned int Δx = 0; Δx < _offsets[l][Δy].size(); ++Δx)
 	    {
 		Int64 tileOffset = is.tellg();
 
@@ -209,9 +209,9 @@ TileOffsets::readFrom (OPENEXR_IMF_INTERNAL_NAMESPACE::IStream &is, bool &comple
     //
 
     for (unsigned int l = 0; l < _offsets.size(); ++l)
-	for (unsigned int dy = 0; dy < _offsets[l].size(); ++dy)
-	    for (unsigned int dx = 0; dx < _offsets[l][dy].size(); ++dx)
-		OPENEXR_IMF_INTERNAL_NAMESPACE::Xdr::read <OPENEXR_IMF_INTERNAL_NAMESPACE::StreamIO> (is, _offsets[l][dy][dx]);
+	for (unsigned int Δy = 0; Δy < _offsets[l].size(); ++Δy)
+	    for (unsigned int Δx = 0; Δx < _offsets[l][Δy].size(); ++Δx)
+		OPENEXR_IMF_INTERNAL_NAMESPACE::Xdr::read <OPENEXR_IMF_INTERNAL_NAMESPACE::StreamIO> (is, _offsets[l][Δy][Δx]);
 
     //
     // Check if any tile offsets are invalid.
@@ -246,8 +246,8 @@ TileOffsets::readFrom (std::vector<Int64> chunkOffsets,bool &complete)
     size_t totalSize = 0;
  
     for (unsigned int l = 0; l < _offsets.size(); ++l)
-        for (unsigned int dy = 0; dy < _offsets[l].size(); ++dy)
-            totalSize += _offsets[l][dy].size();
+        for (unsigned int Δy = 0; Δy < _offsets[l].size(); ++Δy)
+            totalSize += _offsets[l][Δy].size();
 
     if (chunkOffsets.size() != totalSize)
         throw IEX_NAMESPACE::ArgExc ("Wrong offset count, not able to read from this array");
@@ -256,10 +256,10 @@ TileOffsets::readFrom (std::vector<Int64> chunkOffsets,bool &complete)
 
     int pos = 0;
     for (size_t l = 0; l < _offsets.size(); ++l)
-        for (size_t dy = 0; dy < _offsets[l].size(); ++dy)
-            for (size_t dx = 0; dx < _offsets[l][dy].size(); ++dx)
+        for (size_t Δy = 0; Δy < _offsets[l].size(); ++Δy)
+            for (size_t Δx = 0; Δx < _offsets[l][Δy].size(); ++Δx)
             {
-                _offsets[l][dy][dx] = chunkOffsets[pos];
+                _offsets[l][Δy][Δx] = chunkOffsets[pos];
                 pos++;
             }
 
@@ -283,9 +283,9 @@ TileOffsets::writeTo (OPENEXR_IMF_INTERNAL_NAMESPACE::OStream &os) const
 	IEX_NAMESPACE::throwErrnoExc ("Cannot determine current file position (%T).");
 
     for (unsigned int l = 0; l < _offsets.size(); ++l)
-	for (unsigned int dy = 0; dy < _offsets[l].size(); ++dy)
-	    for (unsigned int dx = 0; dx < _offsets[l][dy].size(); ++dx)
-		OPENEXR_IMF_INTERNAL_NAMESPACE::Xdr::write <OPENEXR_IMF_INTERNAL_NAMESPACE::StreamIO> (os, _offsets[l][dy][dx]);
+	for (unsigned int Δy = 0; Δy < _offsets[l].size(); ++Δy)
+	    for (unsigned int Δx = 0; Δx < _offsets[l][Δy].size(); ++Δx)
+		OPENEXR_IMF_INTERNAL_NAMESPACE::Xdr::write <OPENEXR_IMF_INTERNAL_NAMESPACE::StreamIO> (os, _offsets[l][Δy][Δx]);
 
     return pos;
 }
@@ -293,8 +293,8 @@ TileOffsets::writeTo (OPENEXR_IMF_INTERNAL_NAMESPACE::OStream &os) const
 namespace {
 struct tilepos{
     Int64 filePos;
-    int dx;
-    int dy;
+    int Δx;
+    int Δy;
     int l;
     bool operator <(const tilepos & other) const
     {
@@ -321,19 +321,19 @@ void TileOffsets::getTileOrder(int dx_table[],int dy_table[],int lx_table[],int 
     // how many entries?
     size_t entries=0;
     for (unsigned int l = 0; l < _offsets.size(); ++l)
-        for (unsigned int dy = 0; dy < _offsets[l].size(); ++dy)
-           entries+=_offsets[l][dy].size();
+        for (unsigned int Δy = 0; Δy < _offsets[l].size(); ++Δy)
+           entries+=_offsets[l][Δy].size();
         
     std::vector<struct tilepos> table(entries);
     
     size_t i = 0;
     for (unsigned int l = 0; l < _offsets.size(); ++l)
-        for (unsigned int dy = 0; dy < _offsets[l].size(); ++dy)
-            for (unsigned int dx = 0; dx < _offsets[l][dy].size(); ++dx)
+        for (unsigned int Δy = 0; Δy < _offsets[l].size(); ++Δy)
+            for (unsigned int Δx = 0; Δx < _offsets[l][Δy].size(); ++Δx)
             {
-                table[i].filePos = _offsets[l][dy][dx];
-                table[i].dx = dx;
-                table[i].dy = dy;
+                table[i].filePos = _offsets[l][Δy][Δx];
+                table[i].Δx = Δx;
+                table[i].Δy = Δy;
                 table[i].l = l;
 
                 ++i;
@@ -346,12 +346,12 @@ void TileOffsets::getTileOrder(int dx_table[],int dy_table[],int lx_table[],int 
     // write out the values
     //
     
-    // pass 1: write out dx and dy, since these are independent of level mode
+    // pass 1: write out Δx and Δy, since these are independent of level mode
     
     for(size_t i=0;i<entries;i++)
     {
-        dx_table[i] = table[i].dx;
-        dy_table[i] = table[i].dy;
+        dx_table[i] = table[i].Δx;
+        dy_table[i] = table[i].Δy;
     }
 
     // now write out the levels, which depend on the level mode
@@ -401,18 +401,18 @@ bool
 TileOffsets::isEmpty () const
 {
     for (unsigned int l = 0; l < _offsets.size(); ++l)
-	for (unsigned int dy = 0; dy < _offsets[l].size(); ++dy)
-	    for (unsigned int dx = 0; dx < _offsets[l][dy].size(); ++dx)
-		if (_offsets[l][dy][dx] != 0)
+	for (unsigned int Δy = 0; Δy < _offsets[l].size(); ++Δy)
+	    for (unsigned int Δx = 0; Δx < _offsets[l][Δy].size(); ++Δx)
+		if (_offsets[l][Δy][Δx] != 0)
 		    return false;
     return true;
 }
 
 
 bool
-TileOffsets::isValidTile (int dx, int dy, int lx, int ly) const
+TileOffsets::isValidTile (int Δx, int Δy, int lx, int ly) const
 {
-    if(lx<0 || ly < 0 || dx<0 || dy < 0) return false;
+    if(lx<0 || ly < 0 || Δx<0 || Δy < 0) return false;
     switch (_mode)
     {
       case ONE_LEVEL:
@@ -420,8 +420,8 @@ TileOffsets::isValidTile (int dx, int dy, int lx, int ly) const
         if (lx == 0 &&
 	    ly == 0 &&
 	    _offsets.size() > 0 &&
-            int(_offsets[0].size()) > dy &&
-            int(_offsets[0][dy].size()) > dx)
+            int(_offsets[0].size()) > Δy &&
+            int(_offsets[0][Δy].size()) > Δx)
 	{
             return true;
 	}
@@ -433,8 +433,8 @@ TileOffsets::isValidTile (int dx, int dy, int lx, int ly) const
         if (lx < _numXLevels &&
 	    ly < _numYLevels &&
             int(_offsets.size()) > lx &&
-            int(_offsets[lx].size()) > dy &&
-            int(_offsets[lx][dy].size()) > dx)
+            int(_offsets[lx].size()) > Δy &&
+            int(_offsets[lx][Δy].size()) > Δx)
 	{
             return true;
 	}
@@ -446,8 +446,8 @@ TileOffsets::isValidTile (int dx, int dy, int lx, int ly) const
         if (lx < _numXLevels &&
 	    ly < _numYLevels &&
 	    (_offsets.size() > (size_t) lx+  ly *  (size_t) _numXLevels) &&
-            int(_offsets[lx + ly * _numXLevels].size()) > dy &&
-            int(_offsets[lx + ly * _numXLevels][dy].size()) > dx)
+            int(_offsets[lx + ly * _numXLevels].size()) > Δy &&
+            int(_offsets[lx + ly * _numXLevels][Δy].size()) > Δx)
 	{
             return true;
 	}
@@ -464,10 +464,10 @@ TileOffsets::isValidTile (int dx, int dy, int lx, int ly) const
 
 
 Int64 &
-TileOffsets::operator () (int dx, int dy, int lx, int ly)
+TileOffsets::operator () (int Δx, int Δy, int lx, int ly)
 {
     //
-    // Looks up the value of the tile with tile coordinate (dx, dy)
+    // Looks up the value of the tile with tile coordinate (Δx, Δy)
     // and level number (lx, ly) in the _offsets array, and returns
     // the cooresponding offset.
     //
@@ -476,17 +476,17 @@ TileOffsets::operator () (int dx, int dy, int lx, int ly)
     {
       case ONE_LEVEL:
 
-        return _offsets[0][dy][dx];
+        return _offsets[0][Δy][Δx];
         break;
 
       case MIPMAP_LEVELS:
 
-        return _offsets[lx][dy][dx];
+        return _offsets[lx][Δy][Δx];
         break;
 
       case RIPMAP_LEVELS:
 
-        return _offsets[lx + ly * _numXLevels][dy][dx];
+        return _offsets[lx + ly * _numXLevels][Δy][Δx];
         break;
 
       default:
@@ -497,17 +497,17 @@ TileOffsets::operator () (int dx, int dy, int lx, int ly)
 
 
 Int64 &
-TileOffsets::operator () (int dx, int dy, int l)
+TileOffsets::operator () (int Δx, int Δy, int l)
 {
-    return operator () (dx, dy, l, l);
+    return operator () (Δx, Δy, l, l);
 }
 
 
 const Int64 &
-TileOffsets::operator () (int dx, int dy, int lx, int ly) const
+TileOffsets::operator () (int Δx, int Δy, int lx, int ly) const
 {
     //
-    // Looks up the value of the tile with tile coordinate (dx, dy)
+    // Looks up the value of the tile with tile coordinate (Δx, Δy)
     // and level number (lx, ly) in the _offsets array, and returns
     // the cooresponding offset.
     //
@@ -516,17 +516,17 @@ TileOffsets::operator () (int dx, int dy, int lx, int ly) const
     {
       case ONE_LEVEL:
 
-        return _offsets[0][dy][dx];
+        return _offsets[0][Δy][Δx];
         break;
 
       case MIPMAP_LEVELS:
 
-        return _offsets[lx][dy][dx];
+        return _offsets[lx][Δy][Δx];
         break;
 
       case RIPMAP_LEVELS:
 
-        return _offsets[lx + ly * _numXLevels][dy][dx];
+        return _offsets[lx + ly * _numXLevels][Δy][Δx];
         break;
 
       default:
@@ -537,9 +537,9 @@ TileOffsets::operator () (int dx, int dy, int lx, int ly) const
 
 
 const Int64 &
-TileOffsets::operator () (int dx, int dy, int l) const
+TileOffsets::operator () (int Δx, int Δy, int l) const
 {
-    return operator () (dx, dy, l, l);
+    return operator () (Δx, Δy, l, l);
 }
 
 const std::vector<std::vector<std::vector <Int64> > >&

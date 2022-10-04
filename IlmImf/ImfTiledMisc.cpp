@@ -91,11 +91,11 @@ Box2i
 dataWindowForTile (const TileDescription &tileDesc,
 		   int minX, int maxX,
 		   int minY, int maxY,
-		   int dx, int dy,
+		   int Δx, int Δy,
 		   int lx, int ly)
 {
-    V2i tileMin = V2i (minX + dx * tileDesc.xSize,
-		       minY + dy * tileDesc.ySize);
+    V2i tileMin = V2i (minX + Δx * tileDesc.xSize,
+		       minY + Δy * tileDesc.ySize);
 
     V2i tileMax = tileMin + V2i (tileDesc.xSize - 1, tileDesc.ySize - 1);
 

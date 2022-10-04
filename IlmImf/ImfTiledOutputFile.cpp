@@ -134,8 +134,8 @@ TOutSliceInfo::TOutSliceInfo (PixelType t,
 
 struct TileCoord
 {
-    int		dx;
-    int		dy;
+    int		Δx;
+    int		Δy;
     int		lx;
     int		ly;
     
@@ -143,7 +143,7 @@ struct TileCoord
     TileCoord (int xTile = 0, int yTile = 0,
 	       int xLevel = 0, int yLevel = 0)
     :
-        dx (xTile),  dy (yTile),
+        Δx (xTile),  Δy (yTile),
 	lx (xLevel), ly (yLevel)
     {
         // empty
@@ -156,7 +156,7 @@ struct TileCoord
         return (ly < other.ly) ||
 	       (ly == other.ly && lx < other.lx) ||
 	       ((ly == other.ly && lx == other.lx) &&
-		    ((dy < other.dy) || (dy == other.dy && dx < other.dx)));
+		    ((Δy < other.Δy) || (Δy == other.Δy && Δx < other.Δx)));
     }
 
 
@@ -165,8 +165,8 @@ struct TileCoord
     {
         return lx == other.lx &&
 	       ly == other.ly &&
-	       dx == other.dx &&
-	       dy == other.dy;
+	       Δx == other.Δx &&
+	       Δy == other.Δy;
     }
 };
 
@@ -335,20 +335,20 @@ TiledOutputFile::Data::nextTileCoord (const TileCoord &a)
     
     if (lineOrder == INCREASING_Y)
     {
-        b.dx++;
+        b.Δx++;
 
-        if (b.dx >= numXTiles[b.lx])
+        if (b.Δx >= numXTiles[b.lx])
         {
-            b.dx = 0;
-            b.dy++;
+            b.Δx = 0;
+            b.Δy++;
 
-            if (b.dy >= numYTiles[b.ly])
+            if (b.Δy >= numYTiles[b.ly])
             {
 		//
 		// the next tile is in the next level
 		//
 
-                b.dy = 0;
+                b.Δy = 0;
 
                 switch (tileDesc.mode)
                 {
@@ -382,14 +382,14 @@ TiledOutputFile::Data::nextTileCoord (const TileCoord &a)
     }
     else if (lineOrder == DECREASING_Y)
     {
-        b.dx++;
+        b.Δx++;
 
-        if (b.dx >= numXTiles[b.lx])
+        if (b.Δx >= numXTiles[b.lx])
         {
-            b.dx = 0;
-            b.dy--;
+            b.Δx = 0;
+            b.Δy--;
 
-            if (b.dy < 0)
+            if (b.Δy < 0)
             {
 		//
 		// the next tile is in the next level
@@ -424,7 +424,7 @@ TiledOutputFile::Data::nextTileCoord (const TileCoord &a)
                 }
 
 		if (b.ly < numYLevels)
-		    b.dy = numYTiles[b.ly] - 1;
+		    b.Δy = numYTiles[b.ly] - 1;
             }
         }
     }
@@ -438,7 +438,7 @@ namespace {
 void
 writeTileData (OutputStreamMutex *streamData,
                TiledOutputFile::Data *ofd,
-               int dx, int dy,
+               int Δx, int Δy,
 	       int lx, int ly, 
                const char pixelData[],
                int pixelDataSize)
@@ -455,7 +455,7 @@ writeTileData (OutputStreamMutex *streamData,
     if (currentPosition == 0)
         currentPosition = streamData->os->tellp();
 
-    ofd->tileOffsets (dx, dy, lx, ly) = currentPosition;
+    ofd->tileOffsets (Δx, Δy, lx, ly) = currentPosition;
 
     #ifdef DEBUG
 	assert (streamData->os->tellp() == currentPosition);
@@ -469,8 +469,8 @@ writeTileData (OutputStreamMutex *streamData,
     {
         Xdr::write <StreamIO> (*streamData->os, ofd->partNumber);
     }
-    Xdr::write <StreamIO> (*streamData->os, dx);
-    Xdr::write <StreamIO> (*streamData->os, dy);
+    Xdr::write <StreamIO> (*streamData->os, Δx);
+    Xdr::write <StreamIO> (*streamData->os, Δy);
     Xdr::write <StreamIO> (*streamData->os, lx);
     Xdr::write <StreamIO> (*streamData->os, ly);
     Xdr::write <StreamIO> (*streamData->os, pixelDataSize);
@@ -497,20 +497,20 @@ writeTileData (OutputStreamMutex *streamData,
 void
 bufferedTileWrite (OutputStreamMutex *streamData,
                    TiledOutputFile::Data *ofd,
-                   int dx, int dy,
+                   int Δx, int Δy,
 		   int lx, int ly, 
                    const char pixelData[],
                    int pixelDataSize)
 {
     //
-    // Check if a tile with coordinates (dx,dy,lx,ly) has already been written.
+    // Check if a tile with coordinates (Δx,Δy,lx,ly) has already been written.
     //
 
-    if (ofd->tileOffsets (dx, dy, lx, ly))
+    if (ofd->tileOffsets (Δx, Δy, lx, ly))
     {
 	THROW (IEX_NAMESPACE::ArgExc,
 	       "Attempt to write tile "
-	       "(" << dx << ", " << dy << ", " << lx << ", " << ly << ") "
+	       "(" << Δx << ", " << Δy << ", " << lx << ", " << ly << ") "
 	       "more than once.");
     }
 
@@ -520,22 +520,22 @@ bufferedTileWrite (OutputStreamMutex *streamData,
     
     if (ofd->lineOrder == RANDOM_Y)
     {
-        writeTileData (streamData, ofd, dx, dy, lx, ly, pixelData, pixelDataSize);
+        writeTileData (streamData, ofd, Δx, Δy, lx, ly, pixelData, pixelDataSize);
         return;
     }
     
     //
     // If the tiles cannot be written in random order, then check if a
-    // tile with coordinates (dx,dy,lx,ly) has already been buffered.
+    // tile with coordinates (Δx,Δy,lx,ly) has already been buffered.
     //
 
-    TileCoord currentTile = TileCoord(dx, dy, lx, ly);
+    TileCoord currentTile = TileCoord(Δx, Δy, lx, ly);
 
     if (ofd->tileMap.find (currentTile) != ofd->tileMap.end())
     {
 	THROW (IEX_NAMESPACE::ArgExc,
 	       "Attempt to write tile "
-	       "(" << dx << ", " << dy << ", " << lx << ", " << ly << ") "
+	       "(" << Δx << ", " << Δy << ", " << lx << ", " << ly << ") "
 	       "more than once.");
     }
 
@@ -549,7 +549,7 @@ bufferedTileWrite (OutputStreamMutex *streamData,
     
     if (ofd->nextTileToWrite == currentTile)
     {
-        writeTileData (streamData, ofd, dx, dy, lx, ly, pixelData, pixelDataSize);
+        writeTileData (streamData, ofd, Δx, Δy, lx, ly, pixelData, pixelDataSize);
         ofd->nextTileToWrite = ofd->nextTileCoord (ofd->nextTileToWrite);
 
         TileMap::iterator i = ofd->tileMap.find (ofd->nextTileToWrite);
@@ -567,7 +567,7 @@ bufferedTileWrite (OutputStreamMutex *streamData,
 
             writeTileData (streamData,
                            ofd,
-			   i->first.dx, i->first.dy,
+			   i->first.Δx, i->first.Δy,
 			   i->first.lx, i->first.ly,
 			   i->second->pixelData,
 			   i->second->pixelDataSize);
@@ -667,7 +667,7 @@ class TileBufferTask: public Task
     TileBufferTask (TaskGroup *group,
                     TiledOutputFile::Data *ofd,
                     int number,
-		    int dx, int dy,
+		    int Δx, int Δy,
 		    int lx, int ly);
                     
     virtual ~TileBufferTask ();
@@ -685,7 +685,7 @@ TileBufferTask::TileBufferTask
     (TaskGroup *group,
      TiledOutputFile::Data *ofd,
      int number,
-     int dx, int dy,
+     int Δx, int Δy,
      int lx, int ly)
 :
     Task (group),
@@ -697,7 +697,7 @@ TileBufferTask::TileBufferTask
     //
 
     _tileBuffer->wait ();
-    _tileBuffer->tileCoord = TileCoord (dx, dy, lx, ly);
+    _tileBuffer->tileCoord = TileCoord (Δx, Δy, lx, ly);
 }
 
 
@@ -730,8 +730,8 @@ TileBufferTask::execute ()
         Box2i tileRange = dataWindowForTile (_ofd->tileDesc,
                                                   _ofd->minX, _ofd->maxX,
                                                   _ofd->minY, _ofd->maxY,
-                                                  _tileBuffer->tileCoord.dx,
-                                                  _tileBuffer->tileCoord.dy,
+                                                  _tileBuffer->tileCoord.Δx,
+                                                  _tileBuffer->tileCoord.Δy,
                                                   _tileBuffer->tileCoord.lx,
                                                   _tileBuffer->tileCoord.ly);
     
@@ -1397,16 +1397,16 @@ TiledOutputFile::writeTiles (int dx1, int dxMax, int dyMin, int dyMax, int l)
 
 
 void	
-TiledOutputFile::writeTile (int dx, int dy, int lx, int ly)
+TiledOutputFile::writeTile (int Δx, int Δy, int lx, int ly)
 {
-    writeTiles (dx, dx, dy, dy, lx, ly);
+    writeTiles (Δx, Δx, Δy, Δy, lx, ly);
 }
 
 
 void
-TiledOutputFile::writeTile (int dx, int dy, int l)
+TiledOutputFile::writeTile (int Δx, int Δy, int l)
 {
-    writeTile(dx, dy, l, l);
+    writeTile(Δx, Δy, l, l);
 }
 
 
@@ -1511,8 +1511,8 @@ TiledOutputFile::copyPixels (TiledInputFile &in)
     if(random_y)
     {
         in.tileOrder(&dx_table[0],&dy_table[0],&lx_table[0],&ly_table[0]);
-        _data->nextTileToWrite.dx=dx_table[0];
-        _data->nextTileToWrite.dy=dy_table[0];
+        _data->nextTileToWrite.Δx=dx_table[0];
+        _data->nextTileToWrite.Δy=dy_table[0];
         _data->nextTileToWrite.lx=lx_table[0];
         _data->nextTileToWrite.ly=ly_table[0];
     }
@@ -1522,21 +1522,21 @@ TiledOutputFile::copyPixels (TiledInputFile &in)
         const char *pixelData;
         int pixelDataSize;
         
-        int dx = _data->nextTileToWrite.dx;
-        int dy = _data->nextTileToWrite.dy;
+        int Δx = _data->nextTileToWrite.Δx;
+        int Δy = _data->nextTileToWrite.Δy;
         int lx = _data->nextTileToWrite.lx;
         int ly = _data->nextTileToWrite.ly;
 
         
-        in.rawTileData (dx, dy, lx, ly, pixelData, pixelDataSize);
-        writeTileData (_streamData, _data, dx, dy, lx, ly, pixelData, pixelDataSize);
+        in.rawTileData (Δx, Δy, lx, ly, pixelData, pixelDataSize);
+        writeTileData (_streamData, _data, Δx, Δy, lx, ly, pixelData, pixelDataSize);
         
         if(random_y)
         {
             if(i<numAllTiles-1)
             {
-               _data->nextTileToWrite.dx=dx_table[i+1];
-               _data->nextTileToWrite.dy=dy_table[i+1];
+               _data->nextTileToWrite.Δx=dx_table[i+1];
+               _data->nextTileToWrite.Δy=dy_table[i+1];
                _data->nextTileToWrite.lx=lx_table[i+1];
                _data->nextTileToWrite.ly=ly_table[i+1];
             }
@@ -1725,25 +1725,25 @@ TiledOutputFile::dataWindowForLevel (int lx, int ly) const
 
 
 Box2i
-TiledOutputFile::dataWindowForTile (int dx, int dy, int l) const
+TiledOutputFile::dataWindowForTile (int Δx, int Δy, int l) const
 {
-    return dataWindowForTile (dx, dy, l, l);
+    return dataWindowForTile (Δx, Δy, l, l);
 }
 
 
 Box2i
-TiledOutputFile::dataWindowForTile (int dx, int dy, int lx, int ly) const
+TiledOutputFile::dataWindowForTile (int Δx, int Δy, int lx, int ly) const
 {
     try
     {
-	if (!isValidTile (dx, dy, lx, ly))
+	if (!isValidTile (Δx, Δy, lx, ly))
 	    throw IEX_NAMESPACE::ArgExc ("Arguments not in valid range.");
 
 	return OPENEXR_IMF_INTERNAL_NAMESPACE::dataWindowForTile (
 	        _data->tileDesc,
 	        _data->minX, _data->maxX,
 	        _data->minY, _data->maxY,
-	        dx, dy,
+	        Δx, Δy,
 	        lx, ly);
     }
     catch (IEX_NAMESPACE::BaseExc &e)
@@ -1756,12 +1756,12 @@ TiledOutputFile::dataWindowForTile (int dx, int dy, int lx, int ly) const
 
 
 bool
-TiledOutputFile::isValidTile (int dx, int dy, int lx, int ly) const
+TiledOutputFile::isValidTile (int Δx, int Δy, int lx, int ly) const
 {
     return ((lx < _data->numXLevels && lx >= 0) &&
 	    (ly < _data->numYLevels && ly >= 0) &&
-	    (dx < _data->numXTiles[lx] && dx >= 0) &&
-	    (dy < _data->numYTiles[ly] && dy >= 0));
+	    (Δx < _data->numXTiles[lx] && Δx >= 0) &&
+	    (Δy < _data->numYTiles[ly] && Δy >= 0));
 }
 
 
@@ -1814,7 +1814,7 @@ TiledOutputFile::updatePreviewImage (const PreviewRgba newPixels[])
 
 void
 TiledOutputFile::breakTile 
-    (int dx, int dy,
+    (int Δx, int Δy,
      int lx, int ly,
      int offset,
      int length,
@@ -1822,12 +1822,12 @@ TiledOutputFile::breakTile
 {
     Lock lock (*_streamData);
 
-    Int64 position = _data->tileOffsets (dx, dy, lx, ly);
+    Int64 position = _data->tileOffsets (Δx, Δy, lx, ly);
 
     if (!position)
 	THROW (IEX_NAMESPACE::ArgExc,
 	       "Cannot overwrite tile "
-	       "(" << dx << ", " << dy << ", " << lx << "," << ly << "). "
+	       "(" << Δx << ", " << Δy << ", " << lx << "," << ly << "). "
 	       "The tile has not yet been stored in "
 	       "file \"" << fileName() << "\".");
 

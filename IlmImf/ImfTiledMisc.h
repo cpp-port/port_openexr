@@ -65,7 +65,7 @@ IMF_EXPORT
 IMATH_NAMESPACE::Box2i dataWindowForTile (const TileDescription &tileDesc,
 				int minX, int maxX,
 				int minY, int maxY,
-				int dx, int dy,
+				int Δx, int Δy,
 				int lx, int ly);
 
 IMF_EXPORT 

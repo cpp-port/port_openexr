@@ -405,7 +405,7 @@ int		ImfTiledOutputSetFrameBuffer (ImfTiledOutputFile *out,
 
 IMF_EXPORT 
 int		ImfTiledOutputWriteTile (ImfTiledOutputFile *out,
-					 int dx, int dy,
+					 int Δx, int Δy,
 					 int lx, int ly);
 
 IMF_EXPORT 
@@ -488,7 +488,7 @@ int		ImfTiledInputSetFrameBuffer (ImfTiledInputFile *in,
 
 IMF_EXPORT 
 int		ImfTiledInputReadTile (ImfTiledInputFile *in,
-				       int dx, int dy,
+				       int Δx, int Δy,
 				       int lx, int ly);
 
 IMF_EXPORT 

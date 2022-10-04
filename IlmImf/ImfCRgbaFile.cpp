@@ -1085,12 +1085,12 @@ ImfTiledOutputSetFrameBuffer (ImfTiledOutputFile *out,
 
 int		
 ImfTiledOutputWriteTile (ImfTiledOutputFile *out,
-			 int dx, int dy,
+			 int Δx, int Δy,
 			 int lx, int ly)
 {
     try
     {
-	outfile(out)->writeTile (dx, dy, lx, ly);
+	outfile(out)->writeTile (Δx, Δy, lx, ly);
 	return 1;
     }
     catch (const std::exception &e)
@@ -1301,12 +1301,12 @@ ImfTiledInputSetFrameBuffer (ImfTiledInputFile *in,
 
 int
 ImfTiledInputReadTile (ImfTiledInputFile *in,
-		       int dx, int dy,
+		       int Δx, int Δy,
 		       int lx, int ly)
 {
     try
     {
-	infile(in)->readTile (dx, dy, lx, ly);
+	infile(in)->readTile (Δx, Δy, lx, ly);
 	return 1;
     }
     catch (const std::exception &e)

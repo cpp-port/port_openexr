@@ -148,8 +148,8 @@ struct TileBuffer
     Int64                         uncompressedDataSize;
     Compressor *                compressor;
     Compressor::Format          format;
-    int                         dx;
-    int                         dy;
+    int                         Δx;
+    int                         Δy;
     int                         lx;
     int                         ly;
     bool                        hasException;
@@ -173,8 +173,8 @@ TileBuffer::TileBuffer ():
     dataSize (0),
     compressor (0),
     format (defaultFormat (compressor)),
-    dx (-1),
-    dy (-1),
+    Δx (-1),
+    Δy (-1),
     lx (-1),
     ly (-1),
     hasException (false),
@@ -333,7 +333,7 @@ namespace {
 void
 readTileData (InputStreamMutex *streamData,
               DeepTiledInputFile::Data *ifd,
-              int dx, int dy,
+              int Δx, int Δy,
               int lx, int ly,
               char *&buffer,
               Int64 &dataSize,
@@ -351,11 +351,11 @@ readTileData (InputStreamMutex *streamData,
     // seek to that position if necessary
     //
 
-    Int64 tileOffset = ifd->tileOffsets (dx, dy, lx, ly);
+    Int64 tileOffset = ifd->tileOffsets (Δx, Δy, lx, ly);
 
     if (tileOffset == 0)
     {
-        THROW (IEX_NAMESPACE::InputExc, "Tile (" << dx << ", " << dy << ", " <<
+        THROW (IEX_NAMESPACE::InputExc, "Tile (" << Δx << ", " << Δy << ", " <<
                               lx << ", " << ly << ") is missing.");
     }
 
@@ -418,10 +418,10 @@ readTileData (InputStreamMutex *streamData,
     Xdr::skip <StreamIO> (*streamData->is, tableSize);
 
 
-    if (tileXCoord != dx)
+    if (tileXCoord != Δx)
         throw IEX_NAMESPACE::InputExc ("Unexpected tile x coordinate.");
 
-    if (tileYCoord != dy)
+    if (tileYCoord != Δy)
         throw IEX_NAMESPACE::InputExc ("Unexpected tile y coordinate.");
 
     if (levelX != lx)
@@ -461,7 +461,7 @@ readTileData (InputStreamMutex *streamData,
 void
 readNextTileData (InputStreamMutex *streamData,
                   DeepTiledInputFile::Data *ifd,
-                  int &dx, int &dy,
+                  int &Δx, int &Δy,
                   int &lx, int &ly,
                   char * & buffer,
                   Int64 &dataSize,
@@ -475,8 +475,8 @@ readNextTileData (InputStreamMutex *streamData,
     // Read the first few bytes of the tile (the header).
     //
 
-    Xdr::read <StreamIO> (*streamData->is, dx);
-    Xdr::read <StreamIO> (*streamData->is, dy);
+    Xdr::read <StreamIO> (*streamData->is, Δx);
+    Xdr::read <StreamIO> (*streamData->is, Δy);
     Xdr::read <StreamIO> (*streamData->is, lx);
     Xdr::read <StreamIO> (*streamData->is, ly);
 
@@ -571,8 +571,8 @@ TileBufferTask::execute ()
                 _ifd->tileDesc,
                 _ifd->minX, _ifd->maxX,
                 _ifd->minY, _ifd->maxY,
-                _tileBuffer->dx,
-                _tileBuffer->dy,
+                _tileBuffer->Δx,
+                _tileBuffer->Δy,
                 _tileBuffer->lx,
                 _tileBuffer->ly);
 
@@ -742,7 +742,7 @@ newTileBufferTask
     (TaskGroup *group,
      DeepTiledInputFile::Data *ifd,
      int number,
-     int dx, int dy,
+     int Δx, int Δy,
      int lx, int ly)
 {
     //
@@ -759,14 +759,14 @@ newTileBufferTask
     {
         tileBuffer->wait();
 
-        tileBuffer->dx = dx;
-        tileBuffer->dy = dy;
+        tileBuffer->Δx = Δx;
+        tileBuffer->Δy = Δy;
         tileBuffer->lx = lx;
         tileBuffer->ly = ly;
 
         tileBuffer->uncompressedData = 0;
 
-        readTileData (ifd->_streamData, ifd, dx, dy, lx, ly,
+        readTileData (ifd->_streamData, ifd, Δx, Δy, lx, ly,
                       tileBuffer->buffer,
                       tileBuffer->dataSize,
                       tileBuffer->uncompressedDataSize);
@@ -1308,19 +1308,19 @@ DeepTiledInputFile::readTiles (int dx1, int dx2, int dy1, int dy2, int lx, int l
             TaskGroup taskGroup;
             int tileNumber = 0;
 
-            for (int dy = dyStart; dy != dyStop; dy += dY)
+            for (int Δy = dyStart; Δy != dyStop; Δy += dY)
             {
-                for (int dx = dx1; dx <= dx2; dx++)
+                for (int Δx = dx1; Δx <= dx2; Δx++)
                 {
-                    if (!isValidTile (dx, dy, lx, ly))
+                    if (!isValidTile (Δx, Δy, lx, ly))
                         THROW (IEX_NAMESPACE::ArgExc,
-                               "Tile (" << dx << ", " << dy << ", " <<
+                               "Tile (" << Δx << ", " << Δy << ", " <<
                                lx << "," << ly << ") is not a valid tile.");
 
                     ThreadPool::addGlobalTask (newTileBufferTask (&taskGroup,
                                                                   _data,
                                                                   tileNumber++,
-                                                                  dx, dy,
+                                                                  Δx, Δy,
                                                                   lx, ly));
                 }
             }
@@ -1377,34 +1377,34 @@ DeepTiledInputFile::readTiles (int dx1, int dx2, int dy1, int dy2, int l)
 
 
 void
-DeepTiledInputFile::readTile (int dx, int dy, int lx, int ly)
+DeepTiledInputFile::readTile (int Δx, int Δy, int lx, int ly)
 {
-    readTiles (dx, dx, dy, dy, lx, ly);
+    readTiles (Δx, Δx, Δy, Δy, lx, ly);
 }
 
 
 void
-DeepTiledInputFile::readTile (int dx, int dy, int l)
+DeepTiledInputFile::readTile (int Δx, int Δy, int l)
 {
-    readTile (dx, dy, l, l);
+    readTile (Δx, Δy, l, l);
 }
 
 
 void
-DeepTiledInputFile::rawTileData (int &dx, int &dy,
+DeepTiledInputFile::rawTileData (int &Δx, int &Δy,
                              int &lx, int &ly,
                              char * pixelData,
                              Int64 &pixelDataSize) const
 {
-     if (!isValidTile (dx, dy, lx, ly))
+     if (!isValidTile (Δx, Δy, lx, ly))
                throw IEX_NAMESPACE::ArgExc ("Tried to read a tile outside "
                                    "the image file's data window.");
     
-     Int64 tileOffset = _data->tileOffsets (dx, dy, lx, ly);
+     Int64 tileOffset = _data->tileOffsets (Δx, Δy, lx, ly);
                                    
      if(tileOffset == 0)
      {
-        THROW (IEX_NAMESPACE::InputExc, "Tile (" << dx << ", " << dy << ", " <<
+        THROW (IEX_NAMESPACE::InputExc, "Tile (" << Δx << ", " << Δy << ", " <<
         lx << ", " << ly << ") is missing.");
      }
      
@@ -1446,10 +1446,10 @@ DeepTiledInputFile::rawTileData (int &dx, int &dy,
      
           
      
-     if (tileXCoord != dx)
+     if (tileXCoord != Δx)
          throw IEX_NAMESPACE::InputExc ("Unexpected tile x coordinate.");
      
-     if (tileYCoord != dy)
+     if (tileYCoord != Δy)
          throw IEX_NAMESPACE::InputExc ("Unexpected tile y coordinate.");
      
      if (levelX != lx)
@@ -1481,8 +1481,8 @@ DeepTiledInputFile::rawTileData (int &dx, int &dy,
      }
      
      // copy the values we have read into the output block
-     *(int *) (pixelData+0) = dx;
-     *(int *) (pixelData+4) = dy;
+     *(int *) (pixelData+0) = Δx;
+     *(int *) (pixelData+4) = Δy;
      *(int *) (pixelData+8) = levelX;
      *(int *) (pixelData+12) = levelY;
      *(Int64 *) (pixelData+16) =sampleCountTableSize;
@@ -1668,25 +1668,25 @@ DeepTiledInputFile::dataWindowForLevel (int lx, int ly) const
 
 
 Box2i
-DeepTiledInputFile::dataWindowForTile (int dx, int dy, int l) const
+DeepTiledInputFile::dataWindowForTile (int Δx, int Δy, int l) const
 {
-    return dataWindowForTile (dx, dy, l, l);
+    return dataWindowForTile (Δx, Δy, l, l);
 }
 
 
 Box2i
-DeepTiledInputFile::dataWindowForTile (int dx, int dy, int lx, int ly) const
+DeepTiledInputFile::dataWindowForTile (int Δx, int Δy, int lx, int ly) const
 {
     try
     {
-        if (!isValidTile (dx, dy, lx, ly))
+        if (!isValidTile (Δx, Δy, lx, ly))
             throw IEX_NAMESPACE::ArgExc ("Arguments not in valid range.");
 
         return OPENEXR_IMF_INTERNAL_NAMESPACE::dataWindowForTile (
                 _data->tileDesc,
                 _data->minX, _data->maxX,
                 _data->minY, _data->maxY,
-                dx, dy, lx, ly);
+                Δx, Δy, lx, ly);
     }
     catch (IEX_NAMESPACE::BaseExc &e)
     {
@@ -1698,12 +1698,12 @@ DeepTiledInputFile::dataWindowForTile (int dx, int dy, int lx, int ly) const
 
 
 bool
-DeepTiledInputFile::isValidTile (int dx, int dy, int lx, int ly) const
+DeepTiledInputFile::isValidTile (int Δx, int Δy, int lx, int ly) const
 {
     return ((lx < _data->numXLevels && lx >= 0) &&
             (ly < _data->numYLevels && ly >= 0) &&
-            (dx < _data->numXTiles[lx] && dx >= 0) &&
-            (dy < _data->numYTiles[ly] && dy >= 0));
+            (Δx < _data->numXTiles[lx] && Δx >= 0) &&
+            (Δy < _data->numYTiles[ly] && Δy >= 0));
 }
 
 
@@ -1748,15 +1748,15 @@ DeepTiledInputFile::readPixelSampleCounts (int dx1, int dx2,
 
         // (TODO) Check if we have read the sample counts for those tiles,
         // if we have, no need to read again.
-        for (int dy = dyStart; dy != dyStop; dy += dY)
+        for (int Δy = dyStart; Δy != dyStop; Δy += dY)
         {
-            for (int dx = dx1; dx <= dx2; dx++)
+            for (int Δx = dx1; Δx <= dx2; Δx++)
             {
                 
-                if (!isValidTile (dx, dy, lx, ly))
+                if (!isValidTile (Δx, Δy, lx, ly))
                 {
                     THROW (IEX_NAMESPACE::ArgExc,
-                           "Tile (" << dx << ", " << dy << ", " <<
+                           "Tile (" << Δx << ", " << Δy << ", " <<
                            lx << "," << ly << ") is not a valid tile.");
                 }
                 
@@ -1764,7 +1764,7 @@ DeepTiledInputFile::readPixelSampleCounts (int dx1, int dx2,
                         _data->tileDesc,
                         _data->minX, _data->maxX,
                         _data->minY, _data->maxY,
-                        dx, dy, lx, ly);
+                        Δx, Δy, lx, ly);
 
                 int xOffset = _data->sampleCountXTileCoords * tileRange.min.x;
                 int yOffset = _data->sampleCountYTileCoords * tileRange.min.y;
@@ -1773,7 +1773,7 @@ DeepTiledInputFile::readPixelSampleCounts (int dx1, int dx2,
                 // Skip and check the tile coordinates.
                 //
 
-                _data->_streamData->is->seekg(_data->tileOffsets(dx, dy, lx, ly));
+                _data->_streamData->is->seekg(_data->tileOffsets(Δx, Δy, lx, ly));
 
                 if (isMultiPart(_data->version))
                 {
@@ -1790,10 +1790,10 @@ DeepTiledInputFile::readPixelSampleCounts (int dx1, int dx2,
                 Xdr::read <StreamIO> (*_data->_streamData->is, lxInFile);
                 Xdr::read <StreamIO> (*_data->_streamData->is, lyInFile);
 
-                if (xInFile != dx)
+                if (xInFile != Δx)
                     throw IEX_NAMESPACE::InputExc ("Unexpected tile x coordinate.");
 
-                if (yInFile != dy)
+                if (yInFile != Δy)
                     throw IEX_NAMESPACE::InputExc ("Unexpected tile y coordinate.");
 
                 if (lxInFile != lx)
@@ -1810,7 +1810,7 @@ DeepTiledInputFile::readPixelSampleCounts (int dx1, int dx2,
                 
                 if(tableSize>_data->maxSampleCountTableSize)
                 {
-                    THROW (IEX_NAMESPACE::ArgExc, "Bad sampleCountTableDataSize read from tile "<< dx << ',' << dy << ',' << lx << ',' << ly << ": expected " << _data->maxSampleCountTableSize << " or less, got "<< tableSize);
+                    THROW (IEX_NAMESPACE::ArgExc, "Bad sampleCountTableDataSize read from tile "<< Δx << ',' << Δy << ',' << lx << ',' << ly << ": expected " << _data->maxSampleCountTableSize << " or less, got "<< tableSize);
                 }
                     
                 
@@ -1849,7 +1849,7 @@ DeepTiledInputFile::readPixelSampleCounts (int dx1, int dx2,
                 {
                     if(!_data->sampleCountTableComp)
                     {
-                        THROW(IEX_NAMESPACE::ArgExc,"Deep scanline data corrupt at tile " << dx << ',' << dy << ',' << lx << ',' <<  ly << " (sampleCountTableDataSize error)");
+                        THROW(IEX_NAMESPACE::ArgExc,"Deep scanline data corrupt at tile " << Δx << ',' << Δy << ',' << lx << ',' <<  ly << " (sampleCountTableDataSize error)");
                     }
                     _data->sampleCountTableComp->uncompress(_data->sampleCountTableBuffer,
                                                             tableSize,
@@ -1872,7 +1872,7 @@ DeepTiledInputFile::readPixelSampleCounts (int dx1, int dx2,
                         if (accumulatedCount < lastAccumulatedCount)
                         {
                             THROW(IEX_NAMESPACE::ArgExc,"Deep tile sampleCount data corrupt at tile " 
-                                  << dx << ',' << dy << ',' << lx << ',' <<  ly << " (negative sample count detected)");
+                                  << Δx << ',' << Δy << ',' << lx << ',' <<  ly << " (negative sample count detected)");
                         }
 
                         int count = accumulatedCount - lastAccumulatedCount;
@@ -1886,7 +1886,7 @@ DeepTiledInputFile::readPixelSampleCounts (int dx1, int dx2,
                 if(cumulative_total_samples * _data->combinedSampleSize > unpackedDataSize)
                 {
                     THROW(IEX_NAMESPACE::ArgExc,"Deep scanline sampleCount data corrupt at tile " 
-                                                << dx << ',' << dy << ',' << lx << ',' <<  ly 
+                                                << Δx << ',' << Δy << ',' << lx << ',' <<  ly 
                                                 << ": pixel data only contains " << unpackedDataSize 
                                                 << " bytes of data but table references at least " 
                                                 << cumulative_total_samples*_data->combinedSampleSize << " bytes of sample data" );            
@@ -1910,16 +1910,16 @@ DeepTiledInputFile::readPixelSampleCounts (int dx1, int dx2,
 
 
 void
-DeepTiledInputFile::readPixelSampleCount (int dx, int dy, int l)
+DeepTiledInputFile::readPixelSampleCount (int Δx, int Δy, int l)
 {
-    readPixelSampleCount (dx, dy, l, l);
+    readPixelSampleCount (Δx, Δy, l, l);
 }
 
 
 void
-DeepTiledInputFile::readPixelSampleCount (int dx, int dy, int lx, int ly)
+DeepTiledInputFile::readPixelSampleCount (int Δx, int Δy, int lx, int ly)
 {
-    readPixelSampleCounts (dx, dx, dy, dy, lx, ly);
+    readPixelSampleCounts (Δx, Δx, Δy, Δy, lx, ly);
 }
 
 
@@ -1970,9 +1970,9 @@ DeepTiledInputFile::totalTiles() const
 
 
 void 
-DeepTiledInputFile::getTileOrder(int dx[],int dy[],int lx[],int ly[]) const
+DeepTiledInputFile::getTileOrder(int Δx[],int Δy[],int lx[],int ly[]) const
 {
-  return _data->tileOffsets.getTileOrder(dx,dy,lx,ly);
+  return _data->tileOffsets.getTileOrder(Δx,Δy,lx,ly);
   
 }
 
