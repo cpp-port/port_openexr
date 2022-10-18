@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2004, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -43,18 +43,18 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfLineOrder.h"
-#include "ImfCompression.h"
-#include "ImfName.h"
-#include "ImfTileDescription.h"
-#include "ImfInt64.h"
-#include "ImathVec.h"
-#include "ImathBox.h"
-#include "IexBaseExc.h"
+#include "IlmImf/ImfLineOrder.h"
+#include "IlmImf/ImfCompression.h"
+#include "IlmImf/ImfName.h"
+#include "IlmImf/ImfTileDescription.h"
+#include "IlmImf/ImfInt64.h"
+#include "Imath/ImathVec.h"
+#include "Imath/ImathBox.h"
+#include "Iex/IexBaseExc.h"
 
-#include "ImfForward.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "IlmImf/ImfForward.h"
+#include "IlmImf/ImfNamespace.h"
+#include "IlmImf/ImfExport.h"
 
 #include <map>
 #include <iosfwd>

@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2002, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -103,12 +103,12 @@
 //
 //----------------------------------------------------------------------------
 
-#include "ImfInt64.h"
-#include "IexMathExc.h"
-#include "half.h"
+#include "IlmImf/ImfInt64.h"
+#include "Iex/IexMathExc.h"
+#include "Half/half.h"
 #include <limits.h>
 
-#include "ImfNamespace.h"
+#include "IlmImf/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

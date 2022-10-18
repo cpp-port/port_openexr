@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2002-2012, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -44,7 +44,7 @@
 //-----------------------------------------------
 
 #include "ImathNamespace.h"
-#include "IexBaseExc.h"
+#include "Iex/IexBaseExc.h"
 #include "ImathExport.h"
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER

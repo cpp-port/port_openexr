@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2004, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -42,15 +42,15 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfHeader.h"
-#include "ImfFrameBuffer.h"
-#include "ImathBox.h"
-#include "ImfTileDescription.h"
-#include "ImfThreading.h"
-#include "ImfGenericOutputFile.h"
-#include "ImfForward.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "IlmImf/ImfHeader.h"
+#include "IlmImf/ImfFrameBuffer.h"
+#include "Imath/ImathBox.h"
+#include "IlmImf/ImfTileDescription.h"
+#include "IlmImf/ImfThreading.h"
+#include "IlmImf/ImfGenericOutputFile.h"
+#include "IlmImf/ImfForward.h"
+#include "IlmImf/ImfNamespace.h"
+#include "IlmImf/ImfExport.h"
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
