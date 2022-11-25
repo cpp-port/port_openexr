@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2011, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -64,7 +64,7 @@ class IMF_EXPORT OutputPart
         void                copyPixels (InputFile &in);
         void                copyPixels (InputPart &in);
         
-        void                updatePreviewImage (const PreviewRgba newPixels[]);
+        void                updateThumbnailImage (const ThumbnailRgba newPixels[]);
         void                breakScanLine  (int y, int offset, int length, char c);
 
     private:

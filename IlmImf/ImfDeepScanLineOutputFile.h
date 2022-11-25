@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2011, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -54,7 +54,7 @@
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 
 
-struct PreviewRgba;
+struct ThumbnailRgba;
 
 class IMF_EXPORT DeepScanLineOutputFile : public GenericOutputFile
 {
@@ -196,12 +196,12 @@ class IMF_EXPORT DeepScanLineOutputFile : public GenericOutputFile
     //--------------------------------------------------------------
     // Updating the preview image:
     //
-    // updatePreviewImage() supplies a new set of pixels for the
+    // updateThumbnailImage() supplies a new set of pixels for the
     // preview image attribute in the file's header.  If the header
-    // does not contain a preview image, updatePreviewImage() throws
+    // does not contain a preview image, updateThumbnailImage() throws
     // an IEX_NAMESPACE::LogicExc.
     //
-    // Note: updatePreviewImage() is necessary because images are
+    // Note: updateThumbnailImage() is necessary because images are
     // often stored in a file incrementally, a few scan lines at a
     // time, while the image is being generated.  Since the preview
     // image is an attribute in the file's header, it gets stored in
@@ -211,7 +211,7 @@ class IMF_EXPORT DeepScanLineOutputFile : public GenericOutputFile
     //
     //--------------------------------------------------------------
 
-    void                updatePreviewImage (const PreviewRgba newPixels[]);
+    void                updateThumbnailImage (const ThumbnailRgba newPixels[]);
 
 
     struct Data;

@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2004, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -50,9 +50,9 @@
 #include "ImfHeader.h"
 #include "ImfFrameBuffer.h"
 #include "ImfRgba.h"
-#include "ImathVec.h"
-#include "ImathBox.h"
-#include "half.h"
+#include "openexr/Imath/ImathVec.h"
+#include "openexr/Imath/ImathBox.h"
+#include "openexr/Half/half.h"
 #include "ImfThreading.h"
 #include <string>
 #include "ImfNamespace.h"
@@ -171,10 +171,10 @@ class IMF_EXPORT RgbaOutputFile
 
 
     // --------------------------------------------------------------------
-    // Update the preview image (see Imf::OutputFile::updatePreviewImage())
+    // Update the preview image (see Imf::OutputFile::updateThumbnailImage())
     // --------------------------------------------------------------------
 
-    void			updatePreviewImage (const PreviewRgba[]);
+    void			updateThumbnailImage (const ThumbnailRgba[]);
 
 
     //-----------------------------------------------------------------------
@@ -197,7 +197,7 @@ class IMF_EXPORT RgbaOutputFile
 
     //----------------------------------------------------
     // Break a scan line -- for testing and debugging only
-    // (see Imf::OutputFile::updatePreviewImage()
+    // (see Imf::OutputFile::updateThumbnailImage()
     //
     // Warning: Calling this function usually results in a
     // broken image file.  The file or parts of it may not

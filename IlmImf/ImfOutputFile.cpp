@@ -1,4 +1,4 @@
-//
+﻿//
 ///\todo: version needs fixing!
 //
 
@@ -53,7 +53,7 @@
 #include "ImathFun.h"
 #include <ImfArray.h>
 #include "ImfXdr.h"
-#include <ImfPreviewImageAttribute.h>
+#include <ImfThumbnailImageAttribute.h>
 #include <ImfPartType.h>
 #include "IlmThreadPool.h"
 #include "ImfOutputStreamMutex.h"
@@ -1308,7 +1308,7 @@ OutputFile::copyPixels( InputPart & in)
 
 
 void
-OutputFile::updatePreviewImage (const PreviewRgba newPixels[])
+OutputFile::updateThumbnailImage (const ThumbnailRgba newPixels[])
 {
     Lock lock (*_data->_streamData);
 
@@ -1321,11 +1321,11 @@ OutputFile::updatePreviewImage (const PreviewRgba newPixels[])
     // Store the new pixels in the header's preview image attribute.
     //
 
-    PreviewImageAttribute &pia =
-	_data->header.typedAttribute <PreviewImageAttribute> ("preview");
+    ThumbnailImageAttribute &pia =
+	_data->header.typedAttribute <ThumbnailImageAttribute> ("preview");
 
-    PreviewImage &pi = pia.value();
-    PreviewRgba *pixels = pi.pixels();
+    ThumbnailImage &pi = pia.value();
+    ThumbnailRgba *pixels = pi.pixels();
     int numPixels = pi.width() * pi.height();
 
     for (int i = 0; i < numPixels; ++i)

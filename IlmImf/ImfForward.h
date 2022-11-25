@@ -1,4 +1,4 @@
-
+﻿
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -113,8 +113,8 @@ class DeepCompositing;
 class CompositeDeepScanLine;
 
 // preview image
-class PreviewImage;
-struct PreviewRgba;
+class ThumbnailImage;
+struct ThumbnailRgba;
 
 // streams
 class OStream;

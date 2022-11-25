@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2004, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -33,71 +33,38 @@
 ///////////////////////////////////////////////////////////////////////////
 
 
+#ifndef INCLUDED_IMF_PREVIEW_IMAGE_ATTRIBUTE_H
+#define INCLUDED_IMF_PREVIEW_IMAGE_ATTRIBUTE_H
+
 //-----------------------------------------------------------------------------
 //
-//	class PreviewImageAttribute
+//	class ThumbnailImageAttribute
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfPreviewImageAttribute.h>
+#include "ImfAttribute.h"
+#include "ImfThumbnailImage.h"
+
+OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 
 
-OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
-
-using namespace OPENEXR_IMF_INTERNAL_NAMESPACE;
-
-template <>
-const char *
-PreviewImageAttribute::staticTypeName ()
-{
-    return "preview";
-}
-
+typedef TypedAttribute<OPENEXR_IMF_INTERNAL_NAMESPACE::ThumbnailImage> ThumbnailImageAttribute;
 
 template <>
-void
-PreviewImageAttribute::writeValueTo (OPENEXR_IMF_INTERNAL_NAMESPACE::OStream &os, int version) const
-{
-    Xdr::write <StreamIO> (os, _value.width());
-    Xdr::write <StreamIO> (os, _value.height());
-
-    int numPixels = _value.width() * _value.height();
-    const PreviewRgba *pixels = _value.pixels();
-
-    for (int i = 0; i < numPixels; ++i)
-    {
-	Xdr::write <StreamIO> (os, pixels[i].r);
-	Xdr::write <StreamIO> (os, pixels[i].g);
-	Xdr::write <StreamIO> (os, pixels[i].b);
-	Xdr::write <StreamIO> (os, pixels[i].a);
-    }
-}
-
+IMF_EXPORT
+const char *ThumbnailImageAttribute::staticTypeName ();
 
 template <>
-void
-PreviewImageAttribute::readValueFrom (OPENEXR_IMF_INTERNAL_NAMESPACE::IStream &is, int size, int version)
-{
-    int width, height;
+IMF_EXPORT
+void ThumbnailImageAttribute::writeValueTo (OPENEXR_IMF_INTERNAL_NAMESPACE::OStream &,
+                                          int) const;
 
-    Xdr::read <StreamIO> (is, width);
-    Xdr::read <StreamIO> (is, height);
-
-    PreviewImage p (width, height);
-
-    int numPixels = p.width() * p.height();
-    PreviewRgba *pixels = p.pixels();
-
-    for (int i = 0; i < numPixels; ++i)
-    {
-	Xdr::read <StreamIO> (is, pixels[i].r);
-	Xdr::read <StreamIO> (is, pixels[i].g);
-	Xdr::read <StreamIO> (is, pixels[i].b);
-	Xdr::read <StreamIO> (is, pixels[i].a);
-    }
-
-    _value = p;
-}
+template <>
+IMF_EXPORT
+void ThumbnailImageAttribute::readValueFrom (OPENEXR_IMF_INTERNAL_NAMESPACE::IStream &,
+                                           int, int);
 
 
-OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_EXIT 
+OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_EXIT
+
+#endif

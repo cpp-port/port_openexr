@@ -1,6 +1,6 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
-// Copyright (c) 2003, Industrial Light & Magic, a division of Lucas
+// Copyright (c) 2004, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
 // 
 // All rights reserved.
@@ -35,70 +35,69 @@
 
 //-----------------------------------------------------------------------------
 //
-//	class PreviewImage
+//	class ThumbnailImageAttribute
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfPreviewImage.h"
-#include "ImfCheckedArithmetic.h"
-#include "Iex.h"
-#include "ImfNamespace.h"
+#include <ImfThumbnailImageAttribute.h>
+
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 
+using namespace OPENEXR_IMF_INTERNAL_NAMESPACE;
 
-PreviewImage::PreviewImage (unsigned int width,
-			    unsigned int height,
-			    const PreviewRgba pixels[])
+template <>
+const char *
+ThumbnailImageAttribute::staticTypeName ()
 {
-    _width = width;
-    _height = height;
-    _pixels = new PreviewRgba
-        [checkArraySize (uiMult (_width, _height), sizeof (PreviewRgba))];
+    return "preview";
+}
 
-    if (pixels)
+
+template <>
+void
+ThumbnailImageAttribute::writeValueTo (OPENEXR_IMF_INTERNAL_NAMESPACE::OStream &os, int version) const
+{
+    Xdr::write <StreamIO> (os, _value.width());
+    Xdr::write <StreamIO> (os, _value.height());
+
+    int numPixels = _value.width() * _value.height();
+    const ThumbnailRgba *pixels = _value.pixels();
+
+    for (int i = 0; i < numPixels; ++i)
     {
-	for (unsigned int i = 0; i < _width * _height; ++i)
-	    _pixels[i] = pixels[i];
+	Xdr::write <StreamIO> (os, pixels[i].r);
+	Xdr::write <StreamIO> (os, pixels[i].g);
+	Xdr::write <StreamIO> (os, pixels[i].b);
+	Xdr::write <StreamIO> (os, pixels[i].a);
     }
-    else
+}
+
+
+template <>
+void
+ThumbnailImageAttribute::readValueFrom (OPENEXR_IMF_INTERNAL_NAMESPACE::IStream &is, int size, int version)
+{
+    int width, height;
+
+    Xdr::read <StreamIO> (is, width);
+    Xdr::read <StreamIO> (is, height);
+
+    ThumbnailImage p (width, height);
+
+    int numPixels = p.width() * p.height();
+    ThumbnailRgba *pixels = p.pixels();
+
+    for (int i = 0; i < numPixels; ++i)
     {
-	for (unsigned int i = 0; i < _width * _height; ++i)
-	    _pixels[i] = PreviewRgba();
+	Xdr::read <StreamIO> (is, pixels[i].r);
+	Xdr::read <StreamIO> (is, pixels[i].g);
+	Xdr::read <StreamIO> (is, pixels[i].b);
+	Xdr::read <StreamIO> (is, pixels[i].a);
     }
+
+    _value = p;
 }
 
 
-PreviewImage::PreviewImage (const PreviewImage &other):
-    _width (other._width),
-    _height (other._height),
-    _pixels (new PreviewRgba [other._width * other._height])
-{
-    for (unsigned int i = 0; i < _width * _height; ++i)
-	_pixels[i] = other._pixels[i];
-}
-
-
-PreviewImage::~PreviewImage ()
-{
-    delete [] _pixels;
-}
-
-
-PreviewImage &
-PreviewImage::operator = (const PreviewImage &other)
-{
-    delete [] _pixels;
-
-    _width = other._width;
-    _height = other._height;
-    _pixels = new PreviewRgba [other._width * other._height];
-
-    for (unsigned int i = 0; i < _width * _height; ++i)
-	_pixels[i] = other._pixels[i];
-
-    return *this;
-}
-
-
-OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_EXIT
+OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_EXIT 

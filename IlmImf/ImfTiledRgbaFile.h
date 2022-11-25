@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2004, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -251,10 +251,10 @@ class IMF_EXPORT TiledRgbaOutputFile
 
 
     // -------------------------------------------------------------------------
-    // Update the preview image (see Imf::TiledOutputFile::updatePreviewImage())
+    // Update the preview image (see Imf::TiledOutputFile::updateThumbnailImage())
     // -------------------------------------------------------------------------
 
-    void		updatePreviewImage (const PreviewRgba[]);
+    void		updateThumbnailImage (const ThumbnailRgba[]);
 
 
     //------------------------------------------------

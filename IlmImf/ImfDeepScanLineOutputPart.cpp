@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2011, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -98,9 +98,9 @@ DeepScanLineOutputPart::copyPixels (DeepScanLineInputPart &in)
 }
 
 void
-DeepScanLineOutputPart::updatePreviewImage (const PreviewRgba newPixels[])
+DeepScanLineOutputPart::updateThumbnailImage (const ThumbnailRgba newPixels[])
 {
-    file->updatePreviewImage(newPixels);
+    file->updateThumbnailImage(newPixels);
 }
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_EXIT

@@ -341,30 +341,30 @@ public:
    //----------------------------------------------------------------------
    // Preview image:
    //
-   // The preview image is a PreviewImageAttribute whose name is "preview".
+   // The preview image is a ThumbnailImageAttribute whose name is "preview".
    // This attribute is special -- while an image file is being written,
    // the pixels of the preview image can be changed repeatedly by calling
-   // OutputFile::updatePreviewImage().
+   // OutputFile::updateThumbnailImage().
    //
    // Convenience functions:
    //
-   // setPreviewImage(p)
-   //     calls insert ("preview", PreviewImageAttribute (p))
+   // setThumbnailImage(p)
+   //     calls insert ("preview", ThumbnailImageAttribute (p))
    //
-   // previewImage()
-   //     returns typedAttribute<PreviewImageAttribute>("preview").value()
+   // thumbnailImage()
+   //     returns typedAttribute<ThumbnailImageAttribute>("preview").value()
    //
-   // hasPreviewImage()
-   //     return findTypedAttribute<PreviewImageAttribute>("preview") != 0
+   // hasThumbnailImage()
+   //     return findTypedAttribute<ThumbnailImageAttribute>("preview") != 0
    //
    //----------------------------------------------------------------------
 
-   void			setPreviewImage (const PreviewImage &p);
+   void			setThumbnailImage (const ThumbnailImage &p);
 
-   PreviewImage &		previewImage ();
-   const PreviewImage &	previewImage () const;
+   ThumbnailImage &		thumbnailImage ();
+   const ThumbnailImage &	thumbnailImage () const;
 
-   bool			hasPreviewImage () const;
+   bool			hasThumbnailImage () const;
 
 
    //-------------------------------------------------------------
@@ -410,7 +410,7 @@ public:
    //
    // If the header contains a preview image attribute, then writeTo()
    // returns the position of that attribute in the output stream; this
-   // information is used by OutputFile::updatePreviewImage().
+   // information is used by OutputFile::updateThumbnailImage().
    // If the header contains no preview image attribute, then writeTo()
    // returns 0.
    //------------------------------------------------------------------

@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2004, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -44,7 +44,7 @@
 #include <ImfInputFile.h>
 #include <ImfInputPart.h>
 #include <ImfTileDescriptionAttribute.h>
-#include <ImfPreviewImageAttribute.h>
+#include <ImfThumbnailImageAttribute.h>
 #include <ImfChannelList.h>
 #include <ImfMisc.h>
 #include <ImfTiledMisc.h>
@@ -1766,7 +1766,7 @@ TiledOutputFile::isValidTile (int Δx, int Δy, int lx, int ly) const
 
 
 void
-TiledOutputFile::updatePreviewImage (const PreviewRgba newPixels[])
+TiledOutputFile::updateThumbnailImage (const ThumbnailRgba newPixels[])
 {
     Lock lock (*_streamData);
 
@@ -1779,11 +1779,11 @@ TiledOutputFile::updatePreviewImage (const PreviewRgba newPixels[])
     // Store the new pixels in the header's preview image attribute.
     //
 
-    PreviewImageAttribute &pia =
-	_data->header.typedAttribute <PreviewImageAttribute> ("preview");
+    ThumbnailImageAttribute &pia =
+	_data->header.typedAttribute <ThumbnailImageAttribute> ("preview");
 
-    PreviewImage &pi = pia.value();
-    PreviewRgba *pixels = pi.pixels();
+    ThumbnailImage &pi = pia.value();
+    ThumbnailRgba *pixels = pi.pixels();
     int numPixels = pi.width() * pi.height();
 
     for (int i = 0; i < numPixels; ++i)

@@ -279,10 +279,10 @@
     <ClInclude Include="IlmImf\ImfPizCompressor.h">
       <Filter>Header Files\IlmImf Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IlmImf\ImfPreviewImage.h">
+    <ClInclude Include="IlmImf\ImfThumbnailImage.h">
       <Filter>Header Files\IlmImf Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IlmImf\ImfPreviewImageAttribute.h">
+    <ClInclude Include="IlmImf\ImfThumbnailImageAttribute.h">
       <Filter>Header Files\IlmImf Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IlmImf\ImfPxr24Compressor.h">
@@ -736,10 +736,10 @@
     <ClCompile Include="IlmImf\ImfPizCompressor.cpp">
       <Filter>Source Files\IlmImf Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IlmImf\ImfPreviewImage.cpp">
+    <ClCompile Include="IlmImf\ImfThumbnailImage.cpp">
       <Filter>Source Files\IlmImf Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IlmImf\ImfPreviewImageAttribute.cpp">
+    <ClCompile Include="IlmImf\ImfThumbnailImageAttribute.cpp">
       <Filter>Source Files\IlmImf Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IlmImf\ImfPxr24Compressor.cpp">

@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2011, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -43,7 +43,7 @@
 #include "ImfDeepTiledInputPart.h"
 #include "ImfInputFile.h"
 #include "ImfTileDescriptionAttribute.h"
-#include "ImfPreviewImageAttribute.h"
+#include "ImfThumbnailImageAttribute.h"
 #include "ImfChannelList.h"
 #include "ImfMisc.h"
 #include "ImfTiledMisc.h"
@@ -1980,7 +1980,7 @@ DeepTiledOutputFile::isValidTile (int Δx, int Δy, int lx, int ly) const
 
 
 void
-DeepTiledOutputFile::updatePreviewImage (const PreviewRgba newPixels[])
+DeepTiledOutputFile::updateThumbnailImage (const ThumbnailRgba newPixels[])
 {
     Lock lock (*_data->_streamData);
 
@@ -1993,11 +1993,11 @@ DeepTiledOutputFile::updatePreviewImage (const PreviewRgba newPixels[])
     // Store the new pixels in the header's preview image attribute.
     //
 
-    PreviewImageAttribute &pia =
-        _data->header.typedAttribute <PreviewImageAttribute> ("preview");
+    ThumbnailImageAttribute &pia =
+        _data->header.typedAttribute <ThumbnailImageAttribute> ("preview");
 
-    PreviewImage &pi = pia.value();
-    PreviewRgba *pixels = pi.pixels();
+    ThumbnailImage &pi = pia.value();
+    ThumbnailRgba *pixels = pi.pixels();
     int numPixels = pi.width() * pi.height();
 
     for (int i = 0; i < numPixels; ++i)

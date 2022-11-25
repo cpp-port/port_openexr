@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2011, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -89,7 +89,7 @@ class IMF_EXPORT TiledOutputPart
         void                copyPixels (InputPart &in);
         
         
-        void                updatePreviewImage (const PreviewRgba newPixels[]);
+        void                updateThumbnailImage (const ThumbnailRgba newPixels[]);
         void                breakTile  (int Δx, int Δy,
                                         int lx, int ly,
                                         int offset,

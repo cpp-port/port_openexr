@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2011, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -91,9 +91,9 @@ OutputPart::copyPixels (InputPart &in)
 }
 
 void
-OutputPart::updatePreviewImage (const PreviewRgba newPixels[])
+OutputPart::updateThumbnailImage (const ThumbnailRgba newPixels[])
 {
-    file->updatePreviewImage(newPixels);
+    file->updateThumbnailImage(newPixels);
 }
 
 void

@@ -1,6 +1,6 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
-// Copyright (c) 2004, Industrial Light & Magic, a division of Lucas
+// Copyright (c) 2003, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
 // 
 // All rights reserved.
@@ -33,38 +33,72 @@
 ///////////////////////////////////////////////////////////////////////////
 
 
-#ifndef INCLUDED_IMF_PREVIEW_IMAGE_ATTRIBUTE_H
-#define INCLUDED_IMF_PREVIEW_IMAGE_ATTRIBUTE_H
-
 //-----------------------------------------------------------------------------
 //
-//	class PreviewImageAttribute
+//	class ThumbnailImage
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
-#include "ImfPreviewImage.h"
+#include "ImfThumbnailImage.h"
+#include "ImfCheckedArithmetic.h"
+#include "Iex.h"
+#include "ImfNamespace.h"
 
-OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
-
-
-typedef TypedAttribute<OPENEXR_IMF_INTERNAL_NAMESPACE::PreviewImage> PreviewImageAttribute;
-
-template <>
-IMF_EXPORT
-const char *PreviewImageAttribute::staticTypeName ();
-
-template <>
-IMF_EXPORT
-void PreviewImageAttribute::writeValueTo (OPENEXR_IMF_INTERNAL_NAMESPACE::OStream &,
-                                          int) const;
-
-template <>
-IMF_EXPORT
-void PreviewImageAttribute::readValueFrom (OPENEXR_IMF_INTERNAL_NAMESPACE::IStream &,
-                                           int, int);
+OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 
 
-OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_EXIT
+ThumbnailImage::ThumbnailImage (unsigned int width,
+			    unsigned int height,
+			    const ThumbnailRgba pixels[])
+{
+    _width = width;
+    _height = height;
+    _pixels = new ThumbnailRgba
+        [checkArraySize (uiMult (_width, _height), sizeof (ThumbnailRgba))];
 
-#endif
+    if (pixels)
+    {
+	for (unsigned int i = 0; i < _width * _height; ++i)
+	    _pixels[i] = pixels[i];
+    }
+    else
+    {
+	for (unsigned int i = 0; i < _width * _height; ++i)
+	    _pixels[i] = ThumbnailRgba();
+    }
+}
+
+
+ThumbnailImage::ThumbnailImage (const ThumbnailImage &other):
+    _width (other._width),
+    _height (other._height),
+    _pixels (new ThumbnailRgba [other._width * other._height])
+{
+    for (unsigned int i = 0; i < _width * _height; ++i)
+	_pixels[i] = other._pixels[i];
+}
+
+
+ThumbnailImage::~ThumbnailImage ()
+{
+    delete [] _pixels;
+}
+
+
+ThumbnailImage &
+ThumbnailImage::operator = (const ThumbnailImage &other)
+{
+    delete [] _pixels;
+
+    _width = other._width;
+    _height = other._height;
+    _pixels = new ThumbnailRgba [other._width * other._height];
+
+    for (unsigned int i = 0; i < _width * _height; ++i)
+	_pixels[i] = other._pixels[i];
+
+    return *this;
+}
+
+
+OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_EXIT

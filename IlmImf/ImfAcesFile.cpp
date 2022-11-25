@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2007, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -325,9 +325,9 @@ AcesOutputFile::channels () const
 
 
 void		
-AcesOutputFile::updatePreviewImage (const PreviewRgba pixels[])
+AcesOutputFile::updateThumbnailImage (const ThumbnailRgba pixels[])
 {
-    _data->rgbaFile->updatePreviewImage (pixels);
+    _data->rgbaFile->updateThumbnailImage (pixels);
 }
 
 

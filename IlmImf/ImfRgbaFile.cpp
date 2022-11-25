@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2004, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -780,9 +780,9 @@ RgbaOutputFile::channels () const
 
 
 void		
-RgbaOutputFile::updatePreviewImage (const PreviewRgba newPixels[])
+RgbaOutputFile::updateThumbnailImage (const ThumbnailRgba newPixels[])
 {
-    _outputFile->updatePreviewImage (newPixels);
+    _outputFile->updateThumbnailImage (newPixels);
 }
 
 

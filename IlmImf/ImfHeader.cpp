@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2004, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -60,7 +60,7 @@
 #include <ImfLineOrderAttribute.h>
 #include <ImfMatrixAttribute.h>
 #include <ImfOpaqueAttribute.h>
-#include <ImfPreviewImageAttribute.h>
+#include <ImfThumbnailImageAttribute.h>
 #include <ImfRationalAttribute.h>
 #include <ImfStringAttribute.h>
 #include <ImfStringVectorAttribute.h>
@@ -723,30 +723,30 @@ Header::tileDescription () const
 }
 
 void		
-Header::setPreviewImage (const PreviewImage &pi)
+Header::setThumbnailImage (const ThumbnailImage &pi)
 {
-    insert ("preview", PreviewImageAttribute (pi));
+    insert ("preview", ThumbnailImageAttribute (pi));
 }
 
 
-PreviewImage &
-Header::previewImage ()
+ThumbnailImage &
+Header::thumbnailImage ()
 {
-    return typedAttribute <PreviewImageAttribute> ("preview").value();
+    return typedAttribute <ThumbnailImageAttribute> ("preview").value();
 }
 
 
-const PreviewImage &
-Header::previewImage () const
+const ThumbnailImage &
+Header::thumbnailImage () const
 {
-    return typedAttribute <PreviewImageAttribute> ("preview").value();
+    return typedAttribute <ThumbnailImageAttribute> ("preview").value();
 }
 
 
 bool		
-Header::hasPreviewImage () const
+Header::hasThumbnailImage () const
 {
-    return findTypedAttribute <PreviewImageAttribute> ("preview") != 0;
+    return findTypedAttribute <ThumbnailImageAttribute> ("preview") != 0;
 }
 
 
@@ -1102,7 +1102,7 @@ Header::writeTo (OPENEXR_IMF_INTERNAL_NAMESPACE::OStream &os, bool isTiled) cons
     Int64 previewPosition = 0;
 
     const Attribute *preview =
-	    findTypedAttribute <PreviewImageAttribute> ("preview");
+	    findTypedAttribute <ThumbnailImageAttribute> ("preview");
 
     for (ConstIterator i = begin(); i != end(); ++i)
     {
@@ -1261,7 +1261,7 @@ staticInitialize ()
 	M33fAttribute::registerAttributeType();
 	M44dAttribute::registerAttributeType();
 	M44fAttribute::registerAttributeType();
-	PreviewImageAttribute::registerAttributeType();
+	ThumbnailImageAttribute::registerAttributeType();
 	RationalAttribute::registerAttributeType();
 	StringAttribute::registerAttributeType();
         StringVectorAttribute::registerAttributeType();

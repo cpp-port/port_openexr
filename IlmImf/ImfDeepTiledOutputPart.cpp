@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2011, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -231,9 +231,9 @@ DeepTiledOutputPart::copyPixels (DeepTiledInputPart &in)
 
 
 void
-DeepTiledOutputPart::updatePreviewImage (const PreviewRgba newPixels[])
+DeepTiledOutputPart::updateThumbnailImage (const ThumbnailRgba newPixels[])
 {
-    file->updatePreviewImage(newPixels);
+    file->updateThumbnailImage(newPixels);
 }
 
 

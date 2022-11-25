@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2007, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -208,10 +208,10 @@ class IMF_EXPORT AcesOutputFile
 
 
     // --------------------------------------------------------------------
-    // Update the preview image (see Imf::OutputFile::updatePreviewImage())
+    // Update the preview image (see Imf::OutputFile::updateThumbnailImage())
     // --------------------------------------------------------------------
 
-    void			updatePreviewImage (const PreviewRgba[]);
+    void			updateThumbnailImage (const ThumbnailRgba[]);
 
 
   private:
