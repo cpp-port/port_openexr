@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2012, Autodesk, Inc.
 // 
@@ -37,7 +37,8 @@
 #ifndef INCLUDED_IMF_SIMD_H
 #define INCLUDED_IMF_SIMD_H
 
-#include "operating_system/third_private_config.h"
+#include "config.h"
+//#include "operating_system/third_private_config.h"
 
 //
 // Compile time SSE detection:

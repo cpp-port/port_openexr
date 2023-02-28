@@ -42,7 +42,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/Half/half.h"
+#include "Half/half.h"
 #include "ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER

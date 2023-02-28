@@ -229,12 +229,6 @@
     <ClCompile Include="IlmImf\ImfPizCompressor.cpp">
       <Filter>Source Files\IlmImf Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IlmImf\ImfPreviewImage.cpp">
-      <Filter>Source Files\IlmImf Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="IlmImf\ImfPreviewImageAttribute.cpp">
-      <Filter>Source Files\IlmImf Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="IlmImf\ImfPxr24Compressor.cpp">
       <Filter>Source Files\IlmImf Source Files</Filter>
     </ClCompile>
@@ -372,6 +366,12 @@
     </ClCompile>
     <ClCompile Include="IexMath\IexMathFpu.cpp">
       <Filter>Source Files\IexMath Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IlmImf\ImfThumbnailImage.cpp">
+      <Filter>Source Files\IlmImf Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IlmImf\ImfThumbnailImageAttribute.cpp">
+      <Filter>Source Files\IlmImf Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -607,12 +607,6 @@
       <Filter>Header Files\IlmImf Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IlmImf\ImfPizCompressor.h">
-      <Filter>Header Files\IlmImf Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IlmImf\ImfPreviewImage.h">
-      <Filter>Header Files\IlmImf Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IlmImf\ImfPreviewImageAttribute.h">
       <Filter>Header Files\IlmImf Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IlmImf\ImfPxr24Compressor.h">
@@ -884,6 +878,12 @@
     </ClInclude>
     <ClInclude Include="IexMath\IexMathIeeeExc.h">
       <Filter>Header Files\IexMath Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IlmImf\ImfThumbnailImage.h">
+      <Filter>Header Files\IlmImf Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IlmImf\ImfThumbnailImageAttribute.h">
+      <Filter>Header Files\IlmImf Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

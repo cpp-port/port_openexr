@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2002-2012, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -37,7 +37,7 @@
 #define INCLUDED_IMATHRANDOM_H
 
 
-#include "operating_system/third_private_config.h"
+#include "config.h"
 #ifdef ANDROID
 #include <stdlib.h>
 #endif

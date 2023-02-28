@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2002, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
@@ -63,7 +63,8 @@ Attribute::~Attribute () {}
 
 namespace {
 
-struct NameCompare: std::binary_function <const char *, const char *, bool>
+   struct NameCompare
+      /// : std::binary_function <const char *, const char *, bool>
 {
     bool
     operator () (const char *x, const char *y) const
