@@ -1,6 +1,6 @@
 ﻿///////////////////////////////////////////////////////////////////////////
 //
-// Copyright (c) 2006, Industrial Light & Magic, a division of Lucas
+// Copyright (c) 2002-2012, Industrial Light & Magic, a division of Lucas
 // Digital Ltd. LLC
 // 
 // All rights reserved.
@@ -32,25 +32,42 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef INCLUDED_IMF_INT64_H
-#define INCLUDED_IMF_INT64_H
 
-//----------------------------------------------------------------------------
+#ifndef INCLUDED_IMATHEXC_H
+#define INCLUDED_IMATHEXC_H
+
+
+//-----------------------------------------------
 //
-//	Int64 -- unsigned 64-bit integers, imported from namespace Imath
+//	Imath library-specific exceptions
 //
-//----------------------------------------------------------------------------
+//-----------------------------------------------
 
-#include "Imath/ImathInt64.h"
-#include "IlmImf/ImfNamespace.h"
+#include "ImathNamespace.h"
+#include "IexBaseExc.h"
+#include "ImathExport.h"
 
-OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
+IMATH_INTERNAL_NAMESPACE_HEADER_ENTER
 
-using IMATH_NAMESPACE::Int64;
+// Attempt to normalize null vector
+DEFINE_EXC_EXP (IMATH_EXPORT, NullVecExc, ::IEX_NAMESPACE::MathExc)
 
-OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_EXIT
+// Attempt to normalize a point at infinity
+DEFINE_EXC_EXP (IMATH_EXPORT, InfPointExc, ::IEX_NAMESPACE::MathExc)
+
+// Attempt to normalize null quaternion
+DEFINE_EXC_EXP (IMATH_EXPORT, NullQuatExc, ::IEX_NAMESPACE::MathExc)
+
+// Attempt to invert singular matrix
+DEFINE_EXC_EXP (IMATH_EXPORT, SingMatrixExc, ::IEX_NAMESPACE::MathExc)
+
+// Attempt to remove zero scaling from matrix
+DEFINE_EXC_EXP (IMATH_EXPORT, ZeroScaleExc, ::IEX_NAMESPACE::MathExc)
+
+// Attempt to normalize a vector of whose elementsare an integer type
+DEFINE_EXC_EXP (IMATH_EXPORT, IntVecNormalizeExc, ::IEX_NAMESPACE::MathExc)
 
 
+IMATH_INTERNAL_NAMESPACE_HEADER_EXIT
 
-
-#endif // INCLUDED_IMF_INT64_H
+#endif // INCLUDED_IMATHEXC_H

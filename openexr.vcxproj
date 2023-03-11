@@ -94,35 +94,35 @@
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\port.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\port.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\port.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\port.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\port.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\port.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\port.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\operating-system\operating-system-windows\port.props" />
+    <Import Project="..\..\..\operating_system\operating_system-windows\port.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
@@ -163,7 +163,6 @@
       <CompileAs>Default</CompileAs>
       <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
       <DebugInformationFormat>None</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../port/_;$(SolutionDir)../../../port/include;$(ProjectDir)/include/$(ProjectName);$(ProjectDir);$(SolutionDir)../../../port/_/$(ProjectName);$(SolutionDir)/../include;./;./IlmImf;./Imath;./IexMath;./Iex;./Half;./IlmThread;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <DisableSpecificWarnings>4275;4251;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
@@ -201,7 +200,6 @@
       <CompileAs>Default</CompileAs>
       <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
       <DebugInformationFormat>None</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../port/_;$(SolutionDir)../../../port/include;$(ProjectDir)/include/$(ProjectName);$(ProjectDir);$(SolutionDir)../../../port/_/$(ProjectName);$(SolutionDir)/../include;./;./IlmImf;./Imath;./IexMath;./Iex;./Half;./IlmThread;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <DisableSpecificWarnings>4275;4251;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
@@ -243,7 +241,6 @@
       <DisableSpecificWarnings>4275;4251;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
       <DebugInformationFormat>None</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../port/_;$(SolutionDir)../../../port/include;$(ProjectDir)/include/$(ProjectName);$(ProjectDir);$(SolutionDir)../../../port/_/$(ProjectName);$(SolutionDir)/../include;./;./IlmImf;./Imath;./IexMath;./Iex;./Half;./IlmThread;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
@@ -285,7 +282,6 @@
       <DisableSpecificWarnings>4275;4251;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
       <DebugInformationFormat>None</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../port/_;$(SolutionDir)../../../port/include;$(ProjectDir)/include/$(ProjectName);$(ProjectDir);$(SolutionDir)../../../port/_/$(ProjectName);$(SolutionDir)/../include;./;./IlmImf;./Imath;./IexMath;./Iex;./Half;./IlmThread;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
@@ -318,7 +314,6 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../port/_;$(SolutionDir)../../../port/include;$(ProjectDir)/include/$(ProjectName);$(ProjectDir);$(SolutionDir)../../../port/_/$(ProjectName);$(SolutionDir)/../include;./;./IlmImf;./Imath;./IexMath;./Iex;./Half;./IlmThread;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <DisableSpecificWarnings>4275;4251;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
@@ -350,7 +345,6 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../port/_;$(SolutionDir)../../../port/include;$(ProjectDir)/include/$(ProjectName);$(ProjectDir);$(SolutionDir)../../../port/_/$(ProjectName);$(SolutionDir)/../include;./;./IlmImf;./Imath;./IexMath;./Iex;./Half;./IlmThread;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <DisableSpecificWarnings>4275;4251;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
@@ -386,7 +380,6 @@
       <CompileAs>Default</CompileAs>
       <DisableSpecificWarnings>4275;4251;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../port/_;$(SolutionDir)../../../port/include;$(ProjectDir)/include/$(ProjectName);$(ProjectDir);$(SolutionDir)../../../port/_/$(ProjectName);$(SolutionDir)/../include;./;./IlmImf;./Imath;./IexMath;./Iex;./Half;./IlmThread;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
@@ -422,7 +415,6 @@
       <CompileAs>Default</CompileAs>
       <DisableSpecificWarnings>4275;4251;4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../../port/_;$(SolutionDir)../../../port/include;$(ProjectDir)/include/$(ProjectName);$(ProjectDir);$(SolutionDir)../../../port/_/$(ProjectName);$(SolutionDir)/../include;./;./IlmImf;./Imath;./IexMath;./Iex;./Half;./IlmThread;</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
@@ -550,175 +542,65 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IlmBaseConfig.h" />
-    <ClInclude Include="IlmImf\ImfThumbnailImage.h" />
-    <ClInclude Include="IlmImf\ImfThumbnailImageAttribute.h" />
+    <ClInclude Include="include\openexr\eLut.h" />
+    <ClInclude Include="include\openexr\half.h" />
+    <ClInclude Include="include\openexr\halfExport.h" />
+    <ClInclude Include="include\openexr\halfFunction.h" />
+    <ClInclude Include="include\openexr\halfLimits.h" />
+    <ClInclude Include="include\openexr\Iex.h" />
+    <ClInclude Include="include\openexr\IexBaseExc.h" />
+    <ClInclude Include="include\openexr\IexErrnoExc.h" />
+    <ClInclude Include="include\openexr\IexExport.h" />
+    <ClInclude Include="include\openexr\IexForward.h" />
+    <ClInclude Include="include\openexr\IexMacros.h" />
+    <ClInclude Include="include\openexr\IexMathExc.h" />
+    <ClInclude Include="include\openexr\IexMathFloatExc.h" />
+    <ClInclude Include="include\openexr\IexMathFpu.h" />
+    <ClInclude Include="include\openexr\IexMathIeeeExc.h" />
+    <ClInclude Include="include\openexr\IexNamespace.h" />
+    <ClInclude Include="include\openexr\IexThrowErrnoExc.h" />
+    <ClInclude Include="include\openexr\IlmThread.h" />
+    <ClInclude Include="include\openexr\IlmThreadExport.h" />
+    <ClInclude Include="include\openexr\IlmThreadForward.h" />
+    <ClInclude Include="include\openexr\IlmThreadMutex.h" />
+    <ClInclude Include="include\openexr\IlmThreadNamespace.h" />
+    <ClInclude Include="include\openexr\IlmThreadPool.h" />
+    <ClInclude Include="include\openexr\IlmThreadSemaphore.h" />
+    <ClInclude Include="include\openexr\ImathBox.h" />
+    <ClInclude Include="include\openexr\ImathBoxAlgo.h" />
+    <ClInclude Include="include\openexr\ImathColor.h" />
+    <ClInclude Include="include\openexr\ImathColorAlgo.h" />
+    <ClInclude Include="include\openexr\ImathEuler.h" />
+    <ClInclude Include="include\openexr\ImathExc.h" />
+    <ClInclude Include="include\openexr\ImathExport.h" />
+    <ClInclude Include="include\openexr\ImathForward.h" />
+    <ClInclude Include="include\openexr\ImathFrame.h" />
+    <ClInclude Include="include\openexr\ImathFrustum.h" />
+    <ClInclude Include="include\openexr\ImathFrustumTest.h" />
+    <ClInclude Include="include\openexr\ImathFun.h" />
+    <ClInclude Include="include\openexr\ImathGL.h" />
+    <ClInclude Include="include\openexr\ImathGLU.h" />
+    <ClInclude Include="include\openexr\ImathHalfLimits.h" />
+    <ClInclude Include="include\openexr\ImathInt64.h" />
+    <ClInclude Include="include\openexr\ImathInterval.h" />
+    <ClInclude Include="include\openexr\ImathLimits.h" />
+    <ClInclude Include="include\openexr\ImathLine.h" />
+    <ClInclude Include="include\openexr\ImathLineAlgo.h" />
+    <ClInclude Include="include\openexr\ImathMath.h" />
+    <ClInclude Include="include\openexr\ImathMatrix.h" />
+    <ClInclude Include="include\openexr\ImathMatrixAlgo.h" />
+    <ClInclude Include="include\openexr\ImathNamespace.h" />
+    <ClInclude Include="include\openexr\ImathPlane.h" />
+    <ClInclude Include="include\openexr\ImathPlatform.h" />
+    <ClInclude Include="include\openexr\ImathQuat.h" />
+    <ClInclude Include="include\openexr\ImathRandom.h" />
+    <ClInclude Include="include\openexr\ImathRoots.h" />
+    <ClInclude Include="include\openexr\ImathShear.h" />
+    <ClInclude Include="include\openexr\ImathSphere.h" />
+    <ClInclude Include="include\openexr\ImathVec.h" />
+    <ClInclude Include="include\openexr\ImathVecAlgo.h" />
+    <ClInclude Include="include\openexr\toFloat.h" />
     <ClInclude Include="OpenEXRConfig.h" />
-    <ClInclude Include="IlmImf\b44ExpLogTable.h" />
-    <ClInclude Include="IlmImf\dwaLookups.h" />
-    <ClInclude Include="IlmImf\ImfAcesFile.h" />
-    <ClInclude Include="IlmImf\ImfArray.h" />
-    <ClInclude Include="IlmImf\ImfAttribute.h" />
-    <ClInclude Include="IlmImf\ImfAutoArray.h" />
-    <ClInclude Include="IlmImf\ImfB44Compressor.h" />
-    <ClInclude Include="IlmImf\ImfBoxAttribute.h" />
-    <ClInclude Include="IlmImf\ImfChannelList.h" />
-    <ClInclude Include="IlmImf\ImfChannelListAttribute.h" />
-    <ClInclude Include="IlmImf\ImfCheckedArithmetic.h" />
-    <ClInclude Include="IlmImf\ImfChromaticities.h" />
-    <ClInclude Include="IlmImf\ImfChromaticitiesAttribute.h" />
-    <ClInclude Include="IlmImf\ImfCompositeDeepScanLine.h" />
-    <ClInclude Include="IlmImf\ImfCompression.h" />
-    <ClInclude Include="IlmImf\ImfCompressionAttribute.h" />
-    <ClInclude Include="IlmImf\ImfCompressor.h" />
-    <ClInclude Include="IlmImf\ImfConvert.h" />
-    <ClInclude Include="IlmImf\ImfCRgbaFile.h" />
-    <ClInclude Include="IlmImf\ImfDeepCompositing.h" />
-    <ClInclude Include="IlmImf\ImfDeepFrameBuffer.h" />
-    <ClInclude Include="IlmImf\ImfDeepImageState.h" />
-    <ClInclude Include="IlmImf\ImfDeepImageStateAttribute.h" />
-    <ClInclude Include="IlmImf\ImfDeepScanLineInputFile.h" />
-    <ClInclude Include="IlmImf\ImfDeepScanLineInputPart.h" />
-    <ClInclude Include="IlmImf\ImfDeepScanLineOutputFile.h" />
-    <ClInclude Include="IlmImf\ImfDeepScanLineOutputPart.h" />
-    <ClInclude Include="IlmImf\ImfDeepTiledInputFile.h" />
-    <ClInclude Include="IlmImf\ImfDeepTiledInputPart.h" />
-    <ClInclude Include="IlmImf\ImfDeepTiledOutputFile.h" />
-    <ClInclude Include="IlmImf\ImfDeepTiledOutputPart.h" />
-    <ClInclude Include="IlmImf\ImfDoubleAttribute.h" />
-    <ClInclude Include="IlmImf\ImfDwaCompressor.h" />
-    <ClInclude Include="IlmImf\ImfDwaCompressorSimd.h" />
-    <ClInclude Include="IlmImf\ImfEnvmap.h" />
-    <ClInclude Include="IlmImf\ImfEnvmapAttribute.h" />
-    <ClInclude Include="IlmImf\ImfExport.h" />
-    <ClInclude Include="IlmImf\ImfFastHuf.h" />
-    <ClInclude Include="IlmImf\ImfFloatAttribute.h" />
-    <ClInclude Include="IlmImf\ImfFloatVectorAttribute.h" />
-    <ClInclude Include="IlmImf\ImfForward.h" />
-    <ClInclude Include="IlmImf\ImfFrameBuffer.h" />
-    <ClInclude Include="IlmImf\ImfFramesPerSecond.h" />
-    <ClInclude Include="IlmImf\ImfGenericInputFile.h" />
-    <ClInclude Include="IlmImf\ImfGenericOutputFile.h" />
-    <ClInclude Include="IlmImf\ImfHeader.h" />
-    <ClInclude Include="IlmImf\ImfHuf.h" />
-    <ClInclude Include="IlmImf\ImfInputFile.h" />
-    <ClInclude Include="IlmImf\ImfInputPart.h" />
-    <ClInclude Include="IlmImf\ImfInputPartData.h" />
-    <ClInclude Include="IlmImf\ImfInputStreamMutex.h" />
-    <ClInclude Include="IlmImf\ImfInt64.h" />
-    <ClInclude Include="IlmImf\ImfIntAttribute.h" />
-    <ClInclude Include="IlmImf\ImfIO.h" />
-    <ClInclude Include="IlmImf\ImfKeyCode.h" />
-    <ClInclude Include="IlmImf\ImfKeyCodeAttribute.h" />
-    <ClInclude Include="IlmImf\ImfLineOrder.h" />
-    <ClInclude Include="IlmImf\ImfLineOrderAttribute.h" />
-    <ClInclude Include="IlmImf\ImfLut.h" />
-    <ClInclude Include="IlmImf\ImfMatrixAttribute.h" />
-    <ClInclude Include="IlmImf\ImfMisc.h" />
-    <ClInclude Include="IlmImf\ImfMultiPartInputFile.h" />
-    <ClInclude Include="IlmImf\ImfMultiPartOutputFile.h" />
-    <ClInclude Include="IlmImf\ImfMultiView.h" />
-    <ClInclude Include="IlmImf\ImfName.h" />
-    <ClInclude Include="IlmImf\ImfNamespace.h" />
-    <ClInclude Include="IlmImf\ImfOpaqueAttribute.h" />
-    <ClInclude Include="IlmImf\ImfOptimizedPixelReading.h" />
-    <ClInclude Include="IlmImf\ImfOutputFile.h" />
-    <ClInclude Include="IlmImf\ImfOutputPart.h" />
-    <ClInclude Include="IlmImf\ImfOutputPartData.h" />
-    <ClInclude Include="IlmImf\ImfOutputStreamMutex.h" />
-    <ClInclude Include="IlmImf\ImfPartHelper.h" />
-    <ClInclude Include="IlmImf\ImfPartType.h" />
-    <ClInclude Include="IlmImf\ImfPixelType.h" />
-    <ClInclude Include="IlmImf\ImfPizCompressor.h" />
-    <ClInclude Include="IlmImf\ImfPxr24Compressor.h" />
-    <ClInclude Include="IlmImf\ImfRational.h" />
-    <ClInclude Include="IlmImf\ImfRationalAttribute.h" />
-    <ClInclude Include="IlmImf\ImfRgba.h" />
-    <ClInclude Include="IlmImf\ImfRgbaFile.h" />
-    <ClInclude Include="IlmImf\ImfRgbaYca.h" />
-    <ClInclude Include="IlmImf\ImfRle.h" />
-    <ClInclude Include="IlmImf\ImfRleCompressor.h" />
-    <ClInclude Include="IlmImf\ImfScanLineInputFile.h" />
-    <ClInclude Include="IlmImf\ImfSimd.h" />
-    <ClInclude Include="IlmImf\ImfStandardAttributes.h" />
-    <ClInclude Include="IlmImf\ImfStdIO.h" />
-    <ClInclude Include="IlmImf\ImfStringAttribute.h" />
-    <ClInclude Include="IlmImf\ImfStringVectorAttribute.h" />
-    <ClInclude Include="IlmImf\ImfSystemSpecific.h" />
-    <ClInclude Include="IlmImf\ImfTestFile.h" />
-    <ClInclude Include="IlmImf\ImfThreading.h" />
-    <ClInclude Include="IlmImf\ImfTileDescription.h" />
-    <ClInclude Include="IlmImf\ImfTileDescriptionAttribute.h" />
-    <ClInclude Include="IlmImf\ImfTiledInputFile.h" />
-    <ClInclude Include="IlmImf\ImfTiledInputPart.h" />
-    <ClInclude Include="IlmImf\ImfTiledMisc.h" />
-    <ClInclude Include="IlmImf\ImfTiledOutputFile.h" />
-    <ClInclude Include="IlmImf\ImfTiledOutputPart.h" />
-    <ClInclude Include="IlmImf\ImfTiledRgbaFile.h" />
-    <ClInclude Include="IlmImf\ImfTileOffsets.h" />
-    <ClInclude Include="IlmImf\ImfTimeCode.h" />
-    <ClInclude Include="IlmImf\ImfTimeCodeAttribute.h" />
-    <ClInclude Include="IlmImf\ImfVecAttribute.h" />
-    <ClInclude Include="IlmImf\ImfVersion.h" />
-    <ClInclude Include="IlmImf\ImfWav.h" />
-    <ClInclude Include="IlmImf\ImfXdr.h" />
-    <ClInclude Include="IlmImf\ImfZip.h" />
-    <ClInclude Include="IlmImf\ImfZipCompressor.h" />
-    <ClInclude Include="Imath\ImathBox.h" />
-    <ClInclude Include="Imath\ImathBoxAlgo.h" />
-    <ClInclude Include="Imath\ImathColor.h" />
-    <ClInclude Include="Imath\ImathColorAlgo.h" />
-    <ClInclude Include="Imath\ImathEuler.h" />
-    <ClInclude Include="Imath\ImathExc.h" />
-    <ClInclude Include="Imath\ImathExport.h" />
-    <ClInclude Include="Imath\ImathForward.h" />
-    <ClInclude Include="Imath\ImathFrame.h" />
-    <ClInclude Include="Imath\ImathFrustum.h" />
-    <ClInclude Include="Imath\ImathFrustumTest.h" />
-    <ClInclude Include="Imath\ImathFun.h" />
-    <ClInclude Include="Imath\ImathGL.h" />
-    <ClInclude Include="Imath\ImathGLU.h" />
-    <ClInclude Include="Imath\ImathHalfLimits.h" />
-    <ClInclude Include="Imath\ImathInt64.h" />
-    <ClInclude Include="Imath\ImathInterval.h" />
-    <ClInclude Include="Imath\ImathLimits.h" />
-    <ClInclude Include="Imath\ImathLine.h" />
-    <ClInclude Include="Imath\ImathLineAlgo.h" />
-    <ClInclude Include="Imath\ImathMath.h" />
-    <ClInclude Include="Imath\ImathMatrix.h" />
-    <ClInclude Include="Imath\ImathMatrixAlgo.h" />
-    <ClInclude Include="Imath\ImathNamespace.h" />
-    <ClInclude Include="Imath\ImathPlane.h" />
-    <ClInclude Include="Imath\ImathPlatform.h" />
-    <ClInclude Include="Imath\ImathQuat.h" />
-    <ClInclude Include="Imath\ImathRandom.h" />
-    <ClInclude Include="Imath\ImathRoots.h" />
-    <ClInclude Include="Imath\ImathShear.h" />
-    <ClInclude Include="Imath\ImathSphere.h" />
-    <ClInclude Include="Imath\ImathVec.h" />
-    <ClInclude Include="Imath\ImathVecAlgo.h" />
-    <ClInclude Include="Iex\Iex.h" />
-    <ClInclude Include="Iex\IexBaseExc.h" />
-    <ClInclude Include="Iex\IexErrnoExc.h" />
-    <ClInclude Include="Iex\IexExport.h" />
-    <ClInclude Include="Iex\IexForward.h" />
-    <ClInclude Include="Iex\IexMacros.h" />
-    <ClInclude Include="Iex\IexMathExc.h" />
-    <ClInclude Include="Iex\IexNamespace.h" />
-    <ClInclude Include="Iex\IexThrowErrnoExc.h" />
-    <ClInclude Include="Half\eLut.h" />
-    <ClInclude Include="Half\half.h" />
-    <ClInclude Include="Half\halfFunction.h" />
-    <ClInclude Include="Half\halfLimits.h" />
-    <ClInclude Include="Half\toFloat.h" />
-    <ClInclude Include="IlmThread\IlmThread.h" />
-    <ClInclude Include="IlmThread\IlmThreadExport.h" />
-    <ClInclude Include="IlmThread\IlmThreadForward.h" />
-    <ClInclude Include="IlmThread\IlmThreadMutex.h" />
-    <ClInclude Include="IlmThread\IlmThreadNamespace.h" />
-    <ClInclude Include="IlmThread\IlmThreadPool.h" />
-    <ClInclude Include="IlmThread\IlmThreadSemaphore.h" />
-    <ClInclude Include="IexMath\IexMathFloatExc.h" />
-    <ClInclude Include="IexMath\IexMathIeeeExc.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="openexr.def" />

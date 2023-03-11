@@ -50,9 +50,9 @@
 #include "ImfHeader.h"
 #include "ImfFrameBuffer.h"
 #include "ImfRgba.h"
-#include "Imath/ImathVec.h"
-#include "Imath/ImathBox.h"
-#include "Half/half.h"
+#include "ImathVec.h"
+#include "ImathBox.h"
+#include "half.h"
 #include "ImfThreading.h"
 #include <string>
 #include "ImfNamespace.h"
