@@ -357,28 +357,28 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <OutDir>$(SolutionDir)..\..\..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(TimeDir)intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
     <UseMultiToolTask>true</UseMultiToolTask>
     <TargetName>lib$(ProjectName)</TargetName>
     <TargetExt>.a</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
-    <OutDir>$(SolutionDir)..\..\..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(TimeDir)intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
     <UseMultiToolTask>true</UseMultiToolTask>
     <TargetName>lib$(ProjectName)</TargetName>
     <TargetExt>.a</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
-    <OutDir>$(SolutionDir)..\..\..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(TimeDir)intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
     <UseMultiToolTask>true</UseMultiToolTask>
     <TargetName>lib$(ProjectName)</TargetName>
     <TargetExt>.a</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <OutDir>$(SolutionDir)..\..\..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)..\..\operating_system\storage-android\third\library\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(TimeDir)intermediate\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
     <UseMultiToolTask>true</UseMultiToolTask>
     <TargetName>lib$(ProjectName)</TargetName>
