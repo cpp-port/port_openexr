@@ -43,26 +43,26 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfOutputFile.h>
-#include <ImfInputFile.h>
-#include <ImfChannelList.h>
-#include <ImfMisc.h>
-#include <ImfStdIO.h>
-#include <ImfCompressor.h>
-#include "ImathBox.h"
-#include "ImathFun.h"
-#include <ImfArray.h>
-#include "ImfXdr.h"
-#include <ImfThumbnailImageAttribute.h>
-#include <ImfPartType.h>
-#include "IlmThreadPool.h"
-#include "ImfOutputStreamMutex.h"
-#include "IlmThreadSemaphore.h"
-#include "IlmThreadMutex.h"
-#include "Iex.h"
-#include "ImfInputPart.h"
-#include "ImfNamespace.h"
-#include "ImfOutputPartData.h"
+#include <openexr/ImfOutputFile.h>
+#include <openexr/ImfInputFile.h>
+#include <openexr/ImfChannelList.h>
+#include <openexr/ImfMisc.h>
+#include <openexr/ImfStdIO.h>
+#include <openexr/ImfCompressor.h>
+#include "openexr/ImathBox.h"
+#include "openexr/ImathFun.h"
+#include <openexr/ImfArray.h>
+#include "openexr/ImfXdr.h"
+#include <openexr/ImfThumbnailImageAttribute.h>
+#include <openexr/ImfPartType.h>
+#include "openexr/IlmThreadPool.h"
+#include "openexr/ImfOutputStreamMutex.h"
+#include "openexr/IlmThreadSemaphore.h"
+#include "openexr/IlmThreadMutex.h"
+#include "openexr/Iex.h"
+#include "openexr/ImfInputPart.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfOutputPartData.h"
 
 #include <string>
 #include <vector>

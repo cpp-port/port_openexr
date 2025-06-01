@@ -35,12 +35,12 @@
 #ifndef IMFGENERICOUTPUTFILE_H_
 #define IMFGENERICOUTPUTFILE_H_
 
-#include "ImfVersion.h"
-#include "ImfIO.h"
-#include "ImfXdr.h"
-#include "ImfHeader.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfVersion.h"
+#include "openexr/ImfIO.h"
+#include "openexr/ImfXdr.h"
+#include "openexr/ImfHeader.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

@@ -114,9 +114,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfRgba.h"
-#include "ImfChromaticities.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfRgba.h"
+#include "openexr/ImfChromaticities.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

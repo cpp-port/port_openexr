@@ -43,8 +43,8 @@
 //
 //---------------------------------------------------------------------
 
-#include "ImathMath.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathMath.h"
+#include "openexr/ImathNamespace.h"
 #include <complex>
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER

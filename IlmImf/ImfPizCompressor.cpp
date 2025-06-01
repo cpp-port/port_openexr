@@ -39,22 +39,22 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfPizCompressor.h"
-#include "ImfHeader.h"
-#include "ImfChannelList.h"
-#include "ImfHuf.h"
-#include "ImfWav.h"
-#include "ImfMisc.h"
-#include "ImfCheckedArithmetic.h"
+#include "openexr/ImfPizCompressor.h"
+#include "openexr/ImfHeader.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfHuf.h"
+#include "openexr/ImfWav.h"
+#include "openexr/ImfMisc.h"
+#include "openexr/ImfCheckedArithmetic.h"
 #include <ImathFun.h>
 #include <ImathBox.h>
-#include <Iex.h>
-#include "ImfIO.h"
-#include "ImfXdr.h"
-#include "ImfAutoArray.h"
+#include <openexr/Iex.h>
+#include "openexr/ImfIO.h"
+#include "openexr/ImfXdr.h"
+#include "openexr/ImfAutoArray.h"
 #include <string.h>
 #include <assert.h>
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

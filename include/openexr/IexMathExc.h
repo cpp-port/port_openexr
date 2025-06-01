@@ -37,7 +37,7 @@
 #ifndef INCLUDED_IEXMATHEXC_H
 #define INCLUDED_IEXMATHEXC_H
 
-#include "IexBaseExc.h"
+#include "openexr/IexBaseExc.h"
 
 IEX_INTERNAL_NAMESPACE_HEADER_ENTER
 

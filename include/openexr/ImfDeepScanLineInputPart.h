@@ -36,11 +36,11 @@
 #ifndef IMFDEEPSCANLINEINPUTPART_H_
 #define IMFDEEPSCANLINEINPUTPART_H_
 
-#include "ImfMultiPartInputFile.h"
-#include "ImfDeepScanLineInputFile.h"
-#include "ImfDeepScanLineOutputFile.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfMultiPartInputFile.h"
+#include "openexr/ImfDeepScanLineInputFile.h"
+#include "openexr/ImfDeepScanLineOutputFile.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

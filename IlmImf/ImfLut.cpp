@@ -42,10 +42,10 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfLut.h>
+#include <openexr/ImfLut.h>
 #include <math.h>
 #include <assert.h>
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

@@ -45,12 +45,12 @@
 //
 //-------------------------------------------------------------------------
 
-#include "ImathFrustum.h"
-#include "ImathBox.h"
-#include "ImathSphere.h"
-#include "ImathMatrix.h"
-#include "ImathVec.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathFrustum.h"
+#include "openexr/ImathBox.h"
+#include "openexr/ImathSphere.h"
+#include "openexr/ImathMatrix.h"
+#include "openexr/ImathVec.h"
+#include "openexr/ImathNamespace.h"
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER
 

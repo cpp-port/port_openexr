@@ -35,11 +35,11 @@
 #ifndef IMFMULTIPARTINPUTFILE_H_
 #define IMFMULTIPARTINPUTFILE_H_
 
-#include "ImfGenericInputFile.h"
-#include "ImfNamespace.h"
-#include "ImfForward.h"
-#include "ImfThreading.h"
-#include "ImfExport.h"
+#include "openexr/ImfGenericInputFile.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfForward.h"
+#include "openexr/ImfThreading.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

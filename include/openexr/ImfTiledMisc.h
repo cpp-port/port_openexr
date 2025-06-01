@@ -42,9 +42,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImathBox.h"
-#include "ImfHeader.h"
-#include "ImfNamespace.h"
+#include "openexr/ImathBox.h"
+#include "openexr/ImfHeader.h"
+#include "openexr/ImfNamespace.h"
 
 #include <stdio.h>
 #include <vector>

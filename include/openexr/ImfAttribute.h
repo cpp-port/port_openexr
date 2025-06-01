@@ -43,12 +43,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IexBaseExc.h"
-#include "ImfIO.h"
-#include "ImfXdr.h"
-#include "ImfForward.h"
-#include "ImfExport.h"
-#include "ImfNamespace.h"
+#include "openexr/IexBaseExc.h"
+#include "openexr/ImfIO.h"
+#include "openexr/ImfXdr.h"
+#include "openexr/ImfForward.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

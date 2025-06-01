@@ -35,8 +35,8 @@
 #ifndef INCLUDED_IMF_RLE_H_
 #define INCLUDED_IMF_RLE_H_
 
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

@@ -31,9 +31,9 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "ImfSimd.h"
-#include "ImfSystemSpecific.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfSimd.h"
+#include "openexr/ImfSystemSpecific.h"
+#include "openexr/ImfNamespace.h"
 #include "OpenEXRConfig.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

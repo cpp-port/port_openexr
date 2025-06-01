@@ -45,12 +45,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfRgbaFile.h"
-#include "ImfFrameBuffer.h"
-#include "ImathBox.h"
+#include "openexr/ImfRgbaFile.h"
+#include "openexr/ImfFrameBuffer.h"
+#include "openexr/ImathBox.h"
 #include "halfFunction.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

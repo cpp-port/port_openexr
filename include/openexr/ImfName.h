@@ -45,7 +45,7 @@
 //-----------------------------------------------------------------------------
 
 #include <string.h>
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

@@ -39,11 +39,11 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfTileOffsets.h>
-#include <ImfXdr.h>
-#include <ImfIO.h>
-#include "Iex.h"
-#include "ImfNamespace.h"
+#include <openexr/ImfTileOffsets.h>
+#include <openexr/ImfXdr.h>
+#include <openexr/ImfIO.h>
+#include "openexr/Iex.h"
+#include "openexr/ImfNamespace.h"
 #include <algorithm>
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

@@ -71,10 +71,10 @@
 //
 //------------------------------------------------------------------
 
-#include "ImathLine.h"
-#include "ImathVecAlgo.h"
-#include "ImathFun.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathLine.h"
+#include "openexr/ImathVecAlgo.h"
+#include "openexr/ImathFun.h"
+#include "openexr/ImathNamespace.h"
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER
 

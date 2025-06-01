@@ -43,12 +43,12 @@
 //
 //----------------------------------------------------------------
 
-#include "ImathPlatform.h"
-#include "ImathFun.h"
-#include "ImathExc.h"
-#include "ImathVec.h"
-#include "ImathShear.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathPlatform.h"
+#include "openexr/ImathFun.h"
+#include "openexr/ImathExc.h"
+#include "openexr/ImathVec.h"
+#include "openexr/ImathShear.h"
+#include "openexr/ImathNamespace.h"
 
 #include <cstring>
 #include <iostream>

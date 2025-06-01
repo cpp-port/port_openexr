@@ -43,8 +43,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
-#include "ImfTimeCode.h"
+#include "openexr/ImfAttribute.h"
+#include "openexr/ImfTimeCode.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

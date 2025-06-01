@@ -49,9 +49,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
-#include "ImfArray.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfAttribute.h"
+#include "openexr/ImfArray.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

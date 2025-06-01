@@ -32,11 +32,11 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "ImfGenericInputFile.h"
+#include "openexr/ImfGenericInputFile.h"
 
-#include <ImfVersion.h>
-#include <ImfXdr.h>
-#include <Iex.h>
+#include <openexr/ImfVersion.h>
+#include <openexr/ImfXdr.h>
+#include <openexr/Iex.h>
 #include <OpenEXRConfig.h>
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

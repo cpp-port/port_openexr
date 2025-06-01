@@ -41,8 +41,8 @@
 //
 //----------------------------------------------------------------
 
-#include "IexThrowErrnoExc.h"
-#include "IexErrnoExc.h"
+#include "openexr/IexThrowErrnoExc.h"
+#include "openexr/IexErrnoExc.h"
 #include <string.h>
 #include <errno.h>
 

@@ -48,8 +48,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
-#include "ImathVec.h"
+#include "openexr/ImfAttribute.h"
+#include "openexr/ImathVec.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

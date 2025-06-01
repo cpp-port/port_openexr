@@ -43,10 +43,10 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImathExport.h"
-#include "ImathLimits.h"
-#include "ImathInt64.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathExport.h"
+#include "openexr/ImathLimits.h"
+#include "openexr/ImathInt64.h"
+#include "openexr/ImathNamespace.h"
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER
 

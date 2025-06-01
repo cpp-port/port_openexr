@@ -38,11 +38,11 @@
 
 #include <GL/gl.h>
 
-#include "ImathVec.h"
-#include "ImathMatrix.h"
-#include "IexMathExc.h"
-#include "ImathFun.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathVec.h"
+#include "openexr/ImathMatrix.h"
+#include "openexr/IexMathExc.h"
+#include "openexr/ImathFun.h"
+#include "openexr/ImathNamespace.h"
 
 inline void glVertex    ( const IMATH_INTERNAL_NAMESPACE::V3f &v ) { glVertex3f(v.x,v.y,v.z);   }
 inline void glVertex    ( const IMATH_INTERNAL_NAMESPACE::V2f &v ) { glVertex2f(v.x,v.y);       }

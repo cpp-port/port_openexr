@@ -39,14 +39,14 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfTiledMisc.h>
-#include "Iex.h"
-#include <ImfMisc.h>
-#include <ImfChannelList.h>
-#include <ImfTileDescription.h>
+#include <openexr/ImfTiledMisc.h>
+#include "openexr/Iex.h"
+#include <openexr/ImfMisc.h>
+#include <openexr/ImfChannelList.h>
+#include <openexr/ImfTileDescription.h>
 #include <algorithm>
 
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

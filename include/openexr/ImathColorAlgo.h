@@ -38,11 +38,11 @@
 #define INCLUDED_IMATHCOLORALGO_H
 
 
-#include "ImathColor.h"
-#include "ImathExport.h"
-#include "ImathMath.h"
-#include "ImathLimits.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathColor.h"
+#include "openexr/ImathExport.h"
+#include "openexr/ImathMath.h"
+#include "openexr/ImathLimits.h"
+#include "openexr/ImathNamespace.h"
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER
 

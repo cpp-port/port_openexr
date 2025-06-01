@@ -37,7 +37,7 @@
 #ifndef INCLUDED_IMF_ARRAY_H
 #define INCLUDED_IMF_ARRAY_H
 
-#include "ImfForward.h"
+#include "openexr/ImfForward.h"
 
 //-------------------------------------------------------------------------
 //

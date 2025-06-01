@@ -40,15 +40,15 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfCompressor.h"
-#include "ImfRleCompressor.h"
-#include "ImfZipCompressor.h"
-#include "ImfPizCompressor.h"
-#include "ImfPxr24Compressor.h"
-#include "ImfB44Compressor.h"
-#include "ImfDwaCompressor.h"
-#include "ImfCheckedArithmetic.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfCompressor.h"
+#include "openexr/ImfRleCompressor.h"
+#include "openexr/ImfZipCompressor.h"
+#include "openexr/ImfPizCompressor.h"
+#include "openexr/ImfPxr24Compressor.h"
+#include "openexr/ImfB44Compressor.h"
+#include "openexr/ImfDwaCompressor.h"
+#include "openexr/ImfCheckedArithmetic.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

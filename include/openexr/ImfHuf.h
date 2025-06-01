@@ -37,8 +37,8 @@
 #ifndef INCLUDED_IMF_HUF_H
 #define INCLUDED_IMF_HUF_H
 
-#include "ImfExport.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfNamespace.h"
 
 //-----------------------------------------------------------------------------
 //

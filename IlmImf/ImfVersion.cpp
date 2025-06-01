@@ -40,8 +40,8 @@
 //-----------------------------------------------------------------------------
 
 
-#include <ImfVersion.h>
-#include "ImfNamespace.h"
+#include <openexr/ImfVersion.h>
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

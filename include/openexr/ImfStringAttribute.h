@@ -43,7 +43,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
+#include "openexr/ImfAttribute.h"
 #include <string>
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER

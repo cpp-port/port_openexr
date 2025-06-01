@@ -35,7 +35,7 @@
 #ifndef INCLUDED_ILMTHREADFORWARD_H
 #define INCLUDED_ILMTHREADFORWARD_H
 
-#include "IlmThreadNamespace.h"
+#include "openexr/IlmThreadNamespace.h"
 
 ILMTHREAD_INTERNAL_NAMESPACE_HEADER_ENTER
 

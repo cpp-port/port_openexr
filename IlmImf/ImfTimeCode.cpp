@@ -39,9 +39,9 @@
 // 	
 //-----------------------------------------------------------------------------
 
-#include <ImfTimeCode.h>
-#include "Iex.h"
-#include "ImfNamespace.h"
+#include <openexr/ImfTimeCode.h>
+#include "openexr/Iex.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

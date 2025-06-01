@@ -35,7 +35,7 @@
 #ifndef INCLUDED_IMATHFORWARD_H
 #define INCLUDED_IMATHFORWARD_H
 
-#include "ImathNamespace.h"
+#include "openexr/ImathNamespace.h"
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER
 

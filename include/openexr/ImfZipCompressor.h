@@ -43,9 +43,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfCompressor.h"
-#include "ImfZip.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfCompressor.h"
+#include "openexr/ImfZip.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

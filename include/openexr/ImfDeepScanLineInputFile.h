@@ -42,12 +42,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfThreading.h"
-#include "ImfGenericInputFile.h"
-#include "ImfNamespace.h"
-#include "ImfForward.h"
-#include "ImfExport.h"
-#include "ImfDeepScanLineOutputFile.h"
+#include "openexr/ImfThreading.h"
+#include "openexr/ImfGenericInputFile.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfForward.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfDeepScanLineOutputFile.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

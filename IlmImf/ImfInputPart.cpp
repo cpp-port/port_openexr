@@ -32,10 +32,10 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "ImfInputPart.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfInputPart.h"
+#include "openexr/ImfNamespace.h"
 
-#include "ImfMultiPartInputFile.h"
+#include "openexr/ImfMultiPartInputFile.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

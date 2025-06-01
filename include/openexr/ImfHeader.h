@@ -43,18 +43,18 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfLineOrder.h"
-#include "ImfCompression.h"
-#include "ImfName.h"
-#include "ImfTileDescription.h"
-#include "ImfInt64.h"
-#include "ImathVec.h"
-#include "ImathBox.h"
-#include "IexBaseExc.h"
+#include "openexr/ImfLineOrder.h"
+#include "openexr/ImfCompression.h"
+#include "openexr/ImfName.h"
+#include "openexr/ImfTileDescription.h"
+#include "openexr/ImfInt64.h"
+#include "openexr/ImathVec.h"
+#include "openexr/ImathBox.h"
+#include "openexr/IexBaseExc.h"
 
-#include "ImfForward.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfForward.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 #include <map>
 #include <iosfwd>

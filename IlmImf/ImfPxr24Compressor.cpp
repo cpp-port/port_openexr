@@ -63,15 +63,15 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfPxr24Compressor.h"
-#include "ImfHeader.h"
-#include "ImfChannelList.h"
-#include "ImfMisc.h"
-#include "ImfCheckedArithmetic.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfPxr24Compressor.h"
+#include "openexr/ImfHeader.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfMisc.h"
+#include "openexr/ImfCheckedArithmetic.h"
+#include "openexr/ImfNamespace.h"
 
 #include <ImathFun.h>
-#include <Iex.h>
+#include <openexr/Iex.h>
 
 #include <half.h>
 #include <zlib.h>

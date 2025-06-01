@@ -38,11 +38,11 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IlmThread.h"
-#include "IlmThreadMutex.h"
-#include "IlmThreadSemaphore.h"
-#include "IlmThreadPool.h"
-#include "Iex.h"
+#include "openexr/IlmThread.h"
+#include "openexr/IlmThreadMutex.h"
+#include "openexr/IlmThreadSemaphore.h"
+#include "openexr/IlmThreadPool.h"
+#include "openexr/Iex.h"
 #include <list>
 
 using namespace std;

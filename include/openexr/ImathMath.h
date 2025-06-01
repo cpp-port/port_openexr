@@ -80,9 +80,9 @@
 //
 //----------------------------------------------------------------------------
 
-#include "ImathPlatform.h"
-#include "ImathLimits.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathPlatform.h"
+#include "openexr/ImathLimits.h"
+#include "openexr/ImathNamespace.h"
 #include <math.h>
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER

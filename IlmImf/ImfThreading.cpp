@@ -38,9 +38,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfThreading.h"
-#include "IlmThreadPool.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfThreading.h"
+#include "openexr/IlmThreadPool.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

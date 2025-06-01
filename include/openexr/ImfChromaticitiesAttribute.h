@@ -43,8 +43,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
-#include "ImfChromaticities.h"
+#include "openexr/ImfAttribute.h"
+#include "openexr/ImfChromaticities.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

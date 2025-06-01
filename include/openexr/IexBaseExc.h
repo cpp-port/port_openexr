@@ -36,8 +36,8 @@
 #ifndef INCLUDED_IEXBASEEXC_H
 #define INCLUDED_IEXBASEEXC_H
 
-#include "IexNamespace.h"
-#include "IexExport.h"
+#include "openexr/IexNamespace.h"
+#include "openexr/IexExport.h"
 
 //----------------------------------------------------------
 //

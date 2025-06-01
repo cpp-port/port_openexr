@@ -39,10 +39,10 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IlmBaseConfig.h"
+#include "openexr/IlmBaseConfig.h"
 
 //#if !defined(_WIN32) && !defined(_WIN64) && !defined(HAVE_PTHREAD)
-#include "IlmThreadSemaphore.h"
+#include "openexr/IlmThreadSemaphore.h"
 
 ILMTHREAD_INTERNAL_NAMESPACE_SOURCE_ENTER
 

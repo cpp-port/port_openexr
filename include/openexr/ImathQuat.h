@@ -55,9 +55,9 @@
 //
 //----------------------------------------------------------------------
 
-#include "ImathExc.h"
-#include "ImathMatrix.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathExc.h"
+#include "openexr/ImathMatrix.h"
+#include "openexr/ImathNamespace.h"
 
 #include <iostream>
 

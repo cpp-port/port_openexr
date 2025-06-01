@@ -45,7 +45,7 @@
 //---------------------------------------------------------------------------
 
 #include <assert.h>
-#include "half.h"
+#include "openexr/half.h"
 
 using namespace std;
 
@@ -71,7 +71,7 @@ half::overflow ()
 
     for (int i = 0; i < 10; i++)	
 	f *= f;				// this will overflow before
-					// the for­loop terminates
+					// the forï¿½loop terminates
     return f;
 }
 

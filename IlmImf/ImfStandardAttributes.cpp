@@ -39,7 +39,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfStandardAttributes.h>
+#include <openexr/ImfStandardAttributes.h>
 
 
 #define IMF_STRING(name) #name
@@ -85,7 +85,7 @@
 	return name##Attribute(header).value();				 \
     }
 
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 using namespace IMATH_NAMESPACE;
 using namespace std;

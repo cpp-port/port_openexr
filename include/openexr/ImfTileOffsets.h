@@ -42,12 +42,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfTileDescription.h"
-#include "ImfInt64.h"
+#include "openexr/ImfTileDescription.h"
+#include "openexr/ImfInt64.h"
 #include <vector>
-#include "ImfNamespace.h"
-#include "ImfForward.h"
-#include "ImfExport.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfForward.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

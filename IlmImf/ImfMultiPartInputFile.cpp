@@ -32,31 +32,31 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "ImfMultiPartInputFile.h"
+#include "openexr/ImfMultiPartInputFile.h"
 
-#include "ImfTimeCodeAttribute.h"
-#include "ImfChromaticitiesAttribute.h"
-#include "ImfBoxAttribute.h"
-#include "ImfFloatAttribute.h"
-#include "ImfStdIO.h"
-#include "ImfTileOffsets.h"
-#include "ImfMisc.h"
-#include "ImfTiledMisc.h"
-#include "ImfInputStreamMutex.h"
-#include "ImfInputPartData.h"
-#include "ImfPartType.h"
-#include "ImfInputFile.h"
-#include "ImfScanLineInputFile.h"
-#include "ImfTiledInputFile.h"
-#include "ImfDeepScanLineInputFile.h"
-#include "ImfDeepTiledInputFile.h"
-#include "ImfVersion.h"
+#include "openexr/ImfTimeCodeAttribute.h"
+#include "openexr/ImfChromaticitiesAttribute.h"
+#include "openexr/ImfBoxAttribute.h"
+#include "openexr/ImfFloatAttribute.h"
+#include "openexr/ImfStdIO.h"
+#include "openexr/ImfTileOffsets.h"
+#include "openexr/ImfMisc.h"
+#include "openexr/ImfTiledMisc.h"
+#include "openexr/ImfInputStreamMutex.h"
+#include "openexr/ImfInputPartData.h"
+#include "openexr/ImfPartType.h"
+#include "openexr/ImfInputFile.h"
+#include "openexr/ImfScanLineInputFile.h"
+#include "openexr/ImfTiledInputFile.h"
+#include "openexr/ImfDeepScanLineInputFile.h"
+#include "openexr/ImfDeepTiledInputFile.h"
+#include "openexr/ImfVersion.h"
 
 #include <OpenEXRConfig.h>
 #include <IlmThread.h>
 #include <IlmThreadMutex.h>
 
-#include <Iex.h>
+#include <openexr/Iex.h>
 #include <map>
 #include <set>
 

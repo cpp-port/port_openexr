@@ -42,9 +42,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
-#include "ImfEnvmap.h"
-#include "ImfExport.h"
+#include "openexr/ImfAttribute.h"
+#include "openexr/ImfEnvmap.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

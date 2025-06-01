@@ -36,7 +36,7 @@
 #ifndef INCLUDED_IMF_ZIP_H
 #define INCLUDED_IMF_ZIP_H
 
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 #include <cstddef>
 

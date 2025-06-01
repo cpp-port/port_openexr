@@ -48,14 +48,14 @@
 //
 //-------------------------------------------------------------------------
 
-#include "ImathExport.h"
-#include "ImathMatrix.h"
-#include "ImathQuat.h"
-#include "ImathEuler.h"
-#include "ImathExc.h"
-#include "ImathVec.h"
-#include "ImathLimits.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathExport.h"
+#include "openexr/ImathMatrix.h"
+#include "openexr/ImathQuat.h"
+#include "openexr/ImathEuler.h"
+#include "openexr/ImathExc.h"
+#include "openexr/ImathVec.h"
+#include "openexr/ImathLimits.h"
+#include "openexr/ImathNamespace.h"
 #include <math.h>
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER

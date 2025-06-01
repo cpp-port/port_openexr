@@ -42,9 +42,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfInt64.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfInt64.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 #include <string>
 

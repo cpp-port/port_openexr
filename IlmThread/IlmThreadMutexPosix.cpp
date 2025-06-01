@@ -39,12 +39,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IlmBaseConfig.h"
+#include "openexr/IlmBaseConfig.h"
 
 #if HAVE_PTHREAD
 
-#include "IlmThreadMutex.h"
-#include "Iex.h"
+#include "openexr/IlmThreadMutex.h"
+#include "openexr/Iex.h"
 #include <assert.h>
 
 ILMTHREAD_INTERNAL_NAMESPACE_SOURCE_ENTER

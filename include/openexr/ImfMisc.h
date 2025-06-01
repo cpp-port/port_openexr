@@ -43,12 +43,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfPixelType.h"
-#include "ImfCompressor.h"
-#include "ImfArray.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
-#include "ImfForward.h"
+#include "openexr/ImfPixelType.h"
+#include "openexr/ImfCompressor.h"
+#include "openexr/ImfArray.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfForward.h"
 
 #include <cstddef>
 #include <vector>

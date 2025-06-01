@@ -42,8 +42,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
-#include "ImfThumbnailImage.h"
+#include "openexr/ImfAttribute.h"
+#include "openexr/ImfThumbnailImage.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

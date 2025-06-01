@@ -38,15 +38,15 @@
 #define INCLUDED_IMATHFRUSTUM_H
 
 
-#include "ImathVec.h"
-#include "ImathPlane.h"
-#include "ImathLine.h"
-#include "ImathMatrix.h"
-#include "ImathLimits.h"
-#include "ImathFun.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathVec.h"
+#include "openexr/ImathPlane.h"
+#include "openexr/ImathLine.h"
+#include "openexr/ImathMatrix.h"
+#include "openexr/ImathLimits.h"
+#include "openexr/ImathFun.h"
+#include "openexr/ImathNamespace.h"
 
-#include "IexMathExc.h"
+#include "openexr/IexMathExc.h"
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER
 

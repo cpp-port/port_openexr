@@ -43,7 +43,7 @@
 //
 //----------------------------------------------------------------
 
-#include "IexBaseExc.h"
+#include "openexr/IexBaseExc.h"
 
 IEX_INTERNAL_NAMESPACE_HEADER_ENTER
 

@@ -41,8 +41,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
-#include "ImfRational.h"
+#include "openexr/ImfAttribute.h"
+#include "openexr/ImfRational.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

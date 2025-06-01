@@ -35,10 +35,10 @@
 #ifndef INCLUDED_IMF_MULTIVIEW_H
 #define INCLUDED_IMF_MULTIVIEW_H
 
-#include "ImfChannelList.h"
-#include "ImfStringVectorAttribute.h"
-#include "ImfExport.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfStringVectorAttribute.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfNamespace.h"
 
 //-----------------------------------------------------------------------------
 //

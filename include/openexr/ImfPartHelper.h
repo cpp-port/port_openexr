@@ -56,14 +56,14 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfForward.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
-#include "ImfMultiPartInputFile.h"
-#include "ImfChannelList.h"
-#include "ImfStringVectorAttribute.h"
-#include "ImfStandardAttributes.h"
-#include "ImfMultiView.h"
+#include "openexr/ImfForward.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfMultiPartInputFile.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfStringVectorAttribute.h"
+#include "openexr/ImfStandardAttributes.h"
+#include "openexr/ImfMultiView.h"
 
 #include <string>
 #include <map>

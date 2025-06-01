@@ -35,8 +35,8 @@
 #ifndef INCLUDED_IMF_THREADING_H
 #define INCLUDED_IMF_THREADING_H
 
-#include "ImfExport.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfNamespace.h"
 
 //-----------------------------------------------------------------------------
 //

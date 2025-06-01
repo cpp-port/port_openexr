@@ -43,9 +43,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfIO.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfIO.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 #include <fstream>
 #include <sstream>

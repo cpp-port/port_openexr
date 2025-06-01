@@ -39,12 +39,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IlmBaseConfig.h"
+#include "openexr/IlmBaseConfig.h"
 
 #if HAVE_PTHREAD
 
-#include "IlmThread.h"
-#include "Iex.h"
+#include "openexr/IlmThread.h"
+#include "openexr/Iex.h"
 #include <assert.h>
 
 extern "C"

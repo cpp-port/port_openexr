@@ -36,8 +36,8 @@
 #ifndef INCLUDED_IMF_TIME_CODE_H
 #define INCLUDED_IMF_TIME_CODE_H
 
-#include "ImfExport.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfNamespace.h"
 
 //-----------------------------------------------------------------------------
 //

@@ -125,12 +125,12 @@
 //----------------------------------------------------------------------
 
 
-#include "ImathMath.h"
-#include "ImathVec.h"
-#include "ImathQuat.h"
-#include "ImathMatrix.h"
-#include "ImathLimits.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathMath.h"
+#include "openexr/ImathVec.h"
+#include "openexr/ImathQuat.h"
+#include "openexr/ImathMatrix.h"
+#include "openexr/ImathLimits.h"
+#include "openexr/ImathNamespace.h"
 
 #include <iostream>
 

@@ -38,12 +38,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IlmBaseConfig.h"
+#include "openexr/IlmBaseConfig.h"
 
 #if !defined(HAVE_PTHREAD) && defined(_WIN32)
 
-#include "IlmThread.h"
-#include "Iex.h"
+#include "openexr/IlmThread.h"
+#include "openexr/Iex.h"
 #include <iostream>
 #include <assert.h>
 

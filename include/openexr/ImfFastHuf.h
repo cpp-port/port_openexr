@@ -34,8 +34,8 @@
 #ifndef INCLUDED_IMF_FAST_HUF_H
 #define INCLUDED_IMF_FAST_HUF_H
 
-#include "ImfInt64.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfInt64.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

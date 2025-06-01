@@ -61,8 +61,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IlmThreadNamespace.h"
-#include "IlmThreadExport.h"
+#include "openexr/IlmThreadNamespace.h"
+#include "openexr/IlmThreadExport.h"
 
 ILMTHREAD_INTERNAL_NAMESPACE_HEADER_ENTER
 

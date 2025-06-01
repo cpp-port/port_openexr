@@ -43,8 +43,8 @@
 //
 //--------------------------------------------------
 
-#include "ImathLimits.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathLimits.h"
+#include "openexr/ImathNamespace.h"
 
 #include "half.h"
 

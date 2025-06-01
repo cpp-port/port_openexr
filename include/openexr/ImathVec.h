@@ -43,10 +43,10 @@
 //
 //----------------------------------------------------
 
-#include "ImathExc.h"
-#include "ImathLimits.h"
-#include "ImathMath.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathExc.h"
+#include "openexr/ImathLimits.h"
+#include "openexr/ImathMath.h"
+#include "openexr/ImathNamespace.h"
 
 #include <iostream>
 

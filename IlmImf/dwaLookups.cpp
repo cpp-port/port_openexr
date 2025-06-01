@@ -51,9 +51,9 @@
 #include <half.h>
 #include <IlmThread.h>
 #include <IlmThreadSemaphore.h>
-#include <ImfIO.h>
-#include <ImfXdr.h>
-#include "ImfNamespace.h"
+#include <openexr/ImfIO.h>
+#include <openexr/ImfXdr.h>
+#include "openexr/ImfNamespace.h"
 
 using namespace OPENEXR_IMF_NAMESPACE;
 

@@ -63,8 +63,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImathNamespace.h"
-#include "ImathExport.h"
+#include "openexr/ImathNamespace.h"
+#include "openexr/ImathExport.h"
 
 #include <stdlib.h>
 #include <math.h>

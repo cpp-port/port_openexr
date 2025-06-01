@@ -38,33 +38,33 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfDeepTiledOutputFile.h"
-#include "ImfDeepTiledInputFile.h"
-#include "ImfDeepTiledInputPart.h"
-#include "ImfInputFile.h"
-#include "ImfTileDescriptionAttribute.h"
-#include "ImfThumbnailImageAttribute.h"
-#include "ImfChannelList.h"
-#include "ImfMisc.h"
-#include "ImfTiledMisc.h"
-#include "ImfStdIO.h"
-#include "ImfCompressor.h"
-#include "ImfOutputStreamMutex.h"
-#include "ImfOutputPartData.h"
-#include "ImfArray.h"
-#include "ImfXdr.h"
-#include "ImfVersion.h"
-#include "ImfTileOffsets.h"
-#include "ImfThreading.h"
-#include "ImfPartType.h"
+#include "openexr/ImfDeepTiledOutputFile.h"
+#include "openexr/ImfDeepTiledInputFile.h"
+#include "openexr/ImfDeepTiledInputPart.h"
+#include "openexr/ImfInputFile.h"
+#include "openexr/ImfTileDescriptionAttribute.h"
+#include "openexr/ImfThumbnailImageAttribute.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfMisc.h"
+#include "openexr/ImfTiledMisc.h"
+#include "openexr/ImfStdIO.h"
+#include "openexr/ImfCompressor.h"
+#include "openexr/ImfOutputStreamMutex.h"
+#include "openexr/ImfOutputPartData.h"
+#include "openexr/ImfArray.h"
+#include "openexr/ImfXdr.h"
+#include "openexr/ImfVersion.h"
+#include "openexr/ImfTileOffsets.h"
+#include "openexr/ImfThreading.h"
+#include "openexr/ImfPartType.h"
 
-#include "ImathBox.h"
+#include "openexr/ImathBox.h"
 
-#include "IlmThreadPool.h"
-#include "IlmThreadSemaphore.h"
-#include "IlmThreadMutex.h"
+#include "openexr/IlmThreadPool.h"
+#include "openexr/IlmThreadSemaphore.h"
+#include "openexr/IlmThreadMutex.h"
 
-#include "Iex.h"
+#include "openexr/Iex.h"
 
 #include <string>
 #include <vector>
@@ -73,7 +73,7 @@
 #include <map>
 #include <algorithm>
 
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

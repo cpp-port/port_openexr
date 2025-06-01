@@ -42,14 +42,14 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfHeader.h"
-#include "ImfFrameBuffer.h"
-#include "ImfThreading.h"
-#include "ImfInputStreamMutex.h"
-#include "ImfInputPartData.h"
-#include "ImfGenericInputFile.h"
-#include "ImfExport.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfHeader.h"
+#include "openexr/ImfFrameBuffer.h"
+#include "openexr/ImfThreading.h"
+#include "openexr/ImfInputStreamMutex.h"
+#include "openexr/ImfInputPartData.h"
+#include "openexr/ImfGenericInputFile.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

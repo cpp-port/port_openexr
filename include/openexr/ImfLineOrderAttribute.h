@@ -43,9 +43,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
-#include "ImfLineOrder.h"
-#include "ImfExport.h"
+#include "openexr/ImfAttribute.h"
+#include "openexr/ImfLineOrder.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

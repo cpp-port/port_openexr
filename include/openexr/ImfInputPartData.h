@@ -37,9 +37,9 @@
 
 #include <vector>
 
-#include "ImfInputStreamMutex.h"
-#include "ImfHeader.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfInputStreamMutex.h"
+#include "openexr/ImfHeader.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

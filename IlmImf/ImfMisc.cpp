@@ -40,19 +40,19 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfMisc.h>
-#include <ImfHeader.h>
-#include <ImfAttribute.h>
-#include <ImfCompressor.h>
-#include <ImfChannelList.h>
-#include <ImfXdr.h>
+#include <openexr/ImfMisc.h>
+#include <openexr/ImfHeader.h>
+#include <openexr/ImfAttribute.h>
+#include <openexr/ImfCompressor.h>
+#include <openexr/ImfChannelList.h>
+#include <openexr/ImfXdr.h>
 #include <ImathFun.h>
-#include <Iex.h>
-#include <ImfStdIO.h>
-#include <ImfConvert.h>
-#include <ImfPartType.h>
-#include <ImfTileDescription.h>
-#include "ImfNamespace.h"
+#include <openexr/Iex.h>
+#include <openexr/ImfStdIO.h>
+#include <openexr/ImfConvert.h>
+#include <openexr/ImfPartType.h>
+#include <openexr/ImfTileDescription.h>
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

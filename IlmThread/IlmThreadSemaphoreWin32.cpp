@@ -38,12 +38,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IlmBaseConfig.h"
+#include "openexr/IlmBaseConfig.h"
 
 #if defined(_WIN32) && !defined(HAVE_PTHREAD) && !defined(HAVE_POSIX_SEMAPHORES)
 
-#include "IlmThreadSemaphore.h"
-#include "Iex.h"
+#include "openexr/IlmThreadSemaphore.h"
+#include "openexr/Iex.h"
 #include <string>
 #include <assert.h>
 #include <iostream>

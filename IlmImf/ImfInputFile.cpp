@@ -38,29 +38,29 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfInputFile.h"
-#include "ImfScanLineInputFile.h"
-#include "ImfTiledInputFile.h"
-#include "ImfChannelList.h"
-#include "ImfMisc.h"
-#include "ImfStdIO.h"
-#include "ImfVersion.h"
-#include "ImfPartType.h"
-#include "ImfInputPartData.h"
-#include "ImfMultiPartInputFile.h"
+#include "openexr/ImfInputFile.h"
+#include "openexr/ImfScanLineInputFile.h"
+#include "openexr/ImfTiledInputFile.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfMisc.h"
+#include "openexr/ImfStdIO.h"
+#include "openexr/ImfVersion.h"
+#include "openexr/ImfPartType.h"
+#include "openexr/ImfInputPartData.h"
+#include "openexr/ImfMultiPartInputFile.h"
 
-#include <ImfCompositeDeepScanLine.h>
-#include <ImfDeepScanLineInputFile.h>
+#include <openexr/ImfCompositeDeepScanLine.h>
+#include <openexr/ImfDeepScanLineInputFile.h>
 
-#include "ImathFun.h"
-#include "IlmThreadMutex.h"
-#include "Iex.h"
+#include "openexr/ImathFun.h"
+#include "openexr/IlmThreadMutex.h"
+#include "openexr/Iex.h"
 #include "half.h"
 
 #include <fstream>
 #include <algorithm>
 
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

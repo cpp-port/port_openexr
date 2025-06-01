@@ -40,7 +40,7 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 
-#include "ImathVec.h"
+#include "openexr/ImathVec.h"
 
 inline
 void

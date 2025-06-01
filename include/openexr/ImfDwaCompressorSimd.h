@@ -43,9 +43,9 @@
 // aligned. Unaligned pointers may risk seg-faulting.
 //
 
-#include "ImfNamespace.h"
-#include "ImfSimd.h"
-#include "ImfSystemSpecific.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfSimd.h"
+#include "openexr/ImfSystemSpecific.h"
 #include "OpenEXRConfig.h"
 
 #include <half.h>

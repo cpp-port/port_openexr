@@ -43,10 +43,10 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImathVec.h"
-#include "ImathMatrix.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImathVec.h"
+#include "openexr/ImathMatrix.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER

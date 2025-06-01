@@ -37,10 +37,10 @@
 
 #include <vector>
 
-#include "ImfIO.h"
-#include "IlmThreadMutex.h"
-#include "ImfGenericOutputFile.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfIO.h"
+#include "openexr/IlmThreadMutex.h"
+#include "openexr/ImfGenericOutputFile.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

@@ -31,9 +31,9 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "ImfDeepCompositing.h"
+#include "openexr/ImfDeepCompositing.h"
 
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 #include <algorithm>
 #include <vector>
 

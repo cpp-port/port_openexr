@@ -54,10 +54,10 @@
 
 #endif
 
-#include "IexNamespace.h"
-#include "IexMathExc.h"
-//#include <IexBaseExc.h>
-#include "IexMathIeeeExc.h"
+#include "openexr/IexNamespace.h"
+#include "openexr/IexMathExc.h"
+//#include <openexr/IexBaseExc.h>
+#include "openexr/IexMathIeeeExc.h"
 
 IEX_INTERNAL_NAMESPACE_HEADER_ENTER
 

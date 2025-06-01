@@ -35,10 +35,10 @@
 #ifndef INCLUDED_IMF_COMPILER_SPECIFIC_H
 #define INCLUDED_IMF_COMPILER_SPECIFIC_H
 
-#include <ImfNamespace.h>
-#include <ImfSimd.h>
+#include <openexr/ImfNamespace.h>
+#include <openexr/ImfSimd.h>
 #include <stdlib.h>
-#include "ImfExport.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

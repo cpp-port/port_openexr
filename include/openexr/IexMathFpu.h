@@ -42,8 +42,8 @@
 //
 //------------------------------------------------------------------------
 
-#include "IexMathIeeeExc.h"
-#include "IexNamespace.h"
+#include "openexr/IexMathIeeeExc.h"
+#include "openexr/IexNamespace.h"
 
 IEX_INTERNAL_NAMESPACE_HEADER_ENTER
 

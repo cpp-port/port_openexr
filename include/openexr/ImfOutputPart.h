@@ -35,11 +35,11 @@
 #ifndef IMFOUTPUTPART_H_
 #define IMFOUTPUTPART_H_
 
-#include "ImfMultiPartOutputFile.h"
-#include "ImfOutputFile.h"
-#include "ImfForward.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfMultiPartOutputFile.h"
+#include "openexr/ImfOutputFile.h"
+#include "openexr/ImfForward.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

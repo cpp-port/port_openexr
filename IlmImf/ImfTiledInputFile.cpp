@@ -38,32 +38,32 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfTiledInputFile.h"
-#include "ImfTileDescriptionAttribute.h"
-#include "ImfChannelList.h"
-#include "ImfMisc.h"
-#include "ImfTiledMisc.h"
-#include "ImfStdIO.h"
-#include "ImfCompressor.h"
-#include "ImfXdr.h"
-#include "ImfConvert.h"
-#include "ImfVersion.h"
-#include "ImfTileOffsets.h"
-#include "ImfThreading.h"
-#include "ImfPartType.h"
-#include "ImfMultiPartInputFile.h"
-#include "ImfInputStreamMutex.h"
-#include "IlmThreadPool.h"
-#include "IlmThreadSemaphore.h"
-#include "IlmThreadMutex.h"
-#include "ImathVec.h"
-#include "Iex.h"
+#include "openexr/ImfTiledInputFile.h"
+#include "openexr/ImfTileDescriptionAttribute.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfMisc.h"
+#include "openexr/ImfTiledMisc.h"
+#include "openexr/ImfStdIO.h"
+#include "openexr/ImfCompressor.h"
+#include "openexr/ImfXdr.h"
+#include "openexr/ImfConvert.h"
+#include "openexr/ImfVersion.h"
+#include "openexr/ImfTileOffsets.h"
+#include "openexr/ImfThreading.h"
+#include "openexr/ImfPartType.h"
+#include "openexr/ImfMultiPartInputFile.h"
+#include "openexr/ImfInputStreamMutex.h"
+#include "openexr/IlmThreadPool.h"
+#include "openexr/IlmThreadSemaphore.h"
+#include "openexr/IlmThreadMutex.h"
+#include "openexr/ImathVec.h"
+#include "openexr/Iex.h"
 #include <string>
 #include <vector>
 #include <algorithm>
 #include <assert.h>
-#include "ImfInputPartData.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfInputPartData.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

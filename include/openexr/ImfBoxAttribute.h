@@ -44,11 +44,11 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfForward.h"
-#include "ImfExport.h"
-#include "ImfAttribute.h"
-#include "ImathBox.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfForward.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfAttribute.h"
+#include "openexr/ImathBox.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

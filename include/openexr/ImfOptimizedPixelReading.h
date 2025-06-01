@@ -39,12 +39,12 @@
 #ifndef INCLUDED_IMF_OPTIMIZED_PIXEL_READING_H
 #define INCLUDED_IMF_OPTIMIZED_PIXEL_READING_H
 
-#include "ImfSimd.h"
-#include "ImfSystemSpecific.h"
+#include "openexr/ImfSimd.h"
+#include "openexr/ImfSystemSpecific.h"
 #include <iostream>
-#include "ImfChannelList.h"
-#include "ImfFrameBuffer.h"
-#include "ImfStringVectorAttribute.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfFrameBuffer.h"
+#include "openexr/ImfStringVectorAttribute.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

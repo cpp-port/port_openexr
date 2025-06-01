@@ -36,10 +36,10 @@
 #ifndef IMFDEEPTILEDINPUTPART_H_
 #define IMFDEEPTILEDINPUTPART_H_
 
-#include "ImfDeepTiledInputFile.h"
-#include "ImfNamespace.h"
-#include "ImfForward.h"
-#include "ImfExport.h"
+#include "openexr/ImfDeepTiledInputFile.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfForward.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

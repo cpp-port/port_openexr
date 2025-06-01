@@ -36,8 +36,8 @@
 #ifndef INCLUDED_IMF_PREVIEW_IMAGE_H
 #define INCLUDED_IMF_PREVIEW_IMAGE_H
 
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 //-----------------------------------------------------------------------------
 //

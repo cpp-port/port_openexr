@@ -33,8 +33,8 @@
 ///////////////////////////////////////////////////////////////////////////
 
 #include <string.h>
-#include "ImfRle.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfRle.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

@@ -40,10 +40,10 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfOpaqueAttribute.h>
-#include "Iex.h"
+#include <openexr/ImfOpaqueAttribute.h>
+#include "openexr/Iex.h"
 #include <string.h>
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

@@ -41,8 +41,8 @@
 //
 //----------------------------------------------------------------------------
 
-#include "ImathInt64.h"
-#include "ImfNamespace.h"
+#include "openexr/ImathInt64.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

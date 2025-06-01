@@ -77,14 +77,14 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfHeader.h"
-#include "ImfRgba.h"
-#include "ImathVec.h"
-#include "ImathBox.h"
-#include "ImfThreading.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
-#include "ImfForward.h"
+#include "openexr/ImfHeader.h"
+#include "openexr/ImfRgba.h"
+#include "openexr/ImathVec.h"
+#include "openexr/ImathBox.h"
+#include "openexr/ImfThreading.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfForward.h"
 
 #include <string>
 

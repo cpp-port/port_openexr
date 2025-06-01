@@ -39,7 +39,7 @@
 //
 //------------------------------------------------------------------------
 
-#include "IexMathFpu.h"
+#include "openexr/IexMathFpu.h"
 
 //#include <stdint.h>
 #include <IlmBaseConfig.h>

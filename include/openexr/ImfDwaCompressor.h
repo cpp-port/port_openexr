@@ -43,11 +43,11 @@
 #include <vector>
 #include <half.h>
 
-#include "ImfInt64.h"
-#include "ImfZip.h"
-#include "ImfChannelList.h"
-#include "ImfCompressor.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfInt64.h"
+#include "openexr/ImfZip.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfCompressor.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

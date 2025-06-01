@@ -40,13 +40,13 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfAttribute.h>
-#include "IlmThreadMutex.h"
-#include "Iex.h"
+#include <openexr/ImfAttribute.h>
+#include "openexr/IlmThreadMutex.h"
+#include "openexr/Iex.h"
 #include <string.h>
 #include <map>
 
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER 
 

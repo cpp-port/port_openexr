@@ -43,9 +43,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
-#include "ImfChannelList.h"
-#include "ImfExport.h"
+#include "openexr/ImfAttribute.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

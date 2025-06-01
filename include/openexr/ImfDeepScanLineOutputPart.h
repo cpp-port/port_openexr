@@ -35,10 +35,10 @@
 #ifndef IMFDEEPSCANLINEOUTPUTPART_H_
 #define IMFDEEPSCANLINEOUTPUTPART_H_
 
-#include "ImfDeepScanLineOutputFile.h"
-#include "ImfMultiPartOutputFile.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfDeepScanLineOutputFile.h"
+#include "openexr/ImfMultiPartOutputFile.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

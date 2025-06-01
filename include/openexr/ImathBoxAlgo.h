@@ -75,11 +75,11 @@
 //
 //---------------------------------------------------------------------------
 
-#include "ImathBox.h"
-#include "ImathMatrix.h"
-#include "ImathLineAlgo.h"
-#include "ImathPlane.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathBox.h"
+#include "openexr/ImathMatrix.h"
+#include "openexr/ImathLineAlgo.h"
+#include "openexr/ImathPlane.h"
+#include "openexr/ImathNamespace.h"
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER
 

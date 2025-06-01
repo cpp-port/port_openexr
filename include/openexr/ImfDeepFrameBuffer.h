@@ -35,9 +35,9 @@
 #ifndef IMFDEEPFRAMEBUFFER_H_
 #define IMFDEEPFRAMEBUFFER_H_
 
-#include "ImfFrameBuffer.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfFrameBuffer.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

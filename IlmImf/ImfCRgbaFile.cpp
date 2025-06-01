@@ -40,21 +40,21 @@
 //-----------------------------------------------------------------------------
 
 
-#include <ImfCRgbaFile.h>
-#include <ImfRgbaFile.h>
-#include <ImfTiledRgbaFile.h>
-#include <ImfIntAttribute.h>
-#include <ImfFloatAttribute.h>
-#include <ImfDoubleAttribute.h>
-#include <ImfStringAttribute.h>
-#include <ImfBoxAttribute.h>
-#include <ImfVecAttribute.h>
-#include <ImfMatrixAttribute.h>
-#include <ImfChannelList.h>
-#include <ImfLut.h>
+#include <openexr/ImfCRgbaFile.h>
+#include <openexr/ImfRgbaFile.h>
+#include <openexr/ImfTiledRgbaFile.h>
+#include <openexr/ImfIntAttribute.h>
+#include <openexr/ImfFloatAttribute.h>
+#include <openexr/ImfDoubleAttribute.h>
+#include <openexr/ImfStringAttribute.h>
+#include <openexr/ImfBoxAttribute.h>
+#include <openexr/ImfVecAttribute.h>
+#include <openexr/ImfMatrixAttribute.h>
+#include <openexr/ImfChannelList.h>
+#include <openexr/ImfLut.h>
 #include "half.h"
-#include "ImfNamespace.h"
-#include "ImathForward.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImathForward.h"
 
 #include <string.h>
 

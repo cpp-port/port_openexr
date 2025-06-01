@@ -38,12 +38,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IlmBaseConfig.h"
+#include "openexr/IlmBaseConfig.h"
 
 #if !defined(HAVE_PTHREAD) && defined(_WIN32)
 
-#include "IlmThreadMutex.h"
-#include "Iex.h"
+#include "openexr/IlmThreadMutex.h"
+#include "openexr/Iex.h"
 
 ILMTHREAD_INTERNAL_NAMESPACE_SOURCE_ENTER
 

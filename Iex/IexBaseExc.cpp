@@ -40,9 +40,9 @@
 //
 //---------------------------------------------------------------------
 
-#include "IexExport.h"
-#include "IexBaseExc.h"
-#include "IexMacros.h"
+#include "openexr/IexExport.h"
+#include "openexr/IexBaseExc.h"
+#include "openexr/IexMacros.h"
 
 #ifdef PLATFORM_WINDOWS
 #include <windows.h>

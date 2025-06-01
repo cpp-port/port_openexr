@@ -38,11 +38,11 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfFramesPerSecond.h>
-#include "ImathFun.h"
+#include <openexr/ImfFramesPerSecond.h>
+#include "openexr/ImathFun.h"
 
 using namespace IMATH_NAMESPACE;
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

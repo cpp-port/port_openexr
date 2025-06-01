@@ -49,8 +49,8 @@
 //
 //-------------------------------------------------------------------
 
-#include "ImathVec.h"
-#include "ImathNamespace.h"
+#include "openexr/ImathVec.h"
+#include "openexr/ImathNamespace.h"
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER
 

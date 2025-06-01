@@ -37,12 +37,12 @@
 #ifndef MULTIPARTOUTPUTFILE_H_
 #define MULTIPARTOUTPUTFILE_H_
 
-#include "ImfHeader.h"
-#include "ImfGenericOutputFile.h"
-#include "ImfForward.h"
-#include "ImfThreading.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfHeader.h"
+#include "openexr/ImfGenericOutputFile.h"
+#include "openexr/ImfForward.h"
+#include "openexr/ImfThreading.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

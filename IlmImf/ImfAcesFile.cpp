@@ -38,16 +38,16 @@
 //	
 //-----------------------------------------------------------------------------
 
-#include <ImfAcesFile.h>
-#include <ImfRgbaFile.h>
-#include <ImfStandardAttributes.h>
-#include <Iex.h>
+#include <openexr/ImfAcesFile.h>
+#include <openexr/ImfRgbaFile.h>
+#include <openexr/ImfStandardAttributes.h>
+#include <openexr/Iex.h>
 #include <algorithm>
 
 using namespace std;
 using namespace IMATH_NAMESPACE;
 using namespace IEX_NAMESPACE;
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

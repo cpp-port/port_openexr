@@ -42,7 +42,7 @@
 //
 //---------------------------------------------------------------------------
 
-#include "IexNamespace.h"
+#include "openexr/IexNamespace.h"
 
 IEX_INTERNAL_NAMESPACE_HEADER_ENTER
 

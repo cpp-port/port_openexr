@@ -103,12 +103,12 @@
 //
 //----------------------------------------------------------------------------
 
-#include "ImfInt64.h"
-#include "IexMathExc.h"
+#include "openexr/ImfInt64.h"
+#include "openexr/IexMathExc.h"
 #include "half.h"
 #include <limits.h>
 
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

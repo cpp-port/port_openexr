@@ -39,10 +39,10 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfThumbnailImage.h"
-#include "ImfCheckedArithmetic.h"
-#include "Iex.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfThumbnailImage.h"
+#include "openexr/ImfCheckedArithmetic.h"
+#include "openexr/Iex.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

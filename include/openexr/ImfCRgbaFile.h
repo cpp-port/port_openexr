@@ -35,7 +35,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef INCLUDED_IMF_C_RGBA_FILE_H
 #define INCLUDED_IMF_C_RGBA_FILE_H
 
-#include "ImfExport.h"
+#include "openexr/ImfExport.h"
 
 #include <stdlib.h>
 

@@ -44,10 +44,10 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfName.h"
-#include "ImfPixelType.h"
-#include "ImfExport.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfName.h"
+#include "openexr/ImfPixelType.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfNamespace.h"
 
 #include <map>
 #include <string>

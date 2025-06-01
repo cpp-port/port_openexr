@@ -31,8 +31,8 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "ImfFastHuf.h"
-#include <Iex.h>
+#include "openexr/ImfFastHuf.h"
+#include <openexr/Iex.h>
 
 #include <string.h>
 #include <assert.h>

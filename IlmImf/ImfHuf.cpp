@@ -45,11 +45,11 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfHuf.h>
-#include <ImfInt64.h>
-#include "ImfAutoArray.h"
-#include "ImfFastHuf.h"
-#include "Iex.h"
+#include <openexr/ImfHuf.h>
+#include <openexr/ImfInt64.h>
+#include "openexr/ImfAutoArray.h"
+#include "openexr/ImfFastHuf.h"
+#include "openexr/Iex.h"
 #include <cstring>
 #include <cassert>
 #include <algorithm>
@@ -57,7 +57,7 @@
 
 using namespace std;
 using namespace IEX_NAMESPACE;
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

@@ -54,21 +54,21 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfHeader.h"
-#include "ImfBoxAttribute.h"
-#include "ImfChromaticitiesAttribute.h"
-#include "ImfEnvmapAttribute.h"
-#include "ImfDeepImageStateAttribute.h"
-#include "ImfFloatAttribute.h"
-#include "ImfKeyCodeAttribute.h"
-#include "ImfMatrixAttribute.h"
-#include "ImfRationalAttribute.h"
-#include "ImfStringAttribute.h"
-#include "ImfStringVectorAttribute.h"
-#include "ImfTimeCodeAttribute.h"
-#include "ImfVecAttribute.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfHeader.h"
+#include "openexr/ImfBoxAttribute.h"
+#include "openexr/ImfChromaticitiesAttribute.h"
+#include "openexr/ImfEnvmapAttribute.h"
+#include "openexr/ImfDeepImageStateAttribute.h"
+#include "openexr/ImfFloatAttribute.h"
+#include "openexr/ImfKeyCodeAttribute.h"
+#include "openexr/ImfMatrixAttribute.h"
+#include "openexr/ImfRationalAttribute.h"
+#include "openexr/ImfStringAttribute.h"
+#include "openexr/ImfStringVectorAttribute.h"
+#include "openexr/ImfTimeCodeAttribute.h"
+#include "openexr/ImfVecAttribute.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 #define IMF_STD_ATTRIBUTE_DEF(name,suffix,object)                            \
                                                                              \

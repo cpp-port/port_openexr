@@ -42,15 +42,15 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfHeader.h"
-#include "ImfFrameBuffer.h"
-#include "ImathBox.h"
-#include "ImfTileDescription.h"
-#include "ImfThreading.h"
-#include "ImfGenericOutputFile.h"
-#include "ImfForward.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
+#include "openexr/ImfHeader.h"
+#include "openexr/ImfFrameBuffer.h"
+#include "openexr/ImathBox.h"
+#include "openexr/ImfTileDescription.h"
+#include "openexr/ImfThreading.h"
+#include "openexr/ImfGenericOutputFile.h"
+#include "openexr/ImfForward.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER

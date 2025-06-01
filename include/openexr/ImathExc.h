@@ -43,9 +43,9 @@
 //
 //-----------------------------------------------
 
-#include "ImathNamespace.h"
-#include "IexBaseExc.h"
-#include "ImathExport.h"
+#include "openexr/ImathNamespace.h"
+#include "openexr/IexBaseExc.h"
+#include "openexr/ImathExport.h"
 
 IMATH_INTERNAL_NAMESPACE_HEADER_ENTER
 

@@ -97,20 +97,20 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfB44Compressor.h"
-#include "ImfHeader.h"
-#include "ImfChannelList.h"
-#include "ImfMisc.h"
-#include "ImfCheckedArithmetic.h"
+#include "openexr/ImfB44Compressor.h"
+#include "openexr/ImfHeader.h"
+#include "openexr/ImfChannelList.h"
+#include "openexr/ImfMisc.h"
+#include "openexr/ImfCheckedArithmetic.h"
 #include <ImathFun.h>
 #include <ImathBox.h>
-#include <Iex.h>
-#include <ImfIO.h>
-#include <ImfXdr.h>
+#include <openexr/Iex.h>
+#include <openexr/ImfIO.h>
+#include <openexr/ImfXdr.h>
 #include <string.h>
 #include <assert.h>
 #include <algorithm>
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

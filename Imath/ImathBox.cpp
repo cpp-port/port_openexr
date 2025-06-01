@@ -32,6 +32,6 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "ImathBox.h"
+#include "openexr/ImathBox.h"
 
 // this file is necessary for template instantiation on windows

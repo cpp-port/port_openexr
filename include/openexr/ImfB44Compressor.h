@@ -42,10 +42,10 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfCompressor.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
-#include "ImfForward.h"
+#include "openexr/ImfCompressor.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfForward.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

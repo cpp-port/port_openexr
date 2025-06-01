@@ -66,9 +66,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IlmThreadExport.h"
-#include "IlmBaseConfig.h"
-#include "IlmThreadNamespace.h"
+#include "openexr/IlmThreadExport.h"
+#include "openexr/IlmBaseConfig.h"
+#include "openexr/IlmThreadNamespace.h"
 
 #if defined _WIN32 || defined _WIN64
     #ifdef NOMINMAX

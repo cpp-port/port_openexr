@@ -40,8 +40,8 @@
 //
 //----------------------------------------------------------------------------
 
-#include "ImathVec.h"
-#include "ImathExport.h"
+#include "openexr/ImathVec.h"
+#include "openexr/ImathExport.h"
 
 #if (defined _WIN32 || defined _WIN64) && defined _MSC_VER
 // suppress exception specification warnings

@@ -65,7 +65,7 @@ The only exception to this is where user code has forward declarations of
 objects in the Imf namespace, as these will forward declare symbols in an 
 incorrect namespace
 These forward declarations should be removed, and replaced with 
-    #include <ImfForward.h>, 
+    #include <openexr/ImfForward.h>,
 which forward-declares all types correctly.
 
 

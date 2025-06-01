@@ -43,11 +43,11 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfCompression.h"
-#include "ImathBox.h"
-#include "ImfNamespace.h"
-#include "ImfExport.h"
-#include "ImfForward.h"
+#include "openexr/ImfCompression.h"
+#include "openexr/ImathBox.h"
+#include "openexr/ImfNamespace.h"
+#include "openexr/ImfExport.h"
+#include "openexr/ImfForward.h"
 
 #include <stdlib.h>
 

@@ -32,8 +32,8 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "ImfDeepScanLineOutputPart.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfDeepScanLineOutputPart.h"
+#include "openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

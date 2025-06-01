@@ -39,31 +39,31 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <ImfDeepScanLineInputFile.h>
-#include <ImfChannelList.h>
-#include <ImfMisc.h>
-#include <ImfStdIO.h>
-#include <ImfCompressor.h>
-#include <ImfXdr.h>
-#include <ImfConvert.h>
-#include <ImfThreading.h>
-#include <ImfPartType.h>
-#include <ImfVersion.h>
-#include "ImfMultiPartInputFile.h"
-#include "ImfDeepFrameBuffer.h"
-#include "ImfInputStreamMutex.h"
-#include "ImfInputPartData.h"
+#include <openexr/ImfDeepScanLineInputFile.h>
+#include <openexr/ImfChannelList.h>
+#include <openexr/ImfMisc.h>
+#include <openexr/ImfStdIO.h>
+#include <openexr/ImfCompressor.h>
+#include <openexr/ImfXdr.h>
+#include <openexr/ImfConvert.h>
+#include <openexr/ImfThreading.h>
+#include <openexr/ImfPartType.h>
+#include <openexr/ImfVersion.h>
+#include "openexr/ImfMultiPartInputFile.h"
+#include "openexr/ImfDeepFrameBuffer.h"
+#include "openexr/ImfInputStreamMutex.h"
+#include "openexr/ImfInputPartData.h"
 
 
-#include "ImathBox.h"
-#include "ImathFun.h"
+#include "openexr/ImathBox.h"
+#include "openexr/ImathFun.h"
 
 
-#include "IlmThreadPool.h"
-#include "IlmThreadSemaphore.h"
-#include "IlmThreadMutex.h"
+#include "openexr/IlmThreadPool.h"
+#include "openexr/IlmThreadSemaphore.h"
+#include "openexr/IlmThreadMutex.h"
 
-#include "Iex.h"
+#include "openexr/Iex.h"
 
 #include <string>
 #include <vector>
@@ -72,7 +72,7 @@
 #include <algorithm>
 
 
-#include "ImfNamespace.h"
+#include "openexr/ImfNamespace.h"
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 
 using IMATH_NAMESPACE::Box2i;

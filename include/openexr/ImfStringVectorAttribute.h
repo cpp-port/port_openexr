@@ -42,8 +42,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "ImfAttribute.h"
-#include "ImfNamespace.h"
+#include "openexr/ImfAttribute.h"
+#include "openexr/ImfNamespace.h"
 
 #include <string>
 #include <vector>

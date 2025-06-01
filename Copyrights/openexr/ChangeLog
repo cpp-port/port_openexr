@@ -382,7 +382,7 @@ Version 1.2.2:
 	* Added a new "key code" attribute to identify motion picture
 	  film frames.
 	  (Florian Kainz)
-	* Removed #include <Iex.h> from ImfAttribute.h, ImfHeader.h
+	* Removed #include <openexr/Iex.h> from ImfAttribute.h, ImfHeader.h
 	  and ImfXdr.h so that including header files such as
 	  ImfInputFile.h no longer defines ASSERT and THROW macros,
 	  which may conflict with similar macros defined by
