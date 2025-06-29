@@ -40,7 +40,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/IlmBaseConfig.h"
+#include "IlmBaseConfig.h"
 
 #if HAVE_PTHREAD && !HAVE_POSIX_SEMAPHORES
 

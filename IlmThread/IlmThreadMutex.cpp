@@ -39,7 +39,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/IlmBaseConfig.h"
+#include "IlmBaseConfig.h"
 
 //#if !defined(_WIN32) && !defined(_WIN64) && !defined(HAVE_PTHREAD)
 

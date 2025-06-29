@@ -38,7 +38,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/IlmBaseConfig.h"
+#include "IlmBaseConfig.h"
 
 #if defined(_WIN32) && !defined(HAVE_PTHREAD) && !defined(HAVE_POSIX_SEMAPHORES)
 

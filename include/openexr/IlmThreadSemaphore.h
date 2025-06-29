@@ -42,7 +42,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/IlmBaseConfig.h"
+#include "IlmBaseConfig.h"
 #include "openexr/IlmThreadExport.h"
 #include "openexr/IlmThreadNamespace.h"
 
