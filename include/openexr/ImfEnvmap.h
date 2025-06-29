@@ -170,7 +170,7 @@ namespace LatLongMap
 // Cube Map:
 //
 // The environment is projected onto the six faces of an
-// axis-aligned graphics3d.  The graphics3d's faces are then arranged
+// axis-aligned cube.  The cube's faces are then arranged
 // in a 2D image as shown below.
 //
 //          2-----------3
@@ -249,7 +249,7 @@ namespace LatLongMap
 //--------------------------------------------------------------
 
 //------------------------------------
-// Names for the six faces of the graphics3d
+// Names for the six faces of the cube
 //------------------------------------
 
 enum CubeMapFace
@@ -265,7 +265,7 @@ enum CubeMapFace
 namespace CubeMap
 {
     //---------------------------------------------
-    // Width and height of a graphics3d's face, in pixels
+    // Width and height of a cube's face, in pixels
     //---------------------------------------------
 
     IMF_EXPORT 
@@ -296,7 +296,7 @@ namespace CubeMap
 
 
     //--------------------------------------------------------------
-    // Convert a 3D direction into a graphics3d face, and a pixel position
+    // Convert a 3D direction into a cube face, and a pixel position
     // within that face.
     //
     // If you have a 3D direction, dir, the following code fragment
@@ -319,7 +319,7 @@ namespace CubeMap
 
    
     // --------------------------------------------------------
-    // Given a graphics3d face and a pixel position within that face,
+    // Given a cube face and a pixel position within that face,
     // compute the corresponding 3D direction.
     // --------------------------------------------------------
 
