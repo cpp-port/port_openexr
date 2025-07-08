@@ -105,7 +105,7 @@
 
 #include "openexr/ImfInt64.h"
 #include "openexr/IexMathExc.h"
-#include "half.h"
+#include <openexr/half.h>
 #include <limits.h>
 
 #include "openexr/ImfNamespace.h"

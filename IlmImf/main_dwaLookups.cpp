@@ -49,8 +49,8 @@
 #endif
 
 #include <half.h>
-#include <IlmThread.h>
-#include <IlmThreadSemaphore.h>
+#include <openexr/IlmThread.h>
+#include <openexr/IlmThreadSemaphore.h>
 #include <openexr/ImfIO.h>
 #include <openexr/ImfXdr.h>
 #include "openexr/ImfNamespace.h"

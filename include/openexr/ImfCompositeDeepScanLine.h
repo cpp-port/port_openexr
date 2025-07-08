@@ -62,7 +62,7 @@
 #include "openexr/ImfForward.h"
 #include "openexr/ImfNamespace.h"
 #include "openexr/ImfExport.h"
-#include <ImathBox.h>
+#include <openexr/ImathBox.h>
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER
 

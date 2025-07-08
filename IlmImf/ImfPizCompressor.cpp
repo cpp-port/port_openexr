@@ -46,8 +46,8 @@
 #include "openexr/ImfWav.h"
 #include "openexr/ImfMisc.h"
 #include "openexr/ImfCheckedArithmetic.h"
-#include <ImathFun.h>
-#include <ImathBox.h>
+#include <openexr/ImathFun.h>
+#include <openexr/ImathBox.h>
 #include <openexr/Iex.h>
 #include "openexr/ImfIO.h"
 #include "openexr/ImfXdr.h"

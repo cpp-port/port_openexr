@@ -49,7 +49,7 @@
 #include "openexr/ImfFrameBuffer.h"
 #include "openexr/ImathVec.h"
 #include "openexr/ImathBox.h"
-#include "half.h"
+#include <openexr/half.h>
 #include "openexr/ImfTileDescription.h"
 #include "openexr/ImfRgba.h"
 #include "openexr/ImfThreading.h"

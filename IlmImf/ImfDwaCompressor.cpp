@@ -148,9 +148,9 @@
 #include "openexr/ImathFun.h"
 #include "openexr/ImathBox.h"
 #include "openexr/ImathVec.h"
-#include "half.h"
+#include <openexr/half.h>
 
-#include "dwaLookups.h"
+#include <openexr/dwaLookups.h>
 
 #include <vector>
 #include <string>

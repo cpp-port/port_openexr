@@ -49,7 +49,7 @@
 //------------------------------------------------------------------------
 
 #include <limits>
-#include "half.h"
+#include <openexr/half.h>
 
 namespace std {
 

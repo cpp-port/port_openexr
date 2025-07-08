@@ -45,8 +45,8 @@
 #include <openexr/ImfChannelList.h>
 #include <openexr/ImfRgbaYca.h>
 #include <openexr/ImfStandardAttributes.h>
-#include <ImathFun.h>
-#include <IlmThreadMutex.h>
+#include <openexr/ImathFun.h>
+#include <openexr/IlmThreadMutex.h>
 #include <openexr/Iex.h>
 #include <string.h>
 #include <algorithm>

@@ -55,7 +55,7 @@
 #include "openexr/ImathFun.h"
 #include "openexr/IlmThreadMutex.h"
 #include "openexr/Iex.h"
-#include "half.h"
+#include <openexr/half.h>
 
 #include <fstream>
 #include <algorithm>

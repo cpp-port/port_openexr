@@ -83,7 +83,7 @@
 #ifndef _HALF_FUNCTION_H_
 #define _HALF_FUNCTION_H_
 
-#include "half.h"
+#include <openexr/half.h>
 
 #include "IlmBaseConfig.h"
 #ifndef ILMBASE_HAVE_LARGE_STACK  

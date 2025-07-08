@@ -53,8 +53,8 @@
 #include "openexr/ImfVersion.h"
 
 #include <OpenEXRConfig.h>
-#include <IlmThread.h>
-#include <IlmThreadMutex.h>
+#include <openexr/IlmThread.h>
+#include <openexr/IlmThreadMutex.h>
 
 #include <openexr/Iex.h>
 #include <map>

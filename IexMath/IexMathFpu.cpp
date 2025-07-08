@@ -42,7 +42,7 @@
 #include "openexr/IexMathFpu.h"
 
 //#include <stdint.h>
-#include <IlmBaseConfig.h>
+#include <openexr/IlmBaseConfig.h>
 #include <stdio.h>
 
 #if 0

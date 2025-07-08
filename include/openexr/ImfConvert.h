@@ -46,7 +46,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "half.h"
+#include <openexr/half.h>
 #include "openexr/ImfExport.h"
 #include "openexr/ImfNamespace.h"
 

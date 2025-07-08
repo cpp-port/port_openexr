@@ -46,7 +46,7 @@
 #include <openexr/ImfCompressor.h>
 #include <openexr/ImfChannelList.h>
 #include <openexr/ImfXdr.h>
-#include <ImathFun.h>
+#include <openexr/ImathFun.h>
 #include <openexr/Iex.h>
 #include <openexr/ImfStdIO.h>
 #include <openexr/ImfConvert.h>
