@@ -10,9 +10,9 @@ if (MSVC)
 endif ()
 
 list(APPEND library_source
-        Half/eLut.cpp
+        #Half/main_eLut.cpp
         Half/half.cpp
-        Half/toFloat.cpp
+        #Half/main_toFloat.cpp
         Iex/IexBaseExc.cpp
         Iex/IexThrowErrnoExc.cpp
         IexMath/IexMathFloatExc.cpp
@@ -136,6 +136,8 @@ add_library(${PROJECT_NAME} SHARED ${library_source})
 if(MSVC)
 target_compile_definitions(${PROJECT_NAME} PRIVATE OPENEXR_DLL ILMIMF_EXPORTS)
 endif()
+
+target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
 
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
