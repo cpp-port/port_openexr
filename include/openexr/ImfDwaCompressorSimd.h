@@ -48,7 +48,7 @@
 #include "openexr/ImfSystemSpecific.h"
 #include "OpenEXRConfig.h"
 
-#include <half.h>
+#include <openexr/half.h>
 #include <assert.h>
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_HEADER_ENTER

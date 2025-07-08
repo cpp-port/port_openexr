@@ -102,8 +102,8 @@
 #include "openexr/ImfChannelList.h"
 #include "openexr/ImfMisc.h"
 #include "openexr/ImfCheckedArithmetic.h"
-#include <ImathFun.h>
-#include <ImathBox.h>
+#include <openexr/ImathFun.h>
+#include <openexr/ImathBox.h>
 #include <openexr/Iex.h>
 #include <openexr/ImfIO.h>
 #include <openexr/ImfXdr.h>
@@ -131,7 +131,7 @@ namespace {
 //	x = 8 * log (y)
 //
 
-#include "b44ExpLogTable.h"
+#include <openexr/b44ExpLogTable.h>
 
 
 inline void

@@ -41,7 +41,7 @@
 //------------------------------------------------------------------------------
 
 #include <vector>
-#include <half.h>
+#include <openexr/half.h>
 
 #include "openexr/ImfInt64.h"
 #include "openexr/ImfZip.h"

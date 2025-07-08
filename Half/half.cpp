@@ -54,9 +54,9 @@ using namespace std;
 //-------------------------------------------------------------
 
 HALF_EXPORT const half::uif half::_toFloat[1 << 16] =
-    #include "toFloat.h"
+    #include <openexr/toFloat.h>
 HALF_EXPORT const unsigned short half::_eLut[1 << 9] =
-    #include "eLut.h"
+    #include <openexr/eLut.h>
 
 //-----------------------------------------------
 // Overflow handler for float-to-half conversion;

@@ -52,9 +52,9 @@
 #include <openexr/ImfMatrixAttribute.h>
 #include <openexr/ImfChannelList.h>
 #include <openexr/ImfLut.h>
-#include "half.h"
-#include "openexr/ImfNamespace.h"
-#include "openexr/ImathForward.h"
+#include <openexr/half.h>
+#include <openexr/ImfNamespace.h>
+#include <openexr/ImathForward.h>
 
 #include <string.h>
 

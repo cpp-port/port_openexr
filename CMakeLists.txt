@@ -17,8 +17,8 @@ list(APPEND library_source
         Iex/IexThrowErrnoExc.cpp
         IexMath/IexMathFloatExc.cpp
         IexMath/IexMathFpu.cpp
-        IlmImf/b44ExpLogTable.cpp
-        IlmImf/dwaLookups.cpp
+        #IlmImf/b44ExpLogTable.cpp
+        #IlmImf/dwaLookups.cpp
         IlmImf/ImfAcesFile.cpp
         IlmImf/ImfAttribute.cpp
         IlmImf/ImfB44Compressor.cpp
