@@ -81,7 +81,7 @@ half::overflow ()
 // zeroes, denormalized numbers and exponent overflows.
 //-----------------------------------------------------
 
-HALF_EXPORT short
+short
 half::convert (int i)
 {
     //

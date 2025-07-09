@@ -108,17 +108,7 @@ list(APPEND library_source
         IlmImf/ImfWav.cpp
         IlmImf/ImfZip.cpp
         IlmImf/ImfZipCompressor.cpp
-        IlmThread/IlmThread.cpp
-        IlmThread/IlmThreadMutex.cpp
-        IlmThread/IlmThreadMutexPosix.cpp
-        IlmThread/IlmThreadMutexWin32.cpp
         IlmThread/IlmThreadPool.cpp
-        IlmThread/IlmThreadPosix.cpp
-        IlmThread/IlmThreadSemaphore.cpp
-        IlmThread/IlmThreadSemaphorePosix.cpp
-        IlmThread/IlmThreadSemaphorePosixCompat.cpp
-        IlmThread/IlmThreadSemaphoreWin32.cpp
-        IlmThread/IlmThreadWin32.cpp
         Imath/ImathBox.cpp
         Imath/ImathColorAlgo.cpp
         Imath/ImathFun.cpp
@@ -129,12 +119,59 @@ list(APPEND library_source
 
 )
 
+if(${WIN32})
+
+    list(APPEND library_source
+            #Half/main_eLut.cpp
+            IlmThread/IlmThreadMutexWin32.cpp
+            IlmThread/IlmThreadSemaphoreWin32.cpp
+            IlmThread/IlmThreadWin32.cpp
+
+    )
+endif()
+
+if(${LINUX} OR ${ANDROID} OR ${__APPLE__} OR ${__BSD__})
+
+    list(APPEND library_source
+            #Half/main_eLut.cpp
+            IlmThread/IlmThreadPosix.cpp
+            IlmThread/IlmThreadMutexPosix.cpp
+            IlmThread/IlmThreadSemaphorePosix.cpp
+
+    )
+
+endif()
+
+if(${UNIX_COMPAT})
+
+    list(APPEND library_source
+            IlmThread/IlmThreadSemaphorePosixCompat.cpp
+
+    )
+endif()
+
+if(${OPENEXR_NO_THREADING})
+
+    list(APPEND library_source
+            #Half/main_eLut.cpp
+            IlmThread/IlmThread.cpp
+            IlmThread/IlmThreadMutex.cpp
+            IlmThread/IlmThreadSemaphore.cpp
+
+    )
+
+endif()
+
 
 add_library(${PROJECT_NAME} SHARED ${library_source})
 
 
 if(MSVC)
 target_compile_definitions(${PROJECT_NAME} PRIVATE OPENEXR_DLL ILMIMF_EXPORTS)
+target_compile_definitions(${PROJECT_NAME} PRIVATE HALF_EXPORTS)
+target_compile_definitions(${PROJECT_NAME} PRIVATE IMATH_EXPORTS)
+target_compile_definitions(${PROJECT_NAME} PRIVATE ILMTHREAD_EXPORTS)
+target_compile_definitions(${PROJECT_NAME} PRIVATE IEX_EXPORTS)
 endif()
 
 target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
