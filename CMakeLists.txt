@@ -3,7 +3,7 @@ project(openexr CXX)
 
 
 if (MSVC)
-    set(CMAKE_DEBUG_POSTFIX "d")
+    #set(CMAKE_DEBUG_POSTFIX "d")
     add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
     add_definitions(-D_CRT_NONSTDC_NO_DEPRECATE)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR})
@@ -109,6 +109,9 @@ list(APPEND library_source
         IlmImf/ImfZip.cpp
         IlmImf/ImfZipCompressor.cpp
         IlmThread/IlmThreadPool.cpp
+        IlmThread/IlmThread.cpp
+        IlmThread/IlmThreadMutex.cpp
+        IlmThread/IlmThreadSemaphore.cpp
         Imath/ImathBox.cpp
         Imath/ImathColorAlgo.cpp
         Imath/ImathFun.cpp
@@ -131,7 +134,7 @@ if(${WIN32})
 endif()
 
 if(${LINUX} OR ${ANDROID} OR ${__APPLE__} OR ${__BSD__})
-
+message(STATUS "IlmThreadPosix at OpenEXR")
     list(APPEND library_source
             #Half/main_eLut.cpp
             IlmThread/IlmThreadPosix.cpp
@@ -150,17 +153,14 @@ if(${UNIX_COMPAT})
     )
 endif()
 
-if(${OPENEXR_NO_THREADING})
-
-    list(APPEND library_source
-            #Half/main_eLut.cpp
-            IlmThread/IlmThread.cpp
-            IlmThread/IlmThreadMutex.cpp
-            IlmThread/IlmThreadSemaphore.cpp
-
-    )
-
-endif()
+#if(${OPENEXR_NO_THREADING})
+#
+#    list(APPEND library_source
+#            #Half/main_eLut.cpp
+#
+#    )
+#
+#endif()
 
 
 add_library(${PROJECT_NAME} SHARED ${library_source})
@@ -172,6 +172,10 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE HALF_EXPORTS)
 target_compile_definitions(${PROJECT_NAME} PRIVATE IMATH_EXPORTS)
 target_compile_definitions(${PROJECT_NAME} PRIVATE ILMTHREAD_EXPORTS)
 target_compile_definitions(${PROJECT_NAME} PRIVATE IEX_EXPORTS)
+elseif(${LINUX} OR ${ANDROID} OR ${__BSD__})
+
+target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_PTHREAD=1)
+
 endif()
 
 target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
