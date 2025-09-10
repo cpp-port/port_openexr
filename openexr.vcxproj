@@ -539,7 +539,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="IexMath\IexMathFpu.cpp" />
-    <ClCompile Include="IlmImf\b44ExpLogTable.cpp" />
     <ClCompile Include="IlmImf\ImfAcesFile.cpp" />
     <ClCompile Include="IlmImf\ImfAttribute.cpp" />
     <ClCompile Include="IlmImf\ImfB44Compressor.cpp" />
@@ -629,6 +628,9 @@
     <ClCompile Include="IlmImf\ImfWav.cpp" />
     <ClCompile Include="IlmImf\ImfZip.cpp" />
     <ClCompile Include="IlmImf\ImfZipCompressor.cpp" />
+    <ClCompile Include="IlmThread\IlmThreadMutexWin32.cpp" />
+    <ClCompile Include="IlmThread\IlmThreadSemaphoreWin32.cpp" />
+    <ClCompile Include="IlmThread\IlmThreadWin32.cpp" />
     <ClCompile Include="Imath\ImathBox.cpp" />
     <ClCompile Include="Imath\ImathColorAlgo.cpp" />
     <ClCompile Include="Imath\ImathFun.cpp" />

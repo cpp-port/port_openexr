@@ -39,9 +39,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="IlmImf\b44ExpLogTable.cpp">
-      <Filter>Source Files\IlmImf Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="IlmImf\ImfAcesFile.cpp">
       <Filter>Source Files\IlmImf Source Files</Filter>
     </ClCompile>
@@ -356,6 +353,15 @@
     </ClCompile>
     <ClCompile Include="IlmImf\ImfThumbnailImageAttribute.cpp">
       <Filter>Source Files\IlmImf Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IlmThread\IlmThreadWin32.cpp">
+      <Filter>Source Files\IlmThread Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IlmThread\IlmThreadMutexWin32.cpp">
+      <Filter>Source Files\IlmThread Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IlmThread\IlmThreadSemaphoreWin32.cpp">
+      <Filter>Source Files\IlmThread Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
