@@ -32,17 +32,17 @@
 ///////////////////////////////////////////////////////////////////////////
 
 
-#include "openexr/ImfCompositeDeepScanLine.h"
-#include "openexr/ImfDeepScanLineInputPart.h"
-#include "openexr/ImfDeepScanLineInputFile.h"
-#include "openexr/ImfChannelList.h"
-#include "openexr/ImfFrameBuffer.h"
-#include "openexr/ImfDeepFrameBuffer.h"
-#include "openexr/ImfDeepCompositing.h"
-#include "openexr/ImfPixelType.h"
-#include "openexr/IlmThreadPool.h"
+#include "port_openexr/ImfCompositeDeepScanLine.h"
+#include "port_openexr/ImfDeepScanLineInputPart.h"
+#include "port_openexr/ImfDeepScanLineInputFile.h"
+#include "port_openexr/ImfChannelList.h"
+#include "port_openexr/ImfFrameBuffer.h"
+#include "port_openexr/ImfDeepFrameBuffer.h"
+#include "port_openexr/ImfDeepCompositing.h"
+#include "port_openexr/ImfPixelType.h"
+#include "port_openexr/IlmThreadPool.h"
 
-#include <openexr/Iex.h>
+#include <port_openexr/Iex.h>
 #include <vector>
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

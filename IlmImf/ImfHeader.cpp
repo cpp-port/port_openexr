@@ -40,41 +40,41 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfHeader.h>
-#include <openexr/ImfStdIO.h>
-#include <openexr/ImfVersion.h>
-#include <openexr/ImfCompressor.h>
-#include <openexr/ImfMisc.h>
-#include <openexr/ImfBoxAttribute.h>
-#include <openexr/ImfChannelListAttribute.h>
-#include <openexr/ImfChromaticitiesAttribute.h>
-#include <openexr/ImfCompressionAttribute.h>
-#include <openexr/ImfDeepImageStateAttribute.h>
-#include <openexr/ImfDoubleAttribute.h>
-#include <openexr/ImfDwaCompressor.h>
-#include <openexr/ImfEnvmapAttribute.h>
-#include <openexr/ImfFloatAttribute.h>
-#include <openexr/ImfFloatVectorAttribute.h>
-#include <openexr/ImfIntAttribute.h>
-#include <openexr/ImfKeyCodeAttribute.h>
-#include <openexr/ImfLineOrderAttribute.h>
-#include <openexr/ImfMatrixAttribute.h>
-#include <openexr/ImfOpaqueAttribute.h>
-#include <openexr/ImfThumbnailImageAttribute.h>
-#include <openexr/ImfRationalAttribute.h>
-#include <openexr/ImfStringAttribute.h>
-#include <openexr/ImfStringVectorAttribute.h>
-#include <openexr/ImfTileDescriptionAttribute.h>
-#include <openexr/ImfTimeCodeAttribute.h>
-#include <openexr/ImfVecAttribute.h>
-#include <openexr/ImfPartType.h>
-#include "openexr/IlmThreadMutex.h"
-#include "openexr/Iex.h"
+#include <port_openexr/ImfHeader.h>
+#include <port_openexr/ImfStdIO.h>
+#include <port_openexr/ImfVersion.h>
+#include <port_openexr/ImfCompressor.h>
+#include <port_openexr/ImfMisc.h>
+#include <port_openexr/ImfBoxAttribute.h>
+#include <port_openexr/ImfChannelListAttribute.h>
+#include <port_openexr/ImfChromaticitiesAttribute.h>
+#include <port_openexr/ImfCompressionAttribute.h>
+#include <port_openexr/ImfDeepImageStateAttribute.h>
+#include <port_openexr/ImfDoubleAttribute.h>
+#include <port_openexr/ImfDwaCompressor.h>
+#include <port_openexr/ImfEnvmapAttribute.h>
+#include <port_openexr/ImfFloatAttribute.h>
+#include <port_openexr/ImfFloatVectorAttribute.h>
+#include <port_openexr/ImfIntAttribute.h>
+#include <port_openexr/ImfKeyCodeAttribute.h>
+#include <port_openexr/ImfLineOrderAttribute.h>
+#include <port_openexr/ImfMatrixAttribute.h>
+#include <port_openexr/ImfOpaqueAttribute.h>
+#include <port_openexr/ImfThumbnailImageAttribute.h>
+#include <port_openexr/ImfRationalAttribute.h>
+#include <port_openexr/ImfStringAttribute.h>
+#include <port_openexr/ImfStringVectorAttribute.h>
+#include <port_openexr/ImfTileDescriptionAttribute.h>
+#include <port_openexr/ImfTimeCodeAttribute.h>
+#include <port_openexr/ImfVecAttribute.h>
+#include <port_openexr/ImfPartType.h>
+#include "port_openexr/IlmThreadMutex.h"
+#include "port_openexr/Iex.h"
 #include <sstream>
 #include <stdlib.h>
 #include <time.h>
 
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

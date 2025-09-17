@@ -63,17 +63,17 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfPxr24Compressor.h>
-#include <openexr/ImfHeader.h>
-#include <openexr/ImfChannelList.h>
-#include <openexr/ImfMisc.h>
-#include <openexr/ImfCheckedArithmetic.h>
-#include <openexr/ImfNamespace.h>
+#include <port_openexr/ImfPxr24Compressor.h>
+#include <port_openexr/ImfHeader.h>
+#include <port_openexr/ImfChannelList.h>
+#include <port_openexr/ImfMisc.h>
+#include <port_openexr/ImfCheckedArithmetic.h>
+#include <port_openexr/ImfNamespace.h>
 
-#include <openexr/ImathFun.h>
-#include <openexr/Iex.h>
+#include <port_openexr/ImathFun.h>
+#include <port_openexr/Iex.h>
 
-#include <openexr/half.h>
+#include <port_openexr/half.h>
 #include <zlib.h>
 #include <assert.h>
 #include <algorithm>

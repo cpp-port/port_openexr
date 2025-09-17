@@ -40,8 +40,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfChromaticities.h>
-#include "openexr/ImfNamespace.h"
+#include <port_openexr/ImfChromaticities.h>
+#include "port_openexr/ImfNamespace.h"
 #include <string.h>
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

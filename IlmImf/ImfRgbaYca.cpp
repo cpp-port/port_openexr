@@ -42,13 +42,13 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfRgbaYca.h>
+#include <port_openexr/ImfRgbaYca.h>
 #include <assert.h>
 #include <algorithm>
 
 using namespace IMATH_NAMESPACE;
 using namespace std;
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

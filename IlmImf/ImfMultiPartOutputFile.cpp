@@ -32,25 +32,25 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "openexr/ImfMultiPartOutputFile.h"
-#include "openexr/ImfBoxAttribute.h"
-#include "openexr/ImfFloatAttribute.h"
-#include "openexr/ImfTimeCodeAttribute.h"
-#include "openexr/ImfChromaticitiesAttribute.h"
-#include "openexr/ImfOutputPartData.h"
-#include "openexr/ImfPartType.h"
-#include "openexr/ImfOutputFile.h"
-#include "openexr/ImfTiledOutputFile.h"
-#include "openexr/ImfThreading.h"
-#include "openexr/IlmThreadMutex.h"
-#include "openexr/ImfMisc.h"
-#include "openexr/ImfStdIO.h"
-#include "openexr/ImfDeepScanLineOutputFile.h"
-#include "openexr/ImfDeepTiledOutputFile.h"
-#include "openexr/ImfOutputStreamMutex.h"
+#include "port_openexr/ImfMultiPartOutputFile.h"
+#include "port_openexr/ImfBoxAttribute.h"
+#include "port_openexr/ImfFloatAttribute.h"
+#include "port_openexr/ImfTimeCodeAttribute.h"
+#include "port_openexr/ImfChromaticitiesAttribute.h"
+#include "port_openexr/ImfOutputPartData.h"
+#include "port_openexr/ImfPartType.h"
+#include "port_openexr/ImfOutputFile.h"
+#include "port_openexr/ImfTiledOutputFile.h"
+#include "port_openexr/ImfThreading.h"
+#include "port_openexr/IlmThreadMutex.h"
+#include "port_openexr/ImfMisc.h"
+#include "port_openexr/ImfStdIO.h"
+#include "port_openexr/ImfDeepScanLineOutputFile.h"
+#include "port_openexr/ImfDeepTiledOutputFile.h"
+#include "port_openexr/ImfOutputStreamMutex.h"
 
-#include "openexr/ImfNamespace.h"
-#include <openexr/Iex.h>
+#include "port_openexr/ImfNamespace.h"
+#include <port_openexr/Iex.h>
 
 
 #include <set>

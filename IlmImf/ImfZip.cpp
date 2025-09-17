@@ -32,10 +32,10 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "openexr/ImfZip.h"
-#include "openexr/ImfCheckedArithmetic.h"
-#include "openexr/ImfNamespace.h"
-#include "openexr/Iex.h"
+#include "port_openexr/ImfZip.h"
+#include "port_openexr/ImfCheckedArithmetic.h"
+#include "port_openexr/ImfNamespace.h"
+#include "port_openexr/Iex.h"
 
 #include <math.h>
 #include <zlib.h>

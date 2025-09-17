@@ -97,20 +97,20 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/ImfB44Compressor.h"
-#include "openexr/ImfHeader.h"
-#include "openexr/ImfChannelList.h"
-#include "openexr/ImfMisc.h"
-#include "openexr/ImfCheckedArithmetic.h"
-#include <openexr/ImathFun.h>
-#include <openexr/ImathBox.h>
-#include <openexr/Iex.h>
-#include <openexr/ImfIO.h>
-#include <openexr/ImfXdr.h>
+#include "port_openexr/ImfB44Compressor.h"
+#include "port_openexr/ImfHeader.h"
+#include "port_openexr/ImfChannelList.h"
+#include "port_openexr/ImfMisc.h"
+#include "port_openexr/ImfCheckedArithmetic.h"
+#include <port_openexr/ImathFun.h>
+#include <port_openexr/ImathBox.h>
+#include <port_openexr/Iex.h>
+#include <port_openexr/ImfIO.h>
+#include <port_openexr/ImfXdr.h>
 #include <string.h>
 #include <assert.h>
 #include <algorithm>
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
@@ -131,7 +131,7 @@ namespace {
 //	x = 8 * log (y)
 //
 
-#include <openexr/b44ExpLogTable.h>
+#include <port_openexr/b44ExpLogTable.h>
 
 
 inline void

@@ -40,7 +40,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/ImfCompressionAttribute.h"
+#include "port_openexr/ImfCompressionAttribute.h"
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

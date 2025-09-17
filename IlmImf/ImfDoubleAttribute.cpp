@@ -40,7 +40,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfDoubleAttribute.h>
+#include <port_openexr/ImfDoubleAttribute.h>
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

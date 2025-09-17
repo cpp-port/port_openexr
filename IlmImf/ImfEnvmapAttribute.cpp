@@ -39,7 +39,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfEnvmapAttribute.h>
+#include <port_openexr/ImfEnvmapAttribute.h>
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

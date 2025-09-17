@@ -45,7 +45,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfVecAttribute.h>
+#include <port_openexr/ImfVecAttribute.h>
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

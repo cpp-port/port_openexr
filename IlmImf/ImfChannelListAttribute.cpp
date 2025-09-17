@@ -40,7 +40,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfChannelListAttribute.h>
+#include <port_openexr/ImfChannelListAttribute.h>
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

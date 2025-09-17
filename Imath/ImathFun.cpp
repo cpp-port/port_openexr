@@ -33,7 +33,7 @@
 ///////////////////////////////////////////////////////////////////////////
 
 
-#include "openexr/ImathFun.h"
+#include "port_openexr/ImathFun.h"
 
 IMATH_INTERNAL_NAMESPACE_SOURCE_ENTER
 

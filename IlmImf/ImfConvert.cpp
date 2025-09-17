@@ -40,8 +40,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/ImfConvert.h"
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfConvert.h"
+#include "port_openexr/ImfNamespace.h"
 
 #include <limits.h>
 

@@ -45,7 +45,7 @@
 //---------------------------------------------------------------------------
 
 #include <assert.h>
-#include "openexr/half.h"
+#include "port_openexr/half.h"
 
 using namespace std;
 
@@ -54,9 +54,9 @@ using namespace std;
 //-------------------------------------------------------------
 
 HALF_EXPORT const half::uif half::_toFloat[1 << 16] =
-    #include <openexr/toFloat.h>
+    #include <port_openexr/toFloat.h>
 HALF_EXPORT const unsigned short half::_eLut[1 << 9] =
-    #include <openexr/eLut.h>
+    #include <port_openexr/eLut.h>
 
 //-----------------------------------------------
 // Overflow handler for float-to-half conversion;

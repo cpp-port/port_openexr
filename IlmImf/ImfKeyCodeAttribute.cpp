@@ -39,7 +39,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfKeyCodeAttribute.h>
+#include <port_openexr/ImfKeyCodeAttribute.h>
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

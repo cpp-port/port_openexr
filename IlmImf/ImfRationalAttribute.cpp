@@ -38,7 +38,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfRationalAttribute.h>
+#include <port_openexr/ImfRationalAttribute.h>
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

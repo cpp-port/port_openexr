@@ -41,7 +41,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfBoxAttribute.h>
+#include <port_openexr/ImfBoxAttribute.h>
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

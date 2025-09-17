@@ -43,8 +43,8 @@
 
 #if HAVE_PTHREAD && HAVE_POSIX_SEMAPHORES
 
-#include "openexr/IlmThreadSemaphore.h"
-#include "openexr/Iex.h"
+#include "port_openexr/IlmThreadSemaphore.h"
+#include "port_openexr/Iex.h"
 #include <assert.h>
 #include <errno.h>
 

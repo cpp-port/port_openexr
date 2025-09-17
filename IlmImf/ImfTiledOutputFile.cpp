@@ -38,31 +38,31 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfTiledOutputFile.h>
-#include <openexr/ImfTiledInputFile.h>
-#include <openexr/ImfTiledInputPart.h>
-#include <openexr/ImfInputFile.h>
-#include <openexr/ImfInputPart.h>
-#include <openexr/ImfTileDescriptionAttribute.h>
-#include <openexr/ImfThumbnailImageAttribute.h>
-#include <openexr/ImfChannelList.h>
-#include <openexr/ImfMisc.h>
-#include <openexr/ImfTiledMisc.h>
-#include <openexr/ImfStdIO.h>
-#include <openexr/ImfCompressor.h>
-#include "openexr/ImathBox.h"
-#include <openexr/ImfArray.h>
-#include <openexr/ImfXdr.h>
-#include <openexr/ImfVersion.h>
-#include <openexr/ImfTileOffsets.h>
-#include <openexr/ImfThreading.h>
-#include <openexr/ImfPartType.h>
-#include "openexr/IlmThreadPool.h"
-#include "openexr/IlmThreadSemaphore.h"
-#include "openexr/IlmThreadMutex.h"
-#include "openexr/ImfOutputStreamMutex.h"
-#include "openexr/ImfOutputPartData.h"
-#include "openexr/Iex.h"
+#include <port_openexr/ImfTiledOutputFile.h>
+#include <port_openexr/ImfTiledInputFile.h>
+#include <port_openexr/ImfTiledInputPart.h>
+#include <port_openexr/ImfInputFile.h>
+#include <port_openexr/ImfInputPart.h>
+#include <port_openexr/ImfTileDescriptionAttribute.h>
+#include <port_openexr/ImfThumbnailImageAttribute.h>
+#include <port_openexr/ImfChannelList.h>
+#include <port_openexr/ImfMisc.h>
+#include <port_openexr/ImfTiledMisc.h>
+#include <port_openexr/ImfStdIO.h>
+#include <port_openexr/ImfCompressor.h>
+#include "port_openexr/ImathBox.h"
+#include <port_openexr/ImfArray.h>
+#include <port_openexr/ImfXdr.h>
+#include <port_openexr/ImfVersion.h>
+#include <port_openexr/ImfTileOffsets.h>
+#include <port_openexr/ImfThreading.h>
+#include <port_openexr/ImfPartType.h>
+#include "port_openexr/IlmThreadPool.h"
+#include "port_openexr/IlmThreadSemaphore.h"
+#include "port_openexr/IlmThreadMutex.h"
+#include "port_openexr/ImfOutputStreamMutex.h"
+#include "port_openexr/ImfOutputPartData.h"
+#include "port_openexr/Iex.h"
 #include <string>
 #include <vector>
 #include <fstream>
@@ -70,7 +70,7 @@
 #include <map>
 #include <algorithm>
 
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

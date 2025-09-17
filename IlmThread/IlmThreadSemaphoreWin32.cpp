@@ -42,8 +42,8 @@
 
 #if defined(_WIN32) && !defined(HAVE_PTHREAD) && !defined(HAVE_POSIX_SEMAPHORES)
 
-#include "openexr/IlmThreadSemaphore.h"
-#include "openexr/Iex.h"
+#include "port_openexr/IlmThreadSemaphore.h"
+#include "port_openexr/Iex.h"
 #include <string>
 #include <assert.h>
 #include <iostream>

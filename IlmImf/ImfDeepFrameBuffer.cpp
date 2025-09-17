@@ -32,12 +32,12 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "openexr/ImfDeepFrameBuffer.h"
-#include "openexr/Iex.h"
+#include "port_openexr/ImfDeepFrameBuffer.h"
+#include "port_openexr/Iex.h"
 
 
 using namespace std;
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

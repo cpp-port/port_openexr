@@ -42,7 +42,7 @@
 //
 //----------------------------------------------------------------------------
 
-#include "openexr/ImathMatrixAlgo.h"
+#include "port_openexr/ImathMatrixAlgo.h"
 #include <cmath>
 #include <algorithm>
 

@@ -32,17 +32,17 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "openexr/ImfGenericOutputFile.h"
+#include "port_openexr/ImfGenericOutputFile.h"
 
-#include <openexr/ImfBoxAttribute.h>
-#include <openexr/ImfFloatAttribute.h>
-#include <openexr/ImfTimeCodeAttribute.h>
-#include <openexr/ImfChromaticitiesAttribute.h>
+#include <port_openexr/ImfBoxAttribute.h>
+#include <port_openexr/ImfFloatAttribute.h>
+#include <port_openexr/ImfTimeCodeAttribute.h>
+#include <port_openexr/ImfChromaticitiesAttribute.h>
 
-#include <openexr/ImfMisc.h>
-#include <openexr/ImfPartType.h>
+#include <port_openexr/ImfMisc.h>
+#include <port_openexr/ImfPartType.h>
 
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

@@ -127,30 +127,30 @@
 //---------------------------------------------------
 
 
-#include "openexr/ImfDwaCompressor.h"
-#include "openexr/ImfDwaCompressorSimd.h"
+#include "port_openexr/ImfDwaCompressor.h"
+#include "port_openexr/ImfDwaCompressorSimd.h"
 
-#include "openexr/ImfChannelList.h"
-#include "openexr/ImfStandardAttributes.h"
-#include "openexr/ImfHeader.h"
-#include "openexr/ImfHuf.h"
-#include "openexr/ImfInt64.h"
-#include "openexr/ImfIntAttribute.h"
-#include "openexr/ImfIO.h"
-#include "openexr/ImfMisc.h"
-#include "openexr/ImfNamespace.h"
-#include "openexr/ImfRle.h"
-#include "openexr/ImfSimd.h"
-#include "openexr/ImfSystemSpecific.h"
-#include "openexr/ImfXdr.h"
-#include "openexr/ImfZip.h"
+#include "port_openexr/ImfChannelList.h"
+#include "port_openexr/ImfStandardAttributes.h"
+#include "port_openexr/ImfHeader.h"
+#include "port_openexr/ImfHuf.h"
+#include "port_openexr/ImfInt64.h"
+#include "port_openexr/ImfIntAttribute.h"
+#include "port_openexr/ImfIO.h"
+#include "port_openexr/ImfMisc.h"
+#include "port_openexr/ImfNamespace.h"
+#include "port_openexr/ImfRle.h"
+#include "port_openexr/ImfSimd.h"
+#include "port_openexr/ImfSystemSpecific.h"
+#include "port_openexr/ImfXdr.h"
+#include "port_openexr/ImfZip.h"
 
-#include "openexr/ImathFun.h"
-#include "openexr/ImathBox.h"
-#include "openexr/ImathVec.h"
-#include <openexr/half.h>
+#include "port_openexr/ImathFun.h"
+#include "port_openexr/ImathBox.h"
+#include "port_openexr/ImathVec.h"
+#include <port_openexr/half.h>
 
-#include <openexr/dwaLookups.h>
+#include <port_openexr/dwaLookups.h>
 
 #include <vector>
 #include <string>

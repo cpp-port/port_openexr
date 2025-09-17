@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(openexr CXX)
+project(port_openexr CXX)
 
 
 if (MSVC)
@@ -178,15 +178,18 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_PTHREAD=1)
 
 endif()
 
-target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
+
+if(${LINUX})
+    target_link_libraries(${PROJECT_NAME} PRIVATE z)
+else()
+    target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
+endif()
 
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../webp)
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../jxr/common)
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/FreeImage)
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating_system/operating_system-${OPERATING_SYSTEM_LOWERED_NAME}/configuration/FreeImage)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating_system/operating_system-${OPERATING_SYSTEM_LOWERED_NAME}/configuration/${PROJECT_NAME})
 
 
 

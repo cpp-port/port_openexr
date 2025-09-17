@@ -39,7 +39,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfFloatVectorAttribute.h>
+#include <port_openexr/ImfFloatVectorAttribute.h>
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

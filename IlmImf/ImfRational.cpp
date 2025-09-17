@@ -41,11 +41,11 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfRational.h>
+#include <port_openexr/ImfRational.h>
 #include <cmath>
 
 using namespace std;
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

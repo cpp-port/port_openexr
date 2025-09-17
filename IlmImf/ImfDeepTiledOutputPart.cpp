@@ -32,9 +32,9 @@
 //
 ///////////////////////////////////////////////////////////////////////////
 
-#include "openexr/ImfDeepTiledOutputPart.h"
-#include "openexr/ImfMultiPartOutputFile.h"
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfDeepTiledOutputPart.h"
+#include "port_openexr/ImfMultiPartOutputFile.h"
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

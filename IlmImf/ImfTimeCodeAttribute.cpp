@@ -39,7 +39,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfTimeCodeAttribute.h>
+#include <port_openexr/ImfTimeCodeAttribute.h>
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

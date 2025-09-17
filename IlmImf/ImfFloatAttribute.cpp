@@ -40,7 +40,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfFloatAttribute.h>
+#include <port_openexr/ImfFloatAttribute.h>
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

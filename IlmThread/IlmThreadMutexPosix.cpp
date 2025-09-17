@@ -43,8 +43,8 @@
 
 #if HAVE_PTHREAD
 
-#include "openexr/IlmThreadMutex.h"
-#include "openexr/Iex.h"
+#include "port_openexr/IlmThreadMutex.h"
+#include "port_openexr/Iex.h"
 #include <assert.h>
 
 ILMTHREAD_INTERNAL_NAMESPACE_SOURCE_ENTER

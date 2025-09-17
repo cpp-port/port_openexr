@@ -40,12 +40,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfStdIO.h>
-#include "openexr/Iex.h"
+#include <port_openexr/ImfStdIO.h>
+#include "port_openexr/Iex.h"
 #include <errno.h>
 
 using namespace std;
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

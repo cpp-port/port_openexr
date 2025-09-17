@@ -39,9 +39,9 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/ImfEnvmap.h"
-#include "openexr/ImathFun.h"
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfEnvmap.h"
+#include "port_openexr/ImathFun.h"
+#include "port_openexr/ImfNamespace.h"
 
 #include <algorithm>
 #include <math.h>

@@ -38,7 +38,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfStringVectorAttribute.h>
+#include <port_openexr/ImfStringVectorAttribute.h>
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

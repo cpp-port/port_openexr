@@ -43,8 +43,8 @@
 
 #if HAVE_PTHREAD
 
-#include "openexr/IlmThread.h"
-#include "openexr/Iex.h"
+#include "port_openexr/IlmThread.h"
+#include "port_openexr/Iex.h"
 #include <assert.h>
 
 extern "C"

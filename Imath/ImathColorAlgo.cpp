@@ -39,7 +39,7 @@
 //
 //----------------------------------------------------------------------------
 
-#include "openexr/ImathColorAlgo.h"
+#include "port_openexr/ImathColorAlgo.h"
 
 IMATH_INTERNAL_NAMESPACE_SOURCE_ENTER
 

@@ -41,13 +41,13 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfFrameBuffer.h>
-#include "openexr/Iex.h"
+#include <port_openexr/ImfFrameBuffer.h>
+#include "port_openexr/Iex.h"
 
 
 using namespace std;
 
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

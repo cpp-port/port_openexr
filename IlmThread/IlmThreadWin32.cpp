@@ -42,8 +42,8 @@
 
 #if !defined(HAVE_PTHREAD) && defined(_WIN32)
 
-#include "openexr/IlmThread.h"
-#include "openexr/Iex.h"
+#include "port_openexr/IlmThread.h"
+#include "port_openexr/Iex.h"
 #include <iostream>
 #include <assert.h>
 

@@ -38,29 +38,29 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/ImfInputFile.h"
-#include "openexr/ImfScanLineInputFile.h"
-#include "openexr/ImfTiledInputFile.h"
-#include "openexr/ImfChannelList.h"
-#include "openexr/ImfMisc.h"
-#include "openexr/ImfStdIO.h"
-#include "openexr/ImfVersion.h"
-#include "openexr/ImfPartType.h"
-#include "openexr/ImfInputPartData.h"
-#include "openexr/ImfMultiPartInputFile.h"
+#include "port_openexr/ImfInputFile.h"
+#include "port_openexr/ImfScanLineInputFile.h"
+#include "port_openexr/ImfTiledInputFile.h"
+#include "port_openexr/ImfChannelList.h"
+#include "port_openexr/ImfMisc.h"
+#include "port_openexr/ImfStdIO.h"
+#include "port_openexr/ImfVersion.h"
+#include "port_openexr/ImfPartType.h"
+#include "port_openexr/ImfInputPartData.h"
+#include "port_openexr/ImfMultiPartInputFile.h"
 
-#include <openexr/ImfCompositeDeepScanLine.h>
-#include <openexr/ImfDeepScanLineInputFile.h>
+#include <port_openexr/ImfCompositeDeepScanLine.h>
+#include <port_openexr/ImfDeepScanLineInputFile.h>
 
-#include "openexr/ImathFun.h"
-#include "openexr/IlmThreadMutex.h"
-#include "openexr/Iex.h"
-#include <openexr/half.h>
+#include "port_openexr/ImathFun.h"
+#include "port_openexr/IlmThreadMutex.h"
+#include "port_openexr/Iex.h"
+#include <port_openexr/half.h>
 
 #include <fstream>
 #include <algorithm>
 
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

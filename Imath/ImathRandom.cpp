@@ -39,8 +39,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/ImathRandom.h"
-#include "openexr/ImathInt64.h"
+#include "port_openexr/ImathRandom.h"
+#include "port_openexr/ImathInt64.h"
 
 IMATH_INTERNAL_NAMESPACE_SOURCE_ENTER
 namespace {

@@ -41,13 +41,13 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfChannelList.h>
-#include <openexr/Iex.h>
+#include <port_openexr/ImfChannelList.h>
+#include <port_openexr/Iex.h>
 
 
 using std::string;
 using std::set;
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

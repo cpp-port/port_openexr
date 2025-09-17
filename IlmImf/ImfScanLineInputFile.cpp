@@ -39,25 +39,25 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/ImfScanLineInputFile.h"
-#include "openexr/ImfChannelList.h"
-#include "openexr/ImfMisc.h"
-#include "openexr/ImfStdIO.h"
-#include "openexr/ImfCompressor.h"
-#include "openexr/ImathBox.h"
-#include "openexr/ImathFun.h"
-#include <openexr/ImfXdr.h>
-#include <openexr/ImfConvert.h>
-#include <openexr/ImfThreading.h>
-#include <openexr/ImfPartType.h>
-#include "openexr/IlmThreadPool.h"
-#include "openexr/IlmThreadSemaphore.h"
-#include "openexr/IlmThreadMutex.h"
-#include "openexr/Iex.h"
-#include "openexr/ImfVersion.h"
-#include "openexr/ImfOptimizedPixelReading.h"
-#include "openexr/ImfNamespace.h"
-#include "openexr/ImfStandardAttributes.h"
+#include "port_openexr/ImfScanLineInputFile.h"
+#include "port_openexr/ImfChannelList.h"
+#include "port_openexr/ImfMisc.h"
+#include "port_openexr/ImfStdIO.h"
+#include "port_openexr/ImfCompressor.h"
+#include "port_openexr/ImathBox.h"
+#include "port_openexr/ImathFun.h"
+#include <port_openexr/ImfXdr.h>
+#include <port_openexr/ImfConvert.h>
+#include <port_openexr/ImfThreading.h>
+#include <port_openexr/ImfPartType.h>
+#include "port_openexr/IlmThreadPool.h"
+#include "port_openexr/IlmThreadSemaphore.h"
+#include "port_openexr/IlmThreadMutex.h"
+#include "port_openexr/Iex.h"
+#include "port_openexr/ImfVersion.h"
+#include "port_openexr/ImfOptimizedPixelReading.h"
+#include "port_openexr/ImfNamespace.h"
+#include "port_openexr/ImfStandardAttributes.h"
 
 #include <algorithm>
 #include <string>

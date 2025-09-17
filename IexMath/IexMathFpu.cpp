@@ -39,10 +39,10 @@
 //
 //------------------------------------------------------------------------
 
-#include "openexr/IexMathFpu.h"
+#include "port_openexr/IexMathFpu.h"
 
 //#include <stdint.h>
-#include <openexr/IlmBaseConfig.h>
+#include <port_openexr/IlmBaseConfig.h>
 #include <stdio.h>
 
 #if 0

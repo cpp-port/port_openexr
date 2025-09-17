@@ -43,8 +43,8 @@
 
 #if !defined(_WIN32) && !defined(_WIN64) && !defined(HAVE_PTHREAD)
 
-#include "openexr/IlmThread.h"
-#include "openexr/Iex.h"
+#include "port_openexr/IlmThread.h"
+#include "port_openexr/Iex.h"
 
 ILMTHREAD_INTERNAL_NAMESPACE_SOURCE_ENTER
 

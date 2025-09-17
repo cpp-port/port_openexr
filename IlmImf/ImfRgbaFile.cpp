@@ -39,19 +39,19 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfRgbaFile.h>
-#include <openexr/ImfOutputFile.h>
-#include <openexr/ImfInputFile.h>
-#include <openexr/ImfChannelList.h>
-#include <openexr/ImfRgbaYca.h>
-#include <openexr/ImfStandardAttributes.h>
-#include <openexr/ImathFun.h>
-#include <openexr/IlmThreadMutex.h>
-#include <openexr/Iex.h>
+#include <port_openexr/ImfRgbaFile.h>
+#include <port_openexr/ImfOutputFile.h>
+#include <port_openexr/ImfInputFile.h>
+#include <port_openexr/ImfChannelList.h>
+#include <port_openexr/ImfRgbaYca.h>
+#include <port_openexr/ImfStandardAttributes.h>
+#include <port_openexr/ImathFun.h>
+#include <port_openexr/IlmThreadMutex.h>
+#include <port_openexr/Iex.h>
 #include <string.h>
 #include <algorithm>
 
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

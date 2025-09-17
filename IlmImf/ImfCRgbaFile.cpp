@@ -40,21 +40,21 @@
 //-----------------------------------------------------------------------------
 
 
-#include <openexr/ImfCRgbaFile.h>
-#include <openexr/ImfRgbaFile.h>
-#include <openexr/ImfTiledRgbaFile.h>
-#include <openexr/ImfIntAttribute.h>
-#include <openexr/ImfFloatAttribute.h>
-#include <openexr/ImfDoubleAttribute.h>
-#include <openexr/ImfStringAttribute.h>
-#include <openexr/ImfBoxAttribute.h>
-#include <openexr/ImfVecAttribute.h>
-#include <openexr/ImfMatrixAttribute.h>
-#include <openexr/ImfChannelList.h>
-#include <openexr/ImfLut.h>
-#include <openexr/half.h>
-#include <openexr/ImfNamespace.h>
-#include <openexr/ImathForward.h>
+#include <port_openexr/ImfCRgbaFile.h>
+#include <port_openexr/ImfRgbaFile.h>
+#include <port_openexr/ImfTiledRgbaFile.h>
+#include <port_openexr/ImfIntAttribute.h>
+#include <port_openexr/ImfFloatAttribute.h>
+#include <port_openexr/ImfDoubleAttribute.h>
+#include <port_openexr/ImfStringAttribute.h>
+#include <port_openexr/ImfBoxAttribute.h>
+#include <port_openexr/ImfVecAttribute.h>
+#include <port_openexr/ImfMatrixAttribute.h>
+#include <port_openexr/ImfChannelList.h>
+#include <port_openexr/ImfLut.h>
+#include <port_openexr/half.h>
+#include <port_openexr/ImfNamespace.h>
+#include <port_openexr/ImathForward.h>
 
 #include <string.h>
 

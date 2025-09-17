@@ -49,11 +49,11 @@
 #endif
 
 #include <half.h>
-#include <openexr/IlmThread.h>
-#include <openexr/IlmThreadSemaphore.h>
-#include <openexr/ImfIO.h>
-#include <openexr/ImfXdr.h>
-#include "openexr/ImfNamespace.h"
+#include <port_openexr/IlmThread.h>
+#include <port_openexr/IlmThreadSemaphore.h>
+#include <port_openexr/ImfIO.h>
+#include <port_openexr/ImfXdr.h>
+#include "port_openexr/ImfNamespace.h"
 
 using namespace OPENEXR_IMF_NAMESPACE;
 

@@ -41,11 +41,11 @@
 //-----------------------------------------------------------------------------
 
 
-#include <openexr/ImfTestFile.h>
-#include <openexr/ImfStdIO.h>
-#include <openexr/ImfXdr.h>
-#include <openexr/ImfVersion.h>
-#include "openexr/ImfNamespace.h"
+#include <port_openexr/ImfTestFile.h>
+#include <port_openexr/ImfStdIO.h>
+#include <port_openexr/ImfXdr.h>
+#include <port_openexr/ImfVersion.h>
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

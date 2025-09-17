@@ -43,26 +43,26 @@
 //
 //-----------------------------------------------------------------------------
 
-#include <openexr/ImfOutputFile.h>
-#include <openexr/ImfInputFile.h>
-#include <openexr/ImfChannelList.h>
-#include <openexr/ImfMisc.h>
-#include <openexr/ImfStdIO.h>
-#include <openexr/ImfCompressor.h>
-#include "openexr/ImathBox.h"
-#include "openexr/ImathFun.h"
-#include <openexr/ImfArray.h>
-#include "openexr/ImfXdr.h"
-#include <openexr/ImfThumbnailImageAttribute.h>
-#include <openexr/ImfPartType.h>
-#include "openexr/IlmThreadPool.h"
-#include "openexr/ImfOutputStreamMutex.h"
-#include "openexr/IlmThreadSemaphore.h"
-#include "openexr/IlmThreadMutex.h"
-#include "openexr/Iex.h"
-#include "openexr/ImfInputPart.h"
-#include "openexr/ImfNamespace.h"
-#include "openexr/ImfOutputPartData.h"
+#include <port_openexr/ImfOutputFile.h>
+#include <port_openexr/ImfInputFile.h>
+#include <port_openexr/ImfChannelList.h>
+#include <port_openexr/ImfMisc.h>
+#include <port_openexr/ImfStdIO.h>
+#include <port_openexr/ImfCompressor.h>
+#include "port_openexr/ImathBox.h"
+#include "port_openexr/ImathFun.h"
+#include <port_openexr/ImfArray.h>
+#include "port_openexr/ImfXdr.h"
+#include <port_openexr/ImfThumbnailImageAttribute.h>
+#include <port_openexr/ImfPartType.h>
+#include "port_openexr/IlmThreadPool.h"
+#include "port_openexr/ImfOutputStreamMutex.h"
+#include "port_openexr/IlmThreadSemaphore.h"
+#include "port_openexr/IlmThreadMutex.h"
+#include "port_openexr/Iex.h"
+#include "port_openexr/ImfInputPart.h"
+#include "port_openexr/ImfNamespace.h"
+#include "port_openexr/ImfOutputPartData.h"
 
 #include <string>
 #include <vector>

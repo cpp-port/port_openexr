@@ -41,7 +41,7 @@
 //
 //----------------------------------------------------------------------------
 
-#include "openexr/ImathShear.h"
+#include "port_openexr/ImathShear.h"
 
 IMATH_INTERNAL_NAMESPACE_SOURCE_ENTER
 

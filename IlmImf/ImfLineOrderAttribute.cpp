@@ -41,7 +41,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/ImfLineOrderAttribute.h"
+#include "port_openexr/ImfLineOrderAttribute.h"
 
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER

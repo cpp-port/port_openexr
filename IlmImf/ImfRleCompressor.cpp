@@ -40,11 +40,11 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "openexr/ImfRleCompressor.h"
-#include "openexr/ImfCheckedArithmetic.h"
-#include "openexr/ImfRle.h"
-#include "openexr/Iex.h"
-#include "openexr/ImfNamespace.h"
+#include "port_openexr/ImfRleCompressor.h"
+#include "port_openexr/ImfCheckedArithmetic.h"
+#include "port_openexr/ImfRle.h"
+#include "port_openexr/Iex.h"
+#include "port_openexr/ImfNamespace.h"
 
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 
