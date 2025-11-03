@@ -52,7 +52,7 @@
 #include "port_openexr/ImfDeepTiledInputFile.h"
 #include "port_openexr/ImfVersion.h"
 
-#include <OpenEXRConfig.h>
+#include <port_openexr/OpenEXRConfig.h>
 #include <port_openexr/IlmThread.h>
 #include <port_openexr/IlmThreadMutex.h>
 

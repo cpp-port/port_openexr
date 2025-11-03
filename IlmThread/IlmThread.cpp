@@ -39,7 +39,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IlmBaseConfig.h"
+#include "port_openexr/IlmBaseConfig.h"
 
 #if !defined(_WIN32) && !defined(_WIN64) && !defined(HAVE_PTHREAD)
 

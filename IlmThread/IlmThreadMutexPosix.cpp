@@ -39,7 +39,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#include "IlmBaseConfig.h"
+#include "port_openexr/IlmBaseConfig.h"
 
 #if HAVE_PTHREAD
 
