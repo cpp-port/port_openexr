@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(port_openexr CXX)
 
 
-if (MSVC)
+if(${WIN32})
     #set(CMAKE_DEBUG_POSTFIX "d")
     add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
     add_definitions(-D_CRT_NONSTDC_NO_DEPRECATE)
