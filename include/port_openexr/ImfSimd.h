@@ -46,8 +46,12 @@
 //
 
 
-// GCC and Visual Studio SSE2 compiler flags
-#if !defined(ANDROID) && (defined __SSE2__ || (_MSC_VER >= 1300 && !_M_CEE_PURE))
+// Enable SSE2 only on x86/x64
+#if !defined(ANDROID) && \
+    ( \
+        (defined(__SSE2__) && (defined(__i386__) || defined(__x86_64__))) || \
+        (defined(_MSC_VER) && (defined(_M_IX86) || defined(_M_X64))) \
+    )
     #define IMF_HAVE_SSE2 1
 #endif
 
