@@ -133,7 +133,7 @@ if(${WIN32})
     )
 endif()
 
-if(${LINUX} OR ${ANDROID} OR ${__APPLE__} OR ${__BSD__})
+if(${LINUX} OR ${__ANDROID__} OR ${__APPLE__} OR ${__BSD__})
 message(STATUS "IlmThreadPosix at OpenEXR")
     list(APPEND library_source
             #Half/main_eLut.cpp
@@ -152,6 +152,14 @@ if(${UNIX_COMPAT})
 
     )
 endif()
+
+if(${LINUX} OR ${__BSD__} OR ${__ANDROID__})
+    list(APPEND library_references z)
+else()
+    list(APPEND library_references zlib)
+endif()
+
+
 
 #if(${OPENEXR_NO_THREADING})
 #
@@ -172,18 +180,13 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE HALF_EXPORTS)
 target_compile_definitions(${PROJECT_NAME} PRIVATE IMATH_EXPORTS)
 target_compile_definitions(${PROJECT_NAME} PRIVATE ILMTHREAD_EXPORTS)
 target_compile_definitions(${PROJECT_NAME} PRIVATE IEX_EXPORTS)
-elseif(${LINUX} OR ${ANDROID} OR ${__BSD__})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${library_references})
+elseif(${LINUX} OR ${__ANDROID__} OR ${__BSD__})
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_PTHREAD=1)
-
+target_link_libraries(${PROJECT_NAME} PRIVATE ${library_references})
 endif()
 
-
-if(${LINUX} OR ${OPENBSD})
-    target_link_libraries(${PROJECT_NAME} PRIVATE z)
-else()
-    target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
-endif()
 
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
