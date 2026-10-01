@@ -133,7 +133,7 @@ if(${WIN32})
     )
 endif()
 
-if(${LINUX} OR ${__ANDROID__} OR ${__APPLE__} OR ${__BSD__})
+if(LINUX OR __ANDROID__ OR __APPLE__ OR __BSD__ OR __SUNOS__)
 message(STATUS "IlmThreadPosix at OpenEXR")
     list(APPEND library_source
             #Half/main_eLut.cpp
@@ -181,10 +181,15 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE IMATH_EXPORTS)
 target_compile_definitions(${PROJECT_NAME} PRIVATE ILMTHREAD_EXPORTS)
 target_compile_definitions(${PROJECT_NAME} PRIVATE IEX_EXPORTS)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${library_references})
-elseif(${LINUX} OR ${__ANDROID__} OR ${__BSD__})
+elseif(${LINUX} OR ${__ANDROID__} OR ${__BSD__} OR ${__SUNOS__})
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_PTHREAD=1)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${library_references})
+endif()
+
+if(__SUNOS__)
+    find_package(Threads REQUIRED)
+    target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
 endif()
 
 
